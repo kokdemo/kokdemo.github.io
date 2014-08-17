@@ -12,13 +12,13 @@ language: zh-CN
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://kokdemo.github.io/blog
+url: http://kokdemo.github.io/blog/
 deploy:
   type: github
   repo: https://github.com/kokdemo/kokdemo.github.io.git
   branch: master
 
-root: /blog
+root: /blog/
 permalink: :year/:month/:day/:title/
 tag_dir: tags
 archive_dir: archives
