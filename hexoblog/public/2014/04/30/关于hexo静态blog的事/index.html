@@ -1,0 +1,691 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>关于hexo静态blog的搭建，美化 | Kok的猜想空间</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="kok liu">
+    
+    <meta name="description" content="最近看我的wordpress博客越来越不爽了……
+&amp;lt;—! more —&amp;gt;主要是因为wordpress真的太大，繁琐的厉害，最重要的是，它的反垃圾评论功能似乎没有以前那么好用了。
+因此每次登陆的时候都能看到满坑满谷的垃圾评论……实在是删不过来啊……
+在某人的忽悠下，我进了hexo的坑，也就">
+    
+    
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="kokdemo" />
+    <meta name="twitter:title" content="关于hexo静态blog的搭建，美化 | Kok的猜想空间" />
+      
+    
+    
+    <link rel="alternative" href="/atom.xml" title="Kok的猜想空间" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Kok的猜想空间" title="Kok的猜想空间"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Kok的猜想空间">Kok的猜想空间</a></h1>
+				<h2 class="blog-motto">理性向左，感性向右，我该向哪？</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:kokdemo.github.io/blog">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/04/30/关于hexo静态blog的事/" title="关于hexo静态blog的搭建，美化" itemprop="url">关于hexo静态blog的搭建，美化</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="https://plus.google.com/109731366030258114799?rel=author" title="kok liu" target="_blank" itemprop="author">kok liu</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2014-04-30T06:53:18.000Z" itemprop="datePublished">发表于4月 30 2014</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo"><span class="toc-number">1.</span> <span class="toc-text">hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ghost"><span class="toc-number">2.</span> <span class="toc-text">ghost</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#markdown"><span class="toc-number">3.</span> <span class="toc-text">markdown</span></a></li></ol>
+		
+		</div>
+		
+		<p>最近看我的wordpress博客越来越不爽了……</p>
+<p>&lt;—! more —&gt;<br>主要是因为wordpress真的太大，繁琐的厉害，最重要的是，它的反垃圾评论功能似乎没有以前那么好用了。</p>
+<p>因此每次登陆的时候都能看到满坑满谷的垃圾评论……<br>实在是删不过来啊……</p>
+<p>在某人的忽悠下，我进了hexo的坑，也就是目前这个博客所用的静态生成器。hexo可以看作是octopress思路的一种扩展，即用markdown写作，然后生成静态网页，托管到github page上。</p>
+<p>可是octopress使用ruby写的，对于广大js屌丝们来说不是很友好……于是就有了台湾朋友写的这个hexo。</p>
+<p>我fork的主题来自于jacman，而jacman是pacman的fork，那么我这个主题应该算是fork自pacman了……</p>
+<h3 id="hexo">hexo</h3>
+<p>hexo的安装就是使用</p>
+<pre><code>npm <span class="keyword">install</span> -g hexo
+</code></pre><p>tips：安装之前请先注意下你的npm的安装方式，如果npm是apt-get安装的旧版本，你有必要重新安装一次。</p>
+<pre><code>curl http://npmjs<span class="preprocessor">.org</span>/install<span class="preprocessor">.sh</span> | sh
+或者：
+curl http://npmjs<span class="preprocessor">.org</span>/install<span class="preprocessor">.sh</span> | sudo sh
+</code></pre><p>tips：什么，你没有curl，那么你还是先用apt-get安一个curl好了……</p>
+<p>安装好hexo之后就可以开始生成你的第一个blog了。</p>
+<p>cd到目标文件夹之后</p>
+<pre><code>hexo init<span class="comment"> //生成基本的结构</span>
+hexo generate<span class="comment"> //生成静态网页</span>
+hexo server<span class="comment"> //运行blog，在localhost:4000上。</span>
+hexo clean<span class="comment"> //清楚hexo生成的网页和数据库，出错的时候可以试一下。</span>
+hexo <span class="built_in">new</span> [<span class="built_in">post</span>] &lt;title&gt;<span class="comment"> //一目了然，就是写新文章，post是文章类型的一种。</span>
+</code></pre><p>以上就是基本命令。</p>
+<p>hexo的基本结构如下：</p>
+<pre><code>.
+├── .deploy
+├── <span class="keyword">public</span> <span class="comment">//生成的静态网页</span>
+├── scaffolds <span class="comment">//layout模板文件目录，其中的md文件可以添加编辑</span>
+├── scripts <span class="comment">//扩展脚本目录，平常里面只有一个处理图片的js</span>
+├── source <span class="comment">//你的文章保存的地方，你还可以在里面自建文件夹放页面什么的</span>
+ |   ├── _drafts
+ |   └── _posts <span class="comment">//存放的位置</span>
+├── themes <span class="comment">//主题</span>
+├── _config.yml <span class="comment">//主要的配置文件，务必要读一下，把里面的参数改成你需要的</span>
+└── <span class="package"><span class="keyword">package</span>.<span class="title">json</span></span>
+</code></pre><p>生成静态网页之后就可以扔到你的主机上/github page上，同时hexo还提供了直接部署的命令，deploy，有兴趣的你可以自行google一下。</p>
+<p>关于wordpress—&gt;hexo的迁移主要是依靠一个插件hexo-migrator-wordpress。</p>
+<ol>
+<li>首先，需要在Word Press导出博客，会得到一个xml文件，把它拷贝到hexo博客目录下，比如叫wordpress.xml。</li>
+<li>安装hexo-migrator-wordpress这个插件</li>
+</ol>
+<p>首先用npm安装</p>
+<pre><code>npm install hexo<span class="attribute">-migrator</span><span class="attribute">-wordpress</span> <span class="subst">--</span>save
+</code></pre><ol>
+<li>导入</li>
+</ol>
+<p>运行</p>
+<pre><code>hexo migrate wordpress wordpress<span class="preprocessor">.xml</span>
+</code></pre><p>会看到导入了一些Word Press里的文章和页面，看看source里的文件，发现给转成了markdown格式的，这时候多半还需要一些格式微调。</p>
+<p>另外，文章里面的图片会指向原来的博客资源，文章链接也是绝对的。因此将来删除wordpress的时候最好保留下来其中存图片的文件夹……</p>
+<blockquote>
+<p>此时又有人告诉我，ghost比hexo更好用，你快去试试吧……</p>
+</blockquote>
+<h3 id="ghost">ghost</h3>
+<p>ghost是最近很火的一个基于nodejs的博客，不像hexo那样只是一个生成器，它有一个比较简陋的后台，可以直接在里面用markdown写东西，同时可以看到预览。</p>
+<p>ghost的官网 <a href="https://ghost.org/" target="_blank">https://ghost.org/</a> ，上面逼格相当高……</p>
+<p>安装的方法就是从官网上下载安装包，解压之后，cd到那个文件夹，然后</p>
+<pre><code><span class="comment">npm</span> <span class="comment">install</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">production</span>
+</code></pre><p>就行了，然后运行呢</p>
+<pre><code>npm <span class="operator"><span class="keyword">start</span></span>
+</code></pre><p>ok，这时候你在浏览器里打开 <a href="http://localhost:2368" target="_blank">http://localhost:2368</a> 就能看到界面了，默认的主题也是非常酷炫，比hexo不知道高到哪里去了……</p>
+<p>访问 <a href="http://localhost:2368/ghost" target="_blank">http://localhost:2368/ghost</a> 进入后台，你可以看到很多选项，包括换掉图片，更改标题副标题，自我信息什么的，还有文章的控制，删除/修改都有，算是比较齐全。</p>
+<p>ghost的主题也和hexo类似，里面都包括了模板，css，js，图片等等东西，你有兴趣可以自己改改看，我当时fork了ghostium这个主题，自己做了一些修改。</p>
+<blockquote>
+<p>问题来了，这不是一个静态blog，那我应该把它部署在哪？</p>
+</blockquote>
+<p>当我发现这个问题之后纠结的不行，想要在vps上用，还需要先学习一下lxc……于是我还是换回hexo了……</p>
+<p>现在有一些主机商开始提供ghost的主机服务了，如果你有这个机会，可以尝尝鲜！</p>
+<p>因为hexo是静态的，放到哪里都行。</p>
+<blockquote>
+<p>问题2，ghost不支持分类，怎么办？</p>
+</blockquote>
+<p>其实很多人直接通过控制tag来为文章分类了……我自己不是很习惯，因为之前还有好多篇文章都没改……</p>
+<h3 id="markdown">markdown</h3>
+<p>最近比较流行用markdown来写作，我用sphinx的时候，觉得rst其实也不错……</p>
+<p>markdown中常用的标题，列表，引用，代码格式，这篇文章里都用到了，我在这写一点不常用的……</p>
+<ol>
+<li>markdown中&lt;\code&gt;&lt;\pre&gt; 都是可以正常用的。此处为了正确显示，加了一个反斜杠。</li>
+<li><p>链接[an example][id](<a href="http://example.com/" target="_blank">http://example.com/</a> “Title”)</p>
+<p>[id]: <a href="http://example.com/" target="_blank">http://example.com/</a>  “Optional Title Here”，说到这个，我更喜欢rst里的链接格式一些……</p>
+</li>
+<li>图片![Alt text](/path/to/img.jpg “Optional title”)</li>
+</ol>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/技术/">技术</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/hexo/">hexo</a><a href="/tags/ghost/">ghost</a><a href="/tags/nodejs/">nodejs</a><a href="/tags/blog/">blog</a>
+  </div>
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://kokdemo.github.io/blog/2014/04/30/关于hexo静态blog的事/" data-title="关于hexo静态blog的搭建，美化 | Kok的猜想空间" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2014/05/01/数模的基本思路和写作攻略/" title="数模的基本思路和写作攻略">
+  <strong>上一篇：</strong><br/>
+  <span>
+  数模的基本思路和写作攻略</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2014/01/19/投稿的故事/"  title="投稿的故事">
+ <strong>下一篇：</strong><br/> 
+ <span>投稿的故事
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+	<div class="ds-thread"></div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo"><span class="toc-number">1.</span> <span class="toc-text">hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ghost"><span class="toc-number">2.</span> <span class="toc-text">ghost</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#markdown"><span class="toc-number">3.</span> <span class="toc-text">markdown</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/学习生活/" title="学习生活">学习生活<sup>12</sup></a></li>
+		
+			<li><a href="/categories/小说杂文/" title="小说杂文">小说杂文<sup>30</sup></a></li>
+		
+			<li><a href="/categories/我看互联网/" title="我看互联网">我看互联网<sup>9</sup></a></li>
+		
+			<li><a href="/categories/技术/" title="技术">技术<sup>7</sup></a></li>
+		
+			<li><a href="/categories/教育探讨/" title="教育探讨">教育探讨<sup>7</sup></a></li>
+		
+			<li><a href="/categories/未分类/" title="未分类">未分类<sup>2</sup></a></li>
+		
+			<li><a href="/categories/科普/" title="科普">科普<sup>11</sup></a></li>
+		
+			<li><a href="/categories/音乐分享/" title="音乐分享">音乐分享<sup>2</sup></a></li>
+		
+			<li><a href="/categories/项目/" title="项目">项目<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/2012/" title="2012">2012<sup>1</sup></a></li>
+		
+			<li><a href="/tags/360/" title="360">360<sup>1</sup></a></li>
+		
+			<li><a href="/tags/CSDN/" title="CSDN">CSDN<sup>1</sup></a></li>
+		
+			<li><a href="/tags/HTML/" title="HTML">HTML<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Hello world!/" title="Hello world!">Hello world!<sup>1</sup></a></li>
+		
+			<li><a href="/tags/android/" title="android">android<sup>2</sup></a></li>
+		
+			<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
+		
+			<li><a href="/tags/bookit/" title="bookit">bookit<sup>1</sup></a></li>
+		
+			<li><a href="/tags/c语言/" title="c语言">c语言<sup>1</sup></a></li>
+		
+			<li><a href="/tags/ghost/" title="ghost">ghost<sup>1</sup></a></li>
+		
+			<li><a href="/tags/hexo/" title="hexo">hexo<sup>1</sup></a></li>
+		
+			<li><a href="/tags/nodejs/" title="nodejs">nodejs<sup>1</sup></a></li>
+		
+			<li><a href="/tags/qq/" title="qq">qq<sup>1</sup></a></li>
+		
+			<li><a href="/tags/三体/" title="三体">三体<sup>2</sup></a></li>
+		
+			<li><a href="/tags/互联网/" title="互联网">互联网<sup>4</sup></a></li>
+		
+			<li><a href="/tags/互联网安全/" title="互联网安全">互联网安全<sup>3</sup></a></li>
+		
+			<li><a href="/tags/产品经理/" title="产品经理">产品经理<sup>1</sup></a></li>
+		
+			<li><a href="/tags/人人/" title="人人">人人<sup>2</sup></a></li>
+		
+			<li><a href="/tags/作文/" title="作文">作文<sup>1</sup></a></li>
+		
+			<li><a href="/tags/公益项目/" title="公益项目">公益项目<sup>2</sup></a></li>
+		
+			<li><a href="/tags/分享/" title="分享">分享<sup>5</sup></a></li>
+		
+			<li><a href="/tags/卫星武器/" title="卫星武器">卫星武器<sup>1</sup></a></li>
+		
+			<li><a href="/tags/历史/" title="历史">历史<sup>2</sup></a></li>
+		
+			<li><a href="/tags/同位词/" title="同位词">同位词<sup>1</sup></a></li>
+		
+			<li><a href="/tags/哨兵/" title="哨兵">哨兵<sup>1</sup></a></li>
+		
+			<li><a href="/tags/围城/" title="围城">围城<sup>1</sup></a></li>
+		
+			<li><a href="/tags/大学/" title="大学">大学<sup>10</sup></a></li>
+		
+			<li><a href="/tags/大雾/" title="大雾">大雾<sup>1</sup></a></li>
+		
+			<li><a href="/tags/娱乐/" title="娱乐">娱乐<sup>1</sup></a></li>
+		
+			<li><a href="/tags/学习/" title="学习">学习<sup>1</sup></a></li>
+		
+			<li><a href="/tags/宅男腐女混战记/" title="宅男腐女混战记">宅男腐女混战记<sup>1</sup></a></li>
+		
+			<li><a href="/tags/安全/" title="安全">安全<sup>1</sup></a></li>
+		
+			<li><a href="/tags/小说/" title="小说">小说<sup>5</sup></a></li>
+		
+			<li><a href="/tags/尼玛/" title="尼玛">尼玛<sup>1</sup></a></li>
+		
+			<li><a href="/tags/巴比伦塔/" title="巴比伦塔">巴比伦塔<sup>1</sup></a></li>
+		
+			<li><a href="/tags/微型科幻/" title="微型科幻">微型科幻<sup>1</sup></a></li>
+		
+			<li><a href="/tags/微科幻/" title="微科幻">微科幻<sup>1</sup></a></li>
+		
+			<li><a href="/tags/怀念/" title="怀念">怀念<sup>1</sup></a></li>
+		
+			<li><a href="/tags/情人节/" title="情人节">情人节<sup>1</sup></a></li>
+		
+			<li><a href="/tags/愤青/" title="愤青">愤青<sup>1</sup></a></li>
+		
+			<li><a href="/tags/戴森球/" title="戴森球">戴森球<sup>1</sup></a></li>
+		
+			<li><a href="/tags/手机/" title="手机">手机<sup>1</sup></a></li>
+		
+			<li><a href="/tags/探讨/" title="探讨">探讨<sup>5</sup></a></li>
+		
+			<li><a href="/tags/改革开放/" title="改革开放">改革开放<sup>1</sup></a></li>
+		
+			<li><a href="/tags/教育探讨/" title="教育探讨">教育探讨<sup>3</sup></a></li>
+		
+			<li><a href="/tags/数学/" title="数学">数学<sup>2</sup></a></li>
+		
+			<li><a href="/tags/数学建模/" title="数学建模">数学建模<sup>1</sup></a></li>
+		
+			<li><a href="/tags/时事/" title="时事">时事<sup>2</sup></a></li>
+		
+			<li><a href="/tags/时空/" title="时空">时空<sup>1</sup></a></li>
+		
+			<li><a href="/tags/曲率/" title="曲率">曲率<sup>1</sup></a></li>
+		
+			<li><a href="/tags/末日/" title="末日">末日<sup>1</sup></a></li>
+		
+			<li><a href="/tags/杂文/" title="杂文">杂文<sup>1</sup></a></li>
+		
+			<li><a href="/tags/校庆/" title="校庆">校庆<sup>1</sup></a></li>
+		
+			<li><a href="/tags/武侠/" title="武侠">武侠<sup>1</sup></a></li>
+		
+			<li><a href="/tags/毕业季/" title="毕业季">毕业季<sup>1</sup></a></li>
+		
+			<li><a href="/tags/注释/" title="注释">注释<sup>1</sup></a></li>
+		
+			<li><a href="/tags/渣/" title="渣">渣<sup>1</sup></a></li>
+		
+			<li><a href="/tags/物理/" title="物理">物理<sup>1</sup></a></li>
+		
+			<li><a href="/tags/狗血文/" title="狗血文">狗血文<sup>10</sup></a></li>
+		
+			<li><a href="/tags/生活/" title="生活">生活<sup>1</sup></a></li>
+		
+			<li><a href="/tags/生活科学/" title="生活科学">生活科学<sup>1</sup></a></li>
+		
+			<li><a href="/tags/生物/" title="生物">生物<sup>2</sup></a></li>
+		
+			<li><a href="/tags/用户需求/" title="用户需求">用户需求<sup>1</sup></a></li>
+		
+			<li><a href="/tags/病/" title="病">病<sup>1</sup></a></li>
+		
+			<li><a href="/tags/相声/" title="相声">相声<sup>1</sup></a></li>
+		
+			<li><a href="/tags/真的吗？/" title="真的吗？">真的吗？<sup>1</sup></a></li>
+		
+			<li><a href="/tags/知识/" title="知识">知识<sup>1</sup></a></li>
+		
+			<li><a href="/tags/社交网络/" title="社交网络">社交网络<sup>1</sup></a></li>
+		
+			<li><a href="/tags/科幻/" title="科幻">科幻<sup>6</sup></a></li>
+		
+			<li><a href="/tags/穿越小说/" title="穿越小说">穿越小说<sup>1</sup></a></li>
+		
+			<li><a href="/tags/维度空间/" title="维度空间">维度空间<sup>1</sup></a></li>
+		
+			<li><a href="/tags/考研/" title="考研">考研<sup>1</sup></a></li>
+		
+			<li><a href="/tags/航空/" title="航空">航空<sup>1</sup></a></li>
+		
+			<li><a href="/tags/花园口/" title="花园口">花园口<sup>1</sup></a></li>
+		
+			<li><a href="/tags/苦逼的人生/" title="苦逼的人生">苦逼的人生<sup>1</sup></a></li>
+		
+			<li><a href="/tags/英语/" title="英语">英语<sup>1</sup></a></li>
+		
+			<li><a href="/tags/蓝牙/" title="蓝牙">蓝牙<sup>1</sup></a></li>
+		
+			<li><a href="/tags/薛定谔方程/" title="薛定谔方程">薛定谔方程<sup>1</sup></a></li>
+		
+			<li><a href="/tags/蛋疼/" title="蛋疼">蛋疼<sup>2</sup></a></li>
+		
+			<li><a href="/tags/西安/" title="西安">西安<sup>1</sup></a></li>
+		
+			<li><a href="/tags/西电/" title="西电">西电<sup>1</sup></a></li>
+		
+			<li><a href="/tags/西电图书传递计划/" title="西电图书传递计划">西电图书传递计划<sup>1</sup></a></li>
+		
+			<li><a href="/tags/论文写作/" title="论文写作">论文写作<sup>1</sup></a></li>
+		
+			<li><a href="/tags/语言/" title="语言">语言<sup>1</sup></a></li>
+		
+			<li><a href="/tags/钢之炼金术师/" title="钢之炼金术师">钢之炼金术师<sup>1</sup></a></li>
+		
+			<li><a href="/tags/随想/" title="随想">随想<sup>1</sup></a></li>
+		
+			<li><a href="/tags/随笔/" title="随笔">随笔<sup>1</sup></a></li>
+		
+			<li><a href="/tags/隐士/" title="隐士">隐士<sup>1</sup></a></li>
+		
+			<li><a href="/tags/隐私/" title="隐私">隐私<sup>1</sup></a></li>
+		
+			<li><a href="/tags/雷锋/" title="雷锋">雷锋<sup>1</sup></a></li>
+		
+			<li><a href="/tags/音乐/" title="音乐">音乐<sup>2</sup></a></li>
+		
+			<li><a href="/tags/飞船/" title="飞船">飞船<sup>1</sup></a></li>
+		
+			<li><a href="/tags/马勒戈壁上的那些事/" title="马勒戈壁上的那些事">马勒戈壁上的那些事<sup>4</sup></a></li>
+		
+			<li><a href="/tags/高考作文/" title="高考作文">高考作文<sup>1</sup></a></li>
+		
+			<li><a href="/tags/魔兽世界/" title="魔兽世界">魔兽世界<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+      <li><a href="" target="_blank" title="">此处尚无友情链接进驻</a></li>
+</ul>
+</div>
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> 你好，我是kok，现在是一个才工作不久的前端工程师。 <br/>
+			这个blog里比较乱……</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/kokdemo" target="_blank" class="icon-weibo" title="weibo"></a>
+		
+		
+		<a href="https://github.com/kokdemo" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		<a href="https://twitter.com/kokdemo" target="_blank" class="icon-twitter" title="twitter"></a>
+		
+		
+		
+		<a href="https://www.douban.com/people/kokdemo" target="_blank" class="icon-douban" title="豆瓣"></a>
+		
+		
+		<a href="mailto:kokdemo@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://zespia.tw/hexo/" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/kokdemo/kacman" target="_blank" title="Pacman">kacman</a> © 2014
+		
+		<a href="http://kokdemo.github.io/blog/about" target="_blank" title="kok liu">kok liu</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"wocai"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<div id="totop">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+
+<script src="/js/totop.js"></script>
+
+<script type="text/x-mathjax-config"> 
+MathJax.Hub.Config({ 
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} 
+}); 
+</script>
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+  </body>
+</html>
