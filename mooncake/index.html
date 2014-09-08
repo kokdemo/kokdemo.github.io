@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>MoonCake</title>
+    <style>
+        #container{
+            padding-top: 3%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <canvas id="mooncake" width="400" height="500">
+    </canvas>
+</div>
+
+<script>
+    window.onload = function() {
+    var canvas=document.getElementById("mooncake");
+    var background=canvas.getContext("2d");
+    background.fillStyle="#e8b961";
+    background.beginPath();
+    background.arc(200,200,200,0,Math.PI*2,true);
+    background.closePath();
+    background.fill();
+    draw("mooncake");
+    background.fillStyle="#ea7d2a";
+    background.beginPath();
+    background.arc(200,200,180,0,Math.PI*2,true);
+    background.fill();
+    background.closePath();
+
+    background.fillStyle="#e8b961";
+    background.beginPath();
+    background.arc(200,200,160,0,Math.PI*2,true);
+    background.closePath();
+    background.fill();
+
+    background.fillStyle = "#ea7d2a";
+    background.fillRect(120, 70, 160, 260);
+
+    background.fillStyle = "#e8b961";
+    background.fillRect(140, 90, 120, 220);
+
+    background.fillStyle    = '#ea7d2a';
+    background.font         = 'bold 90px 楷体';
+    background.textBaseline = 'top';
+    background.fillText  ('五', 150, 100);
+    background.fillText  ('仁', 150, 200);
+
+    background.fillStyle    = '#000';
+    background.font         = 'bold 25px 黑体';
+    background.textBaseline = 'top';
+    background.fillText  ('中秋佳节，你和家人在分享月饼吗？', 0, 430);
+
+function draw(id) {
+            var canvas = document.getElementById(id);
+            if (canvas == null)
+                return false;
+            var context = canvas.getContext("2d");
+            var n = 0;
+            var dx = 200;
+            var dy = 200;
+            var s = 200;
+            context.beginPath();
+            //context.fillStyle = 'rgb(100,255,100)';
+            context.strokeStyle = '#ba310d';
+            var x = Math.sin(0);
+            var y = Math.cos(0);
+            var dig = Math.PI / 15 * 11;
+            for (var i = 0; i < 30; i++) {
+                var x = Math.sin(i * dig);
+                var y = Math.cos(i * dig);
+                context.lineTo(dx + x * s, dy + y * s);
+            }
+            context.closePath();
+            context.fill();
+            context.stroke();
+
+}
+}
+
+</script>
+</body>
+</html>
