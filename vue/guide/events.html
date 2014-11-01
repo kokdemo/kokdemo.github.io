@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>事件的监听 - vue.js</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Lato|Inconsolata' rel='stylesheet' type='text/css'>
+        <link rel="icon" href="/images/logo.png" type="image/x-icon">
+        <script>
+            window.PAGE_TYPE = "guide"
+        </script>
+        <link rel="stylesheet" href="/vue/css/page.css" type="text/css">
+
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46852172-1', 'vuejs.org');
+  ga('send', 'pageview');
+</script>
+        <script src="/js/vue.min.js"></script>
+    </head>
+    <body>
+        <div id="mobile-bar">
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        
+        
+            <div id="header">
+    <a id="logo" href="/">
+        <img src="/images/logo.png">
+        <span>Vue.js</span>
+    </a>
+    <ul id="nav">
+        <li><a href="/guide/" class="nav-link current">教程</a></li>
+<li><a href="/api/" class="nav-link">API 参考</a></li>
+<li><a href="/examples/" class="nav-link">例子</a></li>
+<li><a href="/blog/" class="nav-link">Blog</a></li>
+<li><a href="https://github.com/yyx990803/vue" target="_blank" class="nav-link">GitHub</a></li>
+    </ul>
+</div>
+        
+
+        <div id="main">
+            
+                
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li><a href="/guide/" class="nav-link current">教程</a></li>
+<li><a href="/api/" class="nav-link">API 参考</a></li>
+<li><a href="/examples/" class="nav-link">例子</a></li>
+<li><a href="/blog/" class="nav-link">Blog</a></li>
+<li><a href="https://github.com/yyx990803/vue" target="_blank" class="nav-link">GitHub</a></li>
+    </ul>
+    <div class="list">
+        <h2>Guide</h2>
+        <ul class="menu-root">
+            
+                <li><a href="/guide/installation.html" class="sidebar-link">Installation</a></li>
+            
+                <li><a href="/guide/index.html" class="sidebar-link">开始吧！马猴烧酒</a></li>
+            
+                <li><a href="/guide/directives.html" class="sidebar-link">教练，我想学指令</a></li>
+            
+                <li><a href="/guide/filters.html" class="sidebar-link">我在学过滤器的道路上迷失了方向</a></li>
+            
+                <li><a href="/guide/list.html" class="sidebar-link">不是假发，是列表</a></li>
+            
+                <li><a href="/guide/events.html" class="sidebar-link current">事件的监听</a></li>
+            
+                <li><a href="/guide/forms.html" class="sidebar-link">处理表单</a></li>
+            
+                <li><a href="/guide/computed.html" class="sidebar-link">燃烧小宇宙吧！计算属性！</a></li>
+            
+                <li><a href="/guide/transitions.html" class="sidebar-link">我要替天行道，增加动画效果</a></li>
+            
+                <li><a href="/guide/composition.html" class="sidebar-link">Composing Components</a></li>
+            
+                <li><a href="/guide/application.html" class="sidebar-link">Building Larger Apps</a></li>
+            
+                <li><a href="/guide/plugin.html" class="sidebar-link">Plugins</a></li>
+            
+            <li style="margin:10px 0 3px">
+              <script data-gittip-username="yyx990803"
+                data-gittip-widget="button"
+                src="//gttp.co/v1.js"></script>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="content guide with-sidebar">
+    <h1>事件的监听</h1>
+    <div id="ad">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=vuejs" id="_carbonads_js"></script>
+    </div>
+    <p>你可以使用 <code>v-on</code> 指令来给DOM事件绑定事件监听器。它既可以与事件处理函数（没有调用的括号）也可以与一个行内表达式相绑定。如果给定的是一个处理函数，它将会将原始的DOM事件作为参数。事件还带来了一个额外的属性：<code>targetVM</code>，当事件被触发时，会指向其对应的视图模型：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"demo"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">v-on</span>=<span class="value">"click: onClick"</span>&gt;</span>Trigger a handler<span class="tag">&lt;/<span class="title">a</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">v-on</span>=<span class="value">"click: n++"</span>&gt;</span>Trigger an expression<span class="tag">&lt;/<span class="title">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue({</div><div class="line">    el: <span class="string">'#demo'</span>,</div><div class="line">    data: {</div><div class="line">        n: <span class="number">0</span></div><div class="line">    },</div><div class="line">    methods: {</div><div class="line">        onClick: <span class="function"><span class="keyword">function</span> <span class="params">(e)</span> </span>{</div><div class="line">            <span class="built_in">console</span>.log(e.target.tagName) <span class="comment">// "A"</span></div><div class="line">            <span class="built_in">console</span>.log(e.targetVM === <span class="keyword">this</span>) <span class="comment">// true</span></div><div class="line">        }</div><div class="line">    }</div><div class="line">})</div></pre></td></tr></table></figure>
+
+<h2 id="通过表达式调用处理函数">通过表达式调用处理函数</h2>
+<p>当 <code>v-on</code> 和 <code>v-repeat</code> 同时使用时，<code>targetVM</code> 会很有用处，因为后者（<code>v-repeat</code>）会创建一系列的子视图模型。然而，通常使用 <code>this</code> 来进行更简单的表达式调用，这个关键字对应当前的视图模型内容：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">id</span>=<span class="value">"list"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">v-repeat</span>=<span class="value">"items"</span> <span class="attribute">v-on</span>=<span class="value">"click: toggle(this)"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue({</div><div class="line">    el: <span class="string">'#list'</span>,</div><div class="line">    data: {</div><div class="line">        items: [</div><div class="line">            { text: <span class="string">'one'</span>, done: <span class="literal">true</span> },</div><div class="line">            { text: <span class="string">'two'</span>, done: <span class="literal">false</span> }</div><div class="line">        ]</div><div class="line">    },</div><div class="line">    methods: {</div><div class="line">        toggle: <span class="function"><span class="keyword">function</span> <span class="params">(item)</span> </span>{</div><div class="line">            item.done = !item.done</div><div class="line">        }</div><div class="line">    }</div><div class="line">})</div></pre></td></tr></table></figure>
+
+<p>当你想要在一个表达式处理函数中访问原始DOM事件，你可以通过 <code>$event</code> 来访问它：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">v-on</span>=<span class="value">"click: submit('hello!', $event)"</span>&gt;</span>Submit<span class="tag">&lt;/<span class="title">button</span>&gt;</span></div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* ... */</span></div><div class="line">{</div><div class="line">    methods: {</div><div class="line">        submit: <span class="function"><span class="keyword">function</span> <span class="params">(msg, e)</span> </span>{</div><div class="line">            e.stopPropagation()</div><div class="line">        }</div><div class="line">    }</div><div class="line">}</div><div class="line"><span class="comment">/* ... */</span></div></pre></td></tr></table></figure>
+
+<h2 id="特殊的_key_过滤器">特殊的 <code>key</code> 过滤器</h2>
+<p>当监听键盘事件的时候，我们常常需要关注一些通用的键盘按键。Vue.js 提供一个特殊的 <code>key</code> 过滤器，它仅能用于 <code>v-on</code> 指令。 它会把所关注的键盘按键当作自己的参数。（译者注：这里属于一个语法糖。合理的使用即可，用多了会蛀牙……）：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- only call vm.submit() when the keyCode is 13 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">v-on</span>=<span class="value">"keyup:submit | key 13"</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<p>它有一些预设好的通用值：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- same as above --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">v-on</span>=<span class="value">"keyup:submit | key enter"</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<p>更多详情请访问 <a href="/api/filters.html#key">full list of key filter presets</a>.</p>
+<h2 id="为什么把事件监听写到HTML中？">为什么把事件监听写到HTML中？</h2>
+<p>你可能会纠结为什么整个事件监听的方法违背了“关系分离（译者注：估计就是逻辑表现分离这个意思吧）”的老规则。请放心，所有的的Vue.js的处理函数和表达式都是严格绑定在处理当前视图的视图模型上，它不会导致任何的维护困难。实际上，使用 <code>v-on</code> 还有这么一些好处：</p>
+<ol>
+<li><p>它使得你可以更快的通过略读HTML模板来定位处理函数在 JS 代码中的位置。</p>
+</li>
+<li><p>由于你不需要手动的在 JS 中绑定监听器到，你的视图模型代码将会是纯粹的逻辑，并且与DOM完全无关。这也减轻了测试的压力。</p>
+</li>
+<li><p>当一个视图模型被摧毁时，所有的监听器都会被自动的移除掉。你不需要担心需要自己来清理这些东西。</p>
+</li>
+</ol>
+<p>下一章节： <a href="/guide/forms.html">处理表单Handling Forms</a>.</p>
+
+    <div class="footer">Caught a mistake or want to contribute to the documentation? <a href="https://github.com/vuejs/vuejs.org" target="_blank">Fork this site on Github</a>!</div>
+</div>
+            
+        </div>
+
+        
+            <script src="/js/smooth-scroll.min.js"></script>
+            <script src="/js/common.js"></script>
+        
+
+    </body>
+</html>

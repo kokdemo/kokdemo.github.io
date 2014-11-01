@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>我要替天行道，增加动画效果 - vue.js</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Lato|Inconsolata' rel='stylesheet' type='text/css'>
+        <link rel="icon" href="/images/logo.png" type="image/x-icon">
+        <script>
+            window.PAGE_TYPE = "guide"
+        </script>
+        <link rel="stylesheet" href="/vue/css/page.css" type="text/css">
+
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46852172-1', 'vuejs.org');
+  ga('send', 'pageview');
+</script>
+        <script src="/js/vue.min.js"></script>
+    </head>
+    <body>
+        <div id="mobile-bar">
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        
+        
+            <div id="header">
+    <a id="logo" href="/">
+        <img src="/images/logo.png">
+        <span>Vue.js</span>
+    </a>
+    <ul id="nav">
+        <li><a href="/guide/" class="nav-link current">教程</a></li>
+<li><a href="/api/" class="nav-link">API 参考</a></li>
+<li><a href="/examples/" class="nav-link">例子</a></li>
+<li><a href="/blog/" class="nav-link">Blog</a></li>
+<li><a href="https://github.com/yyx990803/vue" target="_blank" class="nav-link">GitHub</a></li>
+    </ul>
+</div>
+        
+
+        <div id="main">
+            
+                
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li><a href="/guide/" class="nav-link current">教程</a></li>
+<li><a href="/api/" class="nav-link">API 参考</a></li>
+<li><a href="/examples/" class="nav-link">例子</a></li>
+<li><a href="/blog/" class="nav-link">Blog</a></li>
+<li><a href="https://github.com/yyx990803/vue" target="_blank" class="nav-link">GitHub</a></li>
+    </ul>
+    <div class="list">
+        <h2>Guide</h2>
+        <ul class="menu-root">
+            
+                <li><a href="/guide/installation.html" class="sidebar-link">Installation</a></li>
+            
+                <li><a href="/guide/index.html" class="sidebar-link">开始吧！马猴烧酒</a></li>
+            
+                <li><a href="/guide/directives.html" class="sidebar-link">教练，我想学指令</a></li>
+            
+                <li><a href="/guide/filters.html" class="sidebar-link">我在学过滤器的道路上迷失了方向</a></li>
+            
+                <li><a href="/guide/list.html" class="sidebar-link">不是假发，是列表</a></li>
+            
+                <li><a href="/guide/events.html" class="sidebar-link">事件的监听</a></li>
+            
+                <li><a href="/guide/forms.html" class="sidebar-link">处理表单</a></li>
+            
+                <li><a href="/guide/computed.html" class="sidebar-link">燃烧小宇宙吧！计算属性！</a></li>
+            
+                <li><a href="/guide/transitions.html" class="sidebar-link current">我要替天行道，增加动画效果</a></li>
+            
+                <li><a href="/guide/composition.html" class="sidebar-link">Composing Components</a></li>
+            
+                <li><a href="/guide/application.html" class="sidebar-link">Building Larger Apps</a></li>
+            
+                <li><a href="/guide/plugin.html" class="sidebar-link">Plugins</a></li>
+            
+            <li style="margin:10px 0 3px">
+              <script data-gittip-username="yyx990803"
+                data-gittip-widget="button"
+                src="//gttp.co/v1.js"></script>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="content guide with-sidebar">
+    <h1>我要替天行道，增加动画效果</h1>
+    <div id="ad">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=vuejs" id="_carbonads_js"></script>
+    </div>
+    <p>通过 Vus.js 的动画钩子，当一个元素被插入或者移除出一个DOM的时候，你可以申请自动动画效果。Vue.js中有三个实现动画的选项：CSS 变化，CSS动画，Javascript函数。</p>
+<p class="tip">所有的 Vue.js 动画都只会被 Vue.js所申请的DOM操作所触发，也包括内置的指令，举例来说，<code>v-if</code> 或者是通过试图模型内置的函数，举例来说，<code>vm.$appendTo()</code>。</p>
+
+<h2 id="CSS_变形">CSS 变形</h2>
+<p>为了使一个元素中的CSS变形可用，只需要简单给它一个空的 <code>v-transition</code> 指令：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"msg"</span> <span class="attribute">v-if</span>=<span class="value">"show"</span> <span class="attribute">v-transition</span>&gt;</span>Hello!<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<p>你也同时需要为 <code>v-enter</code> 和 <code>v-leave</code> 类提供CSS（这个类名可以通过 <code>Vue.config()</code> 来设置）：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class">.msg</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">transition</span>:<span class="value"> all .<span class="number">3s</span> ease</span></span>;</div><div class="line">    <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">30px</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">10px</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#eee</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">overflow</span>:<span class="value"> hidden</span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="class">.msg</span><span class="class">.v-enter</span>, <span class="class">.msg</span><span class="class">.v-leave</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">0</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span> <span class="number">10px</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">opacity</span>:<span class="value"> <span class="number">0</span></span></span>;</div><div class="line"><span class="rule">}</span></div></pre></td></tr></table></figure>
+
+<div id="demo"><p class="msg" v-if="show" v-transition="">Hello!</p><button v-on="click: show = !show">Toggle</button></div>
+
+<style>
+.msg {
+    transition: all .5s ease;
+    height: 30px;
+    background-color: #eee;
+    overflow: hidden;
+    padding: 10px;
+    margin: 0 !important;
+}
+.msg.v-enter, .msg.v-leave {
+    height: 0;
+    padding: 0 10px;
+    opacity: 0;
+}
+</style>
+
+<script>
+new Vue({
+    el: '#demo',
+    data: { show: true }
+})
+</script>
+
+<p>现在当 <code>show</code> 属性变化的时候，Vue.js将会插入或者相应的 <code>&lt;p&gt;</code> 元素，并且按照如下规则添加变化的类：</p>
+<ul>
+<li><p>当 <code>show</code> 为假时，Vue.js将会：</p>
+<ol>
+<li>为这个元素添加 <code>v-leave</code> 类，并触发动画；</li>
+<li>等待动画完成；（监听 <code>transitionend</code> 的事件）</li>
+<li>移除掉DOM上的合格元素和对应的<code>v-leave</code> 类。</li>
+</ol>
+</li>
+<li><p>当 <code>show</code> 为真时，Vus.js 将会：</p>
+<ol>
+<li>为元素添加 <code>v-enter</code> 类。</li>
+<li>插入 DOM 中。</li>
+<li><code>v-enter</code>实际的发挥效果，CSS布局开始变化。</li>
+<li>移除 <code>v-enter</code> 类，触发一个动画回归元素的原始状态。（译者注：这里的动画方法也是最普遍实用的方法了。）</li>
+</ol>
+</li>
+</ul>
+<p class="tip">要确保目标元素的CSS动画样式正确的设置了，并且能够产生一个 <code>transitionend</code> 事件，这是很重要的。不然Vue.js 没办法区分啥时候动画结束。</p>
+
+<h2 id="CSS_动画">CSS 动画</h2>
+<p>（译者注：这里有一个CSS变形，有一个CSS动画，两者并不是一套系统，但是我统一的把整个过程称之为动画，请不要打我……）</p>
+<p>CSS 动画的使用和CSS 变形有一些相似，但是使用 <code>v-animation</code> 指令。不同的地方在于， <code>v-enter</code> 并不会在元素插入之后立马就被移除掉，而是需要使用一个 <code>animationend</code> 回调。</p>
+<p><strong>栗子：</strong> (这里省略了CSS的前缀（译者注：动画和变形的前缀简直就是噩梦……）)</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"animated"</span> <span class="attribute">v-if</span>=<span class="value">"show"</span> <span class="attribute">v-animation</span>&gt;</span>Look at me!<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="class">.animated</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">display</span>:<span class="value"> inline-block</span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"></div><div class="line"><span class="class">.animated</span><span class="class">.v-enter</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">animation</span>:<span class="value"> fadein .<span class="number">5s</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"></div><div class="line"><span class="class">.animated</span><span class="class">.v-leave</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">animation</span>:<span class="value"> fadeout .<span class="number">5s</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"></div><div class="line"><span class="at_rule">@<span class="keyword">keyframes</span> fadein </span>{</div><div class="line">    0% <span class="rules">{</span></div><div class="line">        <span class="rule"><span class="attribute">transform</span>:<span class="value"> <span class="function">scale</span>(<span class="number">0</span>)</span></span>;</div><div class="line">    <span class="rule">}</span></div><div class="line">    50% <span class="rules">{</span></div><div class="line">        <span class="rule"><span class="attribute">transform</span>:<span class="value"> <span class="function">scale</span>(<span class="number">1.5</span>)</span></span>;</div><div class="line">    <span class="rule">}</span></div><div class="line">    100% <span class="rules">{</span></div><div class="line">        <span class="rule"><span class="attribute">transform</span>:<span class="value"> <span class="function">scale</span>(<span class="number">1</span>)</span></span>;</div><div class="line">    <span class="rule">}</span></div><div class="line">}</div><div class="line"></div><div class="line"><span class="at_rule">@<span class="keyword">keyframes</span> fadeout </span>{</div><div class="line">    0% <span class="rules">{</span></div><div class="line">        <span class="rule"><span class="attribute">transform</span>:<span class="value"> <span class="function">scale</span>(<span class="number">1</span>)</span></span>;</div><div class="line">    <span class="rule">}</span></div><div class="line">    50% <span class="rules">{</span></div><div class="line">        <span class="rule"><span class="attribute">transform</span>:<span class="value"> <span class="function">scale</span>(<span class="number">1.5</span>)</span></span>;</div><div class="line">    <span class="rule">}</span></div><div class="line">    100% <span class="rules">{</span></div><div class="line">        <span class="rule"><span class="attribute">transform</span>:<span class="value"> <span class="function">scale</span>(<span class="number">0</span>)</span></span>;</div><div class="line">    <span class="rule">}</span></div><div class="line">}</div></pre></td></tr></table></figure>
+
+<div id="anim" class="demo"><span class="animated" v-if="show" v-animation="">Look at me!</span><br><button v-on="click: show = !show">Toggle</button></div>
+
+<style>
+    .animated {
+        display: inline-block;
+    }
+    .animated.v-enter {
+        -webkit-animation: fadein .5s;
+        animation: fadein .5s;
+    }
+    .animated.v-leave {
+        -webkit-animation: fadeout .5s;
+        animation: fadeout .5s;
+    }
+    @keyframes fadein {
+        0% {
+            transform: scale(0);
+            -webkit-transform: scale(0);
+        }
+        50% {
+            transform: scale(1.5);
+            -webkit-transform: scale(1.5);
+        }
+        100% {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+        }
+    }
+    @keyframes fadeout {
+        0% {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+        }
+        50% {
+            transform: scale(1.5);
+            -webkit-transform: scale(1.5);
+        }
+        100% {
+            transform: scale(0);
+            -webkit-transform: scale(0);
+        }
+    }
+    @-webkit-keyframes fadein {
+        0% {
+            -webkit-transform: scale(0);
+        }
+        50% {
+            -webkit-transform: scale(1.5);
+        }
+        100% {
+            -webkit-transform: scale(1);
+        }
+    }
+    @-webkit-keyframes fadeout {
+        0% {
+            -webkit-transform: scale(1);
+        }
+        50% {
+            -webkit-transform: scale(1.5);
+        }
+        100% {
+            -webkit-transform: scale(0);
+        }
+    }
+</style>
+
+<script>
+new Vue({
+    el: '#anim',
+    data: { show: true }
+})
+</script>
+
+<h2 id="JavaScript_函数">JavaScript 函数</h2>
+<p>Vue.js 提供一个方法，可以再元素的插入或者是移除中来调用任意的JS函数。为了使用这个魔法，你需要首先声明你的效果函数：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Vue.effect(<span class="string">'my-effect'</span>, {</div><div class="line">    enter: <span class="function"><span class="keyword">function</span> <span class="params">(el, insert, timeout)</span> </span>{</div><div class="line">        <span class="comment">// insert() will actually insert the element</span></div><div class="line">    },</div><div class="line">    leave: <span class="function"><span class="keyword">function</span> <span class="params">(el, remove, timeout)</span> </span>{</div><div class="line">        <span class="comment">// remove() will actually remove the element</span></div><div class="line">    }</div><div class="line">})</div></pre></td></tr></table></figure>
+
+<p>第三个参数，<code>timeout</code>，是一个 <code>setTimeout</code> 的封装版本。你应该使用它来代替 <code>setTimeout</code>，以便当一个效果被取消时，清楚相关联的计时器。</p>
+<p>然后你可以通过给 <code>v-effect</code> 提供id来使用它了：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">v-effect</span>=<span class="value">"my-effect"</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<p>下一章节： <a href="/guide/composition.html">组装视图模型</a>.</p>
+
+    <div class="footer">Caught a mistake or want to contribute to the documentation? <a href="https://github.com/vuejs/vuejs.org" target="_blank">Fork this site on Github</a>!</div>
+</div>
+            
+        </div>
+
+        
+            <script src="/js/smooth-scroll.min.js"></script>
+            <script src="/js/common.js"></script>
+        
+
+    </body>
+</html>

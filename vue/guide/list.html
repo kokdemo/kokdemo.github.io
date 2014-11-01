@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>不是假发，是列表 - vue.js</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Lato|Inconsolata' rel='stylesheet' type='text/css'>
+        <link rel="icon" href="/images/logo.png" type="image/x-icon">
+        <script>
+            window.PAGE_TYPE = "guide"
+        </script>
+        <link rel="stylesheet" href="/vue/css/page.css" type="text/css">
+
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46852172-1', 'vuejs.org');
+  ga('send', 'pageview');
+</script>
+        <script src="/js/vue.min.js"></script>
+    </head>
+    <body>
+        <div id="mobile-bar">
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        
+        
+            <div id="header">
+    <a id="logo" href="/">
+        <img src="/images/logo.png">
+        <span>Vue.js</span>
+    </a>
+    <ul id="nav">
+        <li><a href="/guide/" class="nav-link current">教程</a></li>
+<li><a href="/api/" class="nav-link">API 参考</a></li>
+<li><a href="/examples/" class="nav-link">例子</a></li>
+<li><a href="/blog/" class="nav-link">Blog</a></li>
+<li><a href="https://github.com/yyx990803/vue" target="_blank" class="nav-link">GitHub</a></li>
+    </ul>
+</div>
+        
+
+        <div id="main">
+            
+                
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li><a href="/guide/" class="nav-link current">教程</a></li>
+<li><a href="/api/" class="nav-link">API 参考</a></li>
+<li><a href="/examples/" class="nav-link">例子</a></li>
+<li><a href="/blog/" class="nav-link">Blog</a></li>
+<li><a href="https://github.com/yyx990803/vue" target="_blank" class="nav-link">GitHub</a></li>
+    </ul>
+    <div class="list">
+        <h2>Guide</h2>
+        <ul class="menu-root">
+            
+                <li><a href="/guide/installation.html" class="sidebar-link">Installation</a></li>
+            
+                <li><a href="/guide/index.html" class="sidebar-link">开始吧！马猴烧酒</a></li>
+            
+                <li><a href="/guide/directives.html" class="sidebar-link">教练，我想学指令</a></li>
+            
+                <li><a href="/guide/filters.html" class="sidebar-link">我在学过滤器的道路上迷失了方向</a></li>
+            
+                <li><a href="/guide/list.html" class="sidebar-link current">不是假发，是列表</a></li>
+            
+                <li><a href="/guide/events.html" class="sidebar-link">事件的监听</a></li>
+            
+                <li><a href="/guide/forms.html" class="sidebar-link">处理表单</a></li>
+            
+                <li><a href="/guide/computed.html" class="sidebar-link">燃烧小宇宙吧！计算属性！</a></li>
+            
+                <li><a href="/guide/transitions.html" class="sidebar-link">我要替天行道，增加动画效果</a></li>
+            
+                <li><a href="/guide/composition.html" class="sidebar-link">Composing Components</a></li>
+            
+                <li><a href="/guide/application.html" class="sidebar-link">Building Larger Apps</a></li>
+            
+                <li><a href="/guide/plugin.html" class="sidebar-link">Plugins</a></li>
+            
+            <li style="margin:10px 0 3px">
+              <script data-gittip-username="yyx990803"
+                data-gittip-widget="button"
+                src="//gttp.co/v1.js"></script>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="content guide with-sidebar">
+    <h1>不是假发，是列表</h1>
+    <div id="ad">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=vuejs" id="_carbonads_js"></script>
+    </div>
+    <p>通过访问一个视图模型中的数组，你可以使用 <code>v-repeat</code> 指令循环生成模型元素。对于这个数组中的每个对象，指令都会使用这个对象生成一个子视图模型作为它的数据对象。通过这个模板元素，你可以访问到子视图模型和他的父视图模型中的属性。此外，你也可以访问当前子视图元素的 <code>$index</code> 属性，这是数组中他的数据对象的索引。</p>
+<p><strong>又是一个栗子：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">id</span>=<span class="value">"demo"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">v-repeat</span>=<span class="value">"items"</span> <span class="attribute">class</span>=<span class="value">"item-{&#123;$index&#125;}"</span>&gt;</span></div><div class="line">        {&#123;$index&#125;} - {&#123;parentMsg&#125;} {&#123;childMsg&#125;}</div><div class="line">    <span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> demo = <span class="keyword">new</span> Vue({</div><div class="line">    el: <span class="string">'#demo'</span>,</div><div class="line">    data: {</div><div class="line">        parentMsg: <span class="string">'Hello'</span>,</div><div class="line">        items: [</div><div class="line">            { childMsg: <span class="string">'Foo'</span> },</div><div class="line">            { childMsg: <span class="string">'Bar'</span> }</div><div class="line">        ]</div><div class="line">    }</div><div class="line">})</div></pre></td></tr></table></figure>
+
+<p><strong>结果：</strong></p>
+<p><ul id="demo"><li v-repeat="items" class="item-{&#123;$index&#125;}">{&#123;$index&#125;} - {&#123;parentMsg&#125;} {&#123;childMsg&#125;}</li></ul></p>
+<script>
+var demo = new Vue({
+    el: '#demo',
+    data: {
+        parentMsg: 'Hello',
+        items: [
+            { childMsg: 'Foo' },
+            { childMsg: 'Bar' }
+        ]
+    }
+})
+</script>
+
+<h2 id="数组的初始值">数组的初始值</h2>
+<p>对于数组包含的初始值，你可以通过 <code>$value</code> 来简单的访问：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">id</span>=<span class="value">"tags"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">v-repeat</span>=<span class="value">"tags"</span>&gt;</span></div><div class="line">        {&#123;$value&#125;}</div><div class="line">    <span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue({</div><div class="line">    el: <span class="string">'#tags'</span>,</div><div class="line">    data: {</div><div class="line">        tags: [<span class="string">'JavaScript'</span>, <span class="string">'MVVM'</span>, <span class="string">'Vue.js'</span>]</div><div class="line">    }</div><div class="line">})</div></pre></td></tr></table></figure>
+
+<p><strong>结果：</strong></p>
+<p><ul id="tags" class="demo"><li v-repeat="tags">{&#123;$value&#125;}</li></ul></p>
+<script>
+new Vue({
+    el: '#tags',
+    data: {
+        tags: ['JavaScript', 'MVVM', 'Vue.js']
+    }
+})
+</script>
+
+<h2 id="使用一个标识符">使用一个标识符</h2>
+<p>有的时候我们可能需要更多的显式变量访问而不是隐式的回退到父作用域。你可以通过提供一个参数给 <code>v-repeat</code> 指令，当个体被重复声明的时候使用它作为一个标识符来达到访问更多显示变量的目的：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">id</span>=<span class="value">"users"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- think of this as "for each user in users" --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">v-repeat</span>=<span class="value">"user: users"</span>&gt;</span></div><div class="line">        {&#123;user.name&#125;} {&#123;user.email&#125;}</div><div class="line">    <span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<h2 id="变异方法">变异方法</h2>
+<p>在内部机制中，Vue.js 会拦截一个被监听数组的变异方法（<code>push()</code>, <code>pop()</code>, <code>shift()</code>, <code>unshift()</code>, <code>splice()</code>, <code>sort()</code> 以及<code>reverse()</code>），这样他们也会触发视图更新。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// the DOM will be updated accordingly</span></div><div class="line">demo.items.unshift({ childMsg: <span class="string">'Baz'</span> })</div><div class="line">demo.items.pop()</div></pre></td></tr></table></figure>
+
+<p>你应该避免直接与索引设置数据绑定数组的元素，因为这些将不会被 Vue.js 检测到。因此，使用 <code>$set()</code> 方法替代之。Vue.js 通过两个方便的函数来增强监听数组：<code>$set()</code> 和 <code>$remove()</code> ：</p>
+<h3 id="$set(_index,_value_)">$set( index, value )</h3>
+<p>在数组中设置一个值：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// same as `demo.items[0] = ...` but triggers view update</span></div><div class="line">demo.items.$set(<span class="number">0</span>, { childMsg: <span class="string">'Changed!'</span>})</div></pre></td></tr></table></figure>
+
+<h3 id="$remove(_index_|_value_)">$remove( index | value )</h3>
+<p><code>$remove()</code> 仅仅是一个 <code>splice()</code> 的语法糖。它会根据所给的索引移除相应的元素。当参数不是一个数字的时候，<code>$remove()</code> 将会在数组中搜索这个值，并且移除掉对应的第一个匹配值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// remove the item at index 0</span></div><div class="line">demo.items.$remove(<span class="number">0</span>)</div></pre></td></tr></table></figure>
+
+<h2 id="设置一个新数组">设置一个新数组</h2>
+<p>当你使用一些非变异的方法的时候，比如<code>filter()</code>, <code>concat()</code> 或者 <code>slice()</code>，返回的数组将会是一个不同的实例。在这种情况下，你只能给新的数组中设置值：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">demo.items = demo.items.filter(<span class="function"><span class="keyword">function</span> <span class="params">(item)</span> </span>{</div><div class="line">    <span class="keyword">return</span> item.childMsg.match(<span class="regexp">/Hello/</span>)</div><div class="line">})</div></pre></td></tr></table></figure>
+
+<p>你可能认为这将会影响已有的DOM并重建所有的东西。但是不要担心，Vue.js使用了某些黑魔法（一些内在算法），会重新利用已经存在的视图模型和DOM节点，这会将DOM操作尽可能的减少到最小。同时，因为批量的更新，对一个事件循环中的数组的多重改变也将只会触发一次比对。</p>
+<h2 id="数组过滤器">数组过滤器</h2>
+<p>有的时候我们仅仅需要显示一个过滤或者分类过的数组，并不需要对原始数据做改变或者重置。Vue 提供了两种内置的过滤器来达到该目的：<code>filterBy</code> 和 <code>orderBy</code> 。你可以围观文档 <a href="/api/filters.html#filterBy">documentations</a> 获得更多信息。</p>
+<h2 id="通过一个对象进行循环">通过一个对象进行循环</h2>
+<p>从 Vue.js 的 v0.8.8版本开始，你可以通过一个对象的属性来循环使用 <code>v-repeat</code> 。每一个循环实例都有一个特殊的属性 <code>$key</code> 。对于原始值，你可以使用 <code>$value</code> 来过的与数组中初始值相同的数值。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">id</span>=<span class="value">"repeat-object"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">v-repeat</span>=<span class="value">"primitiveValues"</span>&gt;</span>{&#123;$key&#125;} : {&#123;$value&#125;}<span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span>===<span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">v-repeat</span>=<span class="value">"objectValues"</span>&gt;</span>{&#123;$key&#125;} : {&#123;msg&#125;}<span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue({</div><div class="line">    el: <span class="string">'#repeat-object'</span>,</div><div class="line">    data: {</div><div class="line">        primitiveValues: {</div><div class="line">            FirstName: <span class="string">'John'</span>,</div><div class="line">            LastName: <span class="string">'Doe'</span>,</div><div class="line">            Age: <span class="number">30</span></div><div class="line">        },</div><div class="line">        objectValues: {</div><div class="line">            one: {</div><div class="line">                msg: <span class="string">'Hello'</span></div><div class="line">            },</div><div class="line">            two: {</div><div class="line">                msg: <span class="string">'Bye'</span></div><div class="line">            }</div><div class="line">        }</div><div class="line">    }</div><div class="line">})</div></pre></td></tr></table></figure>
+
+<p><strong>结果：</strong></p>
+<p><ul id="repeat-object" class="demo"><li v-repeat="primitiveValues">{&#123;$key&#125;} : {&#123;$value&#125;}</li><li>===</li><li v-repeat="objectValues">{&#123;$key&#125;} : {&#123;msg&#125;}</li></ul></p>
+<script>
+new Vue({
+    el: '#repeat-object',
+    data: {
+        primitiveValues: {
+            FirstName: 'John',
+            LastName: 'Doe',
+            Age: 30
+        },
+        objectValues: {
+            one: {
+                msg: 'Hello'
+            },
+            two: {
+                msg: 'Bye'
+            }
+        }
+    }
+})
+</script>
+
+<h2 id="$add()_和_$delete()">$add() 和 $delete()</h2>
+<p>在 ECMAScript 5 中是没有办法检测出一个新的属性被添加到一个对象中的，抑或是一个属性从对象中被删除。为了解决这一问题，被监测的对象将会通过两个方法进行扩展：<code>$add(key, value)</code> 和 <code>$delete(key)</code>。这些方法用于在对应的视图模型更新被触发时，从监测对象中增加或者删除这些属性。</p>
+<p>下一章节： <a href="/guide/events.html">事件的监听Listening for Events</a>.</p>
+
+    <div class="footer">Caught a mistake or want to contribute to the documentation? <a href="https://github.com/vuejs/vuejs.org" target="_blank">Fork this site on Github</a>!</div>
+</div>
+            
+        </div>
+
+        
+            <script src="/js/smooth-scroll.min.js"></script>
+            <script src="/js/common.js"></script>
+        
+
+    </body>
+</html>
