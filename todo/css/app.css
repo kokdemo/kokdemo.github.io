@@ -1,0 +1,296 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*css reset end*/
+body{
+    background-color: #f1f4f9;
+    background-size: cover;
+}
+
+#main{
+    max-width: 640px;
+    margin: auto;
+}
+
+header{
+    display: block;
+    background-color: #3498DB;
+    height: 40px;
+    font-size: 20px;
+    line-height: 40px;
+    padding-left: 5px;
+    color: #FFF;
+}
+
+header h2{
+    display: inline-block;
+}
+
+/*.green:before{*/
+    /*content: "";*/
+    /*float: left;*/
+    /*display:inline-block;*/
+    /*width: 10px;*/
+    /*height: 100%;*/
+    /*background: #0ABF04;*/
+/*}*/
+/*.yellow:before{*/
+    /*content: "";*/
+    /*float: left;*/
+    /*display:inline-block;*/
+    /*width: 10px;*/
+    /*height: 100%;*/
+    /*background: #ffff00;*/
+/*}*/
+/*.orange:before{*/
+    /*content: "";*/
+    /*float: left;*/
+    /*display:inline-block;*/
+    /*width: 10px;*/
+    /*height: 100%;*/
+    /*background: orange;*/
+/*}*/
+/*.red:before{*/
+    /*content: "";*/
+    /*float: left;*/
+    /*display:inline-block;*/
+    /*width: 10px;*/
+    /*height: 100%;*/
+    /*background: #ff0000;*/
+/*}*/
+
+
+.green{
+    background: #27AE60;
+    color: #FFF;
+    line-height: 40px;
+    font-size: 110%;
+}
+
+.yellow{
+    background: #F1C40F;
+    color: #FFF;
+    line-height: 40px;
+    font-size: 110%;
+}
+
+.orange{
+    background: #E67E22;
+    color: #FFF;
+    line-height: 40px;
+    font-size: 110%;
+}
+
+.red{
+    background: #E74C3C;
+    color: #FFF;
+    line-height: 40px;
+    font-size: 110%;
+}
+
+#input{
+    padding: 0px;
+    width: 100%;
+    height: 60px;
+    border-radius: 3px;
+    background: #FFF;
+}
+#input *{
+    display: inline-block;
+}
+
+#input-todo{
+    border: 5px #BDC3C7 solid;
+    color: #34495e;
+    font-family: "Lato", sans-serif;
+    width: 100%;
+    height: 60px;
+    vertical-align: top;
+    font-size: 20px;
+    box-sizing: border-box;
+    padding-right: 100px;
+    outline:none;
+}
+
+#input-important{
+    display: inline-block;
+    /*width: 100px;*/
+    float: right;
+
+}
+
+#input-important button{
+    float: left;
+    margin: 0;
+    padding: 0;
+    max-width: 50px;
+    max-height: 50px;
+    width: 60px;
+    height: 40px;
+    border: 0px #eeeeee solid;
+    border-radius: 0px;
+    line-height: 40px;
+    vertical-align: top;
+}
+
+@media (max-width: 360px) {
+    #input-important button{
+        float: left;
+        margin: 0;
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        border: 0px #eeeeee solid;
+        border-radius: 0px;
+        line-height: 40px;
+        vertical-align: top;
+    }
+}
+
+
+.todolist-div{
+    width: 100%;
+    padding: 0;
+    margin: 7px 0;
+    height: 50px;
+    border: 0px #eeeeee solid;
+    border-radius: 3px;
+    background: #2C3E50;
+    color: #FFF;
+    line-height: 50px;
+
+}
+
+.todolist-div span{
+    padding: 0 0 0 10px;
+    font-size: 20px;
+}
+
+.todolist-div button{
+    border: 0;
+    color: #FFF;
+    background-color: #7F8C8D;
+    width: 50px;
+    height: 100%;
+    float: right;
+}
+
+
+.todolist-0:before{
+    text-align: center;
+    line-height: 50px ;
+    color: #FFF;
+    content: "重要";
+    float: left;
+    display:inline-block;
+    width: 50px;
+    height: 100%;
+    background: #27AE60;
+}
+.todolist-1:before{
+    text-align: center;
+    line-height: 50px ;
+    color: #FFF;
+    content: "紧急";
+    float: left;
+    display:inline-block;
+    width: 50px;
+    height: 100%;
+    background: #F1C40F;
+}
+.todolist-2:before{
+    text-align: center;
+    line-height: 50px ;
+    color: #FFF;
+    content: "要命";
+    float: left;
+    display:inline-block;
+    width: 50px;
+    height: 100%;
+    background: #E67E22;
+}
+.todolist-3:before{
+    text-align: center;
+    line-height: 50px ;
+    color: #FFF;
+    content: "立刻";
+    float: left;
+    display:inline-block;
+    width: 50px;
+    height: 100%;
+    background: #E74C3C;
+}
+
+/*.todolist-0{*/
+    /*background: #27AE60;*/
+    /*color: #FFF;*/
+    /*line-height: 40px;*/
+    /*font-size: 110%;*/
+/*}*/
+
+/*.todolist-1{*/
+    /*background: #F1C40F;*/
+    /*color: #FFF;*/
+    /*line-height: 40px;*/
+    /*font-size: 110%;*/
+/*}*/
+
+/*.todolist-2{*/
+    /*background: #E67E22;*/
+    /*color: #FFF;*/
+    /*line-height: 40px;*/
+    /*font-size: 110%;*/
+/*}*/
+
+/*.todolist-3{*/
+    /*background: #E74C3C;*/
+    /*color: #FFF;*/
+    /*line-height: 40px;*/
+    /*font-size: 110%;*/
+/*}*/

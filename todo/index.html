@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta author="@kokdemo">
+    <title>Deadline·俟现</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+
+</head>
+<body>
+<div id="main">
+    <header id="header">
+        <h2>Deadline·俟现</h2>
+        <div id="input-important">
+            <button class="green" v-on="click : addTodo('0')">!</button>
+            <button class="yellow" v-on="click : addTodo('1')">!!</button>
+            <button class="orange" v-on="click : addTodo('2')">!!!</button>
+            <button class="red" v-on="click : addTodo('3')">!!!!</button>
+        </div>
+    </header>
+    <div id="input" class="card">
+        <input id="input-todo" type="text" v-model="todoTitle">
+
+    </div>
+    <div id="todolist">
+        <div v-repeat="todo" class="todolist-div todolist-{{time}}">
+            <span class="todolist-rank"></span>
+            <span class="todolist-title">{{title}}</span>
+            <span class="todolist-time"></span>
+            <button v-on="click: finishTodo('{{title}}')">完事</button>
+        </div>
+    </div>
+
+</div>
+<script src="js/vue.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/app.js"></script>
+
+
+<script type="text/javascript">
+    var i = Math.floor(Math.random() * 6);
+    var funnyword = ["你是开源社区的成员吗？", "tip：双击可以修改事项", "拖延是可耻的！", "学而不思则罔，思而不学完蛋……", "又忘了做什么吗？面壁思过去！", "还有什么没完成？"];
+    $("#new-todo").attr("placeholder", funnyword[i]);
+</script>
+</body>
+</html>
