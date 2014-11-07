@@ -12,12 +12,7 @@ language: zh-CN
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://kokdemo.github.io/blog/
-deploy:
-  type: github
-  repo: https://github.com/kokdemo/kokdemo.github.io.git
-  branch: master
-
+url: http://kokdemo.github.io/blog
 root: /blog/
 permalink: :year/:month/:day/:title/
 tag_dir: tags
@@ -85,7 +80,7 @@ disqus_shortname:
 # Extensions
 ## Plugins: https://github.com/tommy351/hexo/wiki/Plugins
 ## Themes: https://github.com/tommy351/hexo/wiki/Themes
-theme: kacman
+theme: landscape
 exclude_generator:
 
 # Markdown
@@ -106,4 +101,6 @@ stylus:
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: github
+  repo: https://github.com/kokdemo/kokdemo.github.io
+  branch: master
