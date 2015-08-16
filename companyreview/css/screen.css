@@ -2,29 +2,29 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 6, ../sass/screen.scss */
+/* line 6, ../sass/main.scss */
 html, body {
   height: 100%;
 }
 
-/* line 10, ../sass/screen.scss */
+/* line 10, ../sass/main.scss */
 main {
   height: 100%;
 }
 
-/* line 14, ../sass/screen.scss */
+/* line 14, ../sass/main.scss */
 #title {
   padding-top: 200px;
 }
 
-/* line 18, ../sass/screen.scss */
+/* line 18, ../sass/main.scss */
 #button {
   position: fixed;
   width: 100%;
   bottom: 88px;
 }
 
-/* line 24, ../sass/screen.scss */
+/* line 24, ../sass/main.scss */
 #score {
   position: fixed;
   bottom: 0;
@@ -33,24 +33,24 @@ main {
   width: 100%;
 }
 
-/* line 32, ../sass/screen.scss */
+/* line 32, ../sass/main.scss */
 #shareLink {
   word-break: break-all;
 }
 
-/* line 36, ../sass/screen.scss */
+/* line 36, ../sass/main.scss */
 #showList ul li.showList-1:before {
   content: '\2714';
   margin-right: 10px;
 }
 
-/* line 41, ../sass/screen.scss */
+/* line 41, ../sass/main.scss */
 #showList ul li.showList-0:before {
   content: '\2716';
   margin-right: 10px;
 }
 
-/* line 46, ../sass/screen.scss */
+/* line 46, ../sass/main.scss */
 #showList ul li.showList-0 {
   background: #777;
   color: #eee;

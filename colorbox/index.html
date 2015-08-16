@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta author="@kokdemo">
+    <title>ColorBox</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link href='color.css' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Oswald:400' rel='stylesheet' type='text/css'>
+</head>
+<body v-style="background-color: 'rgb('+colorExpand.List[4][0]+ ',' + colorExpand.List[4][1] + ','+ colorExpand.List[4][2] + ')'">
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">ColorBox</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a v-on="click : changeStep(0)">基础色板</a></li>
+                <li><a v-on="click : changeStep(2)">效果演示</a></li>
+                <li><a href="https://github.com/kokdemo/ColorBox">star me</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container" >
+        <div class="colorBox" v-if="step==0">
+            <div class="baseColor " v-repeat="color : baseColors" v-style="background-color:'#'+color.r+color.g+color.b"
+                 v-on="click: choose(color,16)">
+                <h4>{{color.name}}</h4>
+                <span>{{'#'+color.r+color.g+color.b}}</span>
+            </div>
+        </div>
+        <div class="colorExpand" v-if="step==1">
+            <div class="baseColor center-block"
+                 v-style="background-color: 'rgb('+colorExpand.Comple[0]+ ',' + colorExpand.Comple[1] + ','+ colorExpand.Comple[2] + ')'"
+                 v-on="click: choose(colorExpand.Comple,10)">
+                <span>{{'#'+string16(colorExpand.Comple[0])+string16(colorExpand.Comple[1])+string16(colorExpand.Comple[2])}}</span>
+                <button class="addButton" v-on="click: list(colorExpand.Comple,$event)"
+                        v-show="colorExpand.List.length<5">+
+                </button>
+            </div>
+            <div class="Hues">
+                <div class="colorChoose baseColor center-block" v-repeat="color: colorExpand.Hue"
+                     v-style="background-color: 'rgb('+color[0]+ ',' + color[1] + ','+ color[2] + ')'"
+                     v-on="click: choose(color,10)">
+                    <span>{{'#'+string16(color[0]) + string16(color[1]) + string16(color[2])}}</span>
+                    <button class="addButton" v-on="click: list(color,$event)" v-show="colorExpand.List.length<5">+
+                    </button>
+                </div>
+            </div>
+            <div class="Brightnesss">
+                <div class="colorChoose baseColor center-block" v-repeat="color: colorExpand.Brightness"
+                     v-style="background-color: 'rgb('+color[0]+ ',' + color[1] + ','+ color[2]+ ')'"
+                     v-on="click: choose(color,10)">
+                    <span>{{'#'+string16(color[0]) + string16(color[1]) + string16(color[2])}}</span>
+                    <button class="addButton" v-on="click: list(color,$event)" v-show="colorExpand.List.length<5">+
+                    </button>
+                </div>
+            </div>
+            <div class="Gray">
+                <div class="colorChoose baseColor center-block" v-repeat="color: colorExpand.Gray"
+                     v-style="background-color: 'rgb('+color[0]+ ',' + color[1] + ','+ color[2]+ ')'"
+                     v-on="click: choose(color,10)">
+                    <span>{{'#'+string16(color[0]) + string16(color[1]) + string16(color[2])}}</span>
+                    <button class="addButton" v-on="click: list(color,$event)" v-show="colorExpand.List.length<5">+
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="colorDisplay" v-if="step==2">
+            <div class="col-xs-10">
+                <div class="jumbotron"
+                     v-style="background-color: 'rgb('+colorExpand.List[0][0]+ ',' + colorExpand.List[0][1] + ','+ colorExpand.List[0][2] + ')'">
+                    <h1 v-style="color: 'rgb('+colorExpand.List[4][0]+ ',' + colorExpand.List[4][1] + ','+ colorExpand.List[4][2] + ')'">
+                        更简单的配色方案</h1>
+
+                    <p v-style="color: 'rgb('+colorExpand.List[4][0]+ ',' + colorExpand.List[4][1] + ','+ colorExpand.List[4][2] + ')'">
+                        这个页面会显示您当前选则颜色对应的配色方案。
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4">
+                        <h2 v-style="color: 'rgb('+colorExpand.List[0][0]+ ',' + colorExpand.List[0][1] + ','+ colorExpand.List[0][2] + ')'">同类色彩方案</h2>
+                        <p>
+                            这个方案中，辅助色和强调色都在主色的左右，这样会让整个页面有一致感。
+                        </p>
+
+                        <p><a class="btn" v-style="background-color: 'rgb('+colorExpand.List[1][0]+ ',' + colorExpand.List[1][1] + ','+ colorExpand.List[1][2] + ')',color : '#FFF'" role="button">示例按钮</a></p>
+                    </div>
+                    <!--/.col-xs-6.col-lg-4-->
+                    <div class="col-xs-4">
+                        <h2 v-style="color: 'rgb('+colorExpand.List[0][0]+ ',' + colorExpand.List[0][1] + ','+ colorExpand.List[0][2] + ')'">临近色彩方案</h2>
+
+                        <p>这个方案中，辅助色和强调色会稍微远离主色一些，这让整个页面更加的灵动。 </p>
+
+                        <p><a class="btn" v-style="background-color: 'rgb('+colorExpand.List[1][0]+ ',' + colorExpand.List[1][1] + ','+ colorExpand.List[1][2] + ')',color : '#FFF'" role="button">示例按钮</a></p>
+                    </div>
+                    <!--/.col-xs-6.col-lg-4-->
+                    <div class="col-xs-4">
+                        <h2 v-style="color: 'rgb('+colorExpand.List[0][0]+ ',' + colorExpand.List[0][1] + ','+ colorExpand.List[0][2] + ')'">对比色彩方案</h2>
+
+                        <p>这个方案中，强调色会选择当前颜色的反色的色系，这会让整个页面醒目有力，但也会造成杂乱的副作用 </p>
+
+                        <p><a class="btn" v-style="background-color: 'rgb('+colorExpand.List[1][0]+ ',' + colorExpand.List[1][1] + ','+ colorExpand.List[1][2] + ')',color : '#FFF'" role="button">示例按钮</a></p>
+                    </div>
+                </div>
+                <!--/row-->
+            </div>
+            <!--/.col-xs-12.col-sm-9-->
+
+            <div class="col-xs-2 sidebar-offcanvas" id="sidebar">
+                <div class="list-group">
+                    <a href="#" class="list-group-item active" v-style="background-color: 'rgb('+colorExpand.List[3][0]+ ',' + colorExpand.List[3][1] + ','+ colorExpand.List[3][2] + ')' ">Link</a>
+                    <a href="#" class="list-group-item">Link</a>
+                    <a href="#" class="list-group-item">Link</a>
+                    <a href="#" class="list-group-item">Link</a>
+                    <a href="#" class="list-group-item">Link</a>
+                </div>
+            </div>
+        </div>
+
+</div>
+<div class="colorList">
+        <ul class="colorTag" v-show="step==2">
+            <li><h4>主色</h4></li>
+            <li><h4>辅助色</h4></li>
+            <li><h4>辅助色</h4></li>
+            <li><h4>强调色</h4></li>
+            <li><h4>背景色</h4></li>
+        </ul>
+        <div class="colors">
+            <div class="colorChoose baseColor center-block" v-repeat="color: colorExpand.List"
+                 v-style="background-color: 'rgb('+color[0]+ ',' + color[1] + ','+ color[2]+ ')'"
+                 v-on="click: deleteColor(color,$index)">
+                <span>{{'#'+string16(color[0]) + string16(color[1]) + string16(color[2])}}</span>
+            </div>
+        </div>
+
+    </div>
+    <div class="colorHistory">
+        <div class="colorChoose baseColor center-block" v-repeat="color: colorExpand.History"
+             v-style="background-color: 'rgb('+color[0]+ ',' + color[1] + ','+ color[2]+ ')'"
+             v-on="click: choose(color,10)">
+        </div>
+    </div>
+<!--<script src="bower_components/jquery/dist/jquery.min.js"></script>-->
+<script src="bower_components/vue/dist/vue.min.js"></script>
+<script src="color.js"></script>
+</body>
+</html>
