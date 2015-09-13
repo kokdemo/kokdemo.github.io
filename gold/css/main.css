@@ -1,0 +1,57 @@
+#resource{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.coin{
+    background-image: url('coin.png');
+    background-size: cover;
+    height: 20vh;
+    width: 20vh;
+    margin: auto;
+}
+
+.add{
+    position: absolute;
+    left: 70%;
+    bottom: 0;
+    font-size: 2em;
+    color: #888;
+}
+
+.resource-button{
+    background: #0398db;
+    height: 60px;
+    margin-bottom: 5px;
+
+}
+.infos{
+    display: inline-block;
+}
+
+.resource-button span{
+    color: #FFF;
+    margin-left: 9px;
+    display: block;
+}
+.name{
+    padding-top: 15px;
+}
+.info{
+    font-size: 0.5em;
+    opacity: 0.7;
+}
+
+.resource-click{
+    float: right;
+    height: 100%;
+}
+.success{
+    text-align: center;
+}
+
+
+.am-header .am-header-title{
+    margin:auto;
+}
+
