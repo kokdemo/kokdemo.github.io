@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta author="@kokdemo">
+    <title>KMockup-app界面展示图生成器</title>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .mockup {
+            position: relative;
+            background-color: #ccc;
+            width: 800px;
+            height: 600px;
+            border: 20px solid #ccc;
+            box-sizing: content-box;
+        }
+        .mockup-help{
+            background-color: #ccc;
+            position: absolute;
+            opacity: 0.8;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            transition : opacity 0.7s;
+        }
+        .mockup-help p{
+            font-size: 2.5em;
+            display: inline-block;
+            padding-top: 250px;
+            width: 100%;
+            text-align: center;
+            vertical-align:middle;
+        }
+        .mockup:hover .mockup-help{
+            opacity: 0;
+            transition : opacity 0.7s;
+        }
+
+        #mockup-canvas {
+            display: block;
+            margin: 0 auto;
+        }
+
+        #mockup-upload {
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .btns {
+            width: 100px;
+        }
+
+        .btns button {
+            width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">KMockup</a>
+      <p class="navbar-text">简单易用的mock up图片生成器</p>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="https://github.com/kokdemo/KMockup">github地址</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="container">
+    <ul></ul>
+    <div class="center-block mockup">
+        <div class="mockup-help"><p>点击这里，上传适合大小的内容图片<br>然后点击下面的按钮</p></div>
+        <canvas width="800" height="600" id="mockup-canvas"></canvas>
+        <input type="file" id="mockup-upload" onchange="change('mockup-canvas', mockInfo['ip6p'])">
+    </div>
+    <div class="center-block btns">
+        <button id="savePNG" class="btn btn-primary"
+                onclick="download('mockup-canvas', 'png')">保存为png
+        </button>
+        <button id="saveJPG" class="btn btn-primary"
+                onclick="download('mockup-canvas', 'jpg')">保存为jpg
+        </button>
+    </div>
+
+</div>
+<script>
+    // 这里每个参数的四个属性分别为 屏幕左上角到左边的距离/宽度，屏幕左上角到上边的距离/高度
+    // 屏幕宽度/宽度，屏幕高度/高度
+    var mockInfo = {
+        ip6p: [0.06648, 0.11465, 0.86838, 0.76913]
+    };
+    var mockBack;
+    function draw(canvas, img, phone) {
+        var cv = document.getElementById(canvas);
+        var ctx = cv.getContext('2d');
+        var canvas_width = cv.width;
+        var canvas_height = cv.height;
+        var pic_width = img.width;
+        var pic_height = img.height;
+        var res = calc(pic_width, pic_height, canvas_width, canvas_height, phone);
+        console.info(res);
+        if (!mockBack) {
+            cv.height = res.canvas_height;
+            cv.width = res.canvas_width;
+            mockBack = res;
+        }
+        ctx.drawImage(img, res.left, res.top, res.width, res.height);
+
+        return res;
+    }
+    function calc(pic_width, pic_height, canvas_width, canvas_height, phone) {
+        var z2 = pic_height / pic_width; //图像宽高比
+        var z1 = canvas_height / canvas_width; //画布宽高比
+        if (z2 >= z1) {
+            pic_width = canvas_height / pic_height * pic_width;
+            pic_height = canvas_height;
+            canvas_width = pic_width;
+        } else {
+            pic_height = canvas_width / pic_width * pic_height;
+            pic_width = canvas_width;
+            canvas_height = pic_height;
+        }
+//       机型修正
+        if (phone) {
+            return{
+                left: mockBack.left + mockBack.width * phone[0],
+                top: mockBack.top + mockBack.height * phone[1],
+                width: mockBack.width * phone[2],
+                height: mockBack.height * phone[3]
+            }
+        } else {
+            return {
+                left: canvas_width / 2 - pic_width / 2,
+                top: canvas_height / 2 - pic_height / 2,
+                width: pic_width,
+                height: pic_height,
+                canvas_width: canvas_width,
+                canvas_height: canvas_height
+            }
+        }
+
+    }
+    // 加载背景
+    function load(canvas, src, phone) {
+        var mock_pic = new Image();
+        mock_pic.onload = function () {
+            draw(canvas, mock_pic, phone);
+        };
+        mock_pic.onerror = function () {
+            window.alert('图片加载失败，请重试');
+        };
+        mock_pic.src = src;
+    }
+    //上传图片
+    function change(canvas, phone) {
+        var file = document.getElementById('mockup-upload');
+        var ext = file.value.substring(file.value.lastIndexOf(".") + 1).toLowerCase();
+        if (ext != 'png' && ext != 'jpg' && ext != 'jpeg') {
+            console.info('false');
+            return;
+        }
+        load(canvas, URL.createObjectURL(file.files[0]), phone);
+    }
+
+    function download(canvas,type) {
+        var filename = 'KMockup_' + (new Date()).getTime() + '.' + type;
+        var cv = document.getElementById(canvas);
+        var imgData = cv.toDataURL(type);
+        type = type.toLowerCase().replace(/jpg/i, 'jpeg');
+        var r = 'image/' + type.match(/png|jpeg|bmp|gif/)[0];
+        imgData = imgData.replace(r, 'image/octet-stream');
+        var save_link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
+        save_link.href = imgData;
+        save_link.download = filename;
+        var event = document.createEvent('MouseEvents');
+        event.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+        save_link.dispatchEvent(event);
+    }
+
+    if (document.all) {
+        window.attachEvent('onload', load('mockup-canvas', "./6pw.png"));
+    } else {
+        window.addEventListener('load', load('mockup-canvas', "./mockup/iphone/6pw.png"), false);
+    }
+</script>
+</body>
+</html>
