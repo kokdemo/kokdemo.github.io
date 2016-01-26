@@ -1,0 +1,82 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 关于hexo静态blog的搭建，美化 · kok's story box</title><meta name="description" content="关于hexo静态blog的搭建，美化 - kokdemo"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/blog/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">博客</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">归档</a></li><li class="nav-list-item"><a href="http://weibo.com/sunchongsheng" target="_blank" class="nav-list-link">微博</a></li><li class="nav-list-item"><a href="https://github.com/pinggod" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">关于hexo静态blog的搭建，美化</h1><div class="post-meta"><div class="post-time">Apr 30, 2014</div></div><div class="post-content"><p>最近看我的wordpress博客越来越不爽了……</p>
+<p>&lt;–! more –&gt;<br>主要是因为wordpress真的太大，繁琐的厉害，最重要的是，它的反垃圾评论功能似乎没有以前那么好用了。</p>
+<p>因此每次登陆的时候都能看到满坑满谷的垃圾评论……<br>实在是删不过来啊……</p>
+<p>在某人的忽悠下，我进了hexo的坑，也就是目前这个博客所用的静态生成器。hexo可以看作是octopress思路的一种扩展，即用markdown写作，然后生成静态网页，托管到github page上。</p>
+<p>可是octopress使用ruby写的，对于广大js屌丝们来说不是很友好……于是就有了台湾朋友写的这个hexo。</p>
+<p>我fork的主题来自于jacman，而jacman是pacman的fork，那么我这个主题应该算是fork自pacman了……</p>
+<p>###hexo</p>
+<p>hexo的安装就是使用</p>
+<pre><code>npm install -g hexo
+</code></pre><p>tips：安装之前请先注意下你的npm的安装方式，如果npm是apt-get安装的旧版本，你有必要重新安装一次。</p>
+<pre><code>curl http://npmjs.org/install.sh | sh
+或者：
+curl http://npmjs.org/install.sh | sudo sh
+</code></pre><p>tips：什么，你没有curl，那么你还是先用apt-get安一个curl好了……</p>
+<p>安装好hexo之后就可以开始生成你的第一个blog了。</p>
+<p>cd到目标文件夹之后</p>
+<pre><code>hexo init //生成基本的结构
+hexo generate //生成静态网页
+hexo server //运行blog，在localhost:4000上。
+hexo clean //清楚hexo生成的网页和数据库，出错的时候可以试一下。
+hexo new [post] &lt;title&gt; //一目了然，就是写新文章，post是文章类型的一种。
+</code></pre><p>以上就是基本命令。</p>
+<p>hexo的基本结构如下：</p>
+<pre><code>.
+├── .deploy
+├── public //生成的静态网页
+├── scaffolds //layout模板文件目录，其中的md文件可以添加编辑
+├── scripts //扩展脚本目录，平常里面只有一个处理图片的js
+├── source //你的文章保存的地方，你还可以在里面自建文件夹放页面什么的
+ |   ├── _drafts
+ |   └── _posts //存放的位置
+├── themes //主题
+├── _config.yml //主要的配置文件，务必要读一下，把里面的参数改成你需要的
+└── package.json
+</code></pre><p>生成静态网页之后就可以扔到你的主机上/github page上，同时hexo还提供了直接部署的命令，deploy，有兴趣的你可以自行google一下。</p>
+<p>关于wordpress–&gt;hexo的迁移主要是依靠一个插件hexo-migrator-wordpress。</p>
+<ol>
+<li>首先，需要在Word Press导出博客，会得到一个xml文件，把它拷贝到hexo博客目录下，比如叫wordpress.xml。</li>
+<li>安装hexo-migrator-wordpress这个插件</li>
+</ol>
+<p>首先用npm安装</p>
+<pre><code>npm install hexo-migrator-wordpress --save
+</code></pre><ol>
+<li>导入</li>
+</ol>
+<p>运行</p>
+<pre><code>hexo migrate wordpress wordpress.xml
+</code></pre><p>会看到导入了一些Word Press里的文章和页面，看看source里的文件，发现给转成了markdown格式的，这时候多半还需要一些格式微调。</p>
+<p>另外，文章里面的图片会指向原来的博客资源，文章链接也是绝对的。因此将来删除wordpress的时候最好保留下来其中存图片的文件夹……</p>
+<blockquote>
+<p>此时又有人告诉我，ghost比hexo更好用，你快去试试吧……</p>
+</blockquote>
+<p>###ghost</p>
+<p>ghost是最近很火的一个基于nodejs的博客，不像hexo那样只是一个生成器，它有一个比较简陋的后台，可以直接在里面用markdown写东西，同时可以看到预览。</p>
+<p>ghost的官网 <a href="https://ghost.org/" target="_blank" rel="external">https://ghost.org/</a> ，上面逼格相当高……</p>
+<p>安装的方法就是从官网上下载安装包，解压之后，cd到那个文件夹，然后</p>
+<pre><code>npm install --production
+</code></pre><p>就行了，然后运行呢</p>
+<pre><code>npm start
+</code></pre><p>ok，这时候你在浏览器里打开 <a href="http://localhost:2368" target="_blank" rel="external">http://localhost:2368</a> 就能看到界面了，默认的主题也是非常酷炫，比hexo不知道高到哪里去了……</p>
+<p>访问 <a href="http://localhost:2368/ghost" target="_blank" rel="external">http://localhost:2368/ghost</a> 进入后台，你可以看到很多选项，包括换掉图片，更改标题副标题，自我信息什么的，还有文章的控制，删除/修改都有，算是比较齐全。</p>
+<p>ghost的主题也和hexo类似，里面都包括了模板，css，js，图片等等东西，你有兴趣可以自己改改看，我当时fork了ghostium这个主题，自己做了一些修改。</p>
+<blockquote>
+<p>问题来了，这不是一个静态blog，那我应该把它部署在哪？</p>
+</blockquote>
+<p>当我发现这个问题之后纠结的不行，想要在vps上用，还需要先学习一下lxc……于是我还是换回hexo了……</p>
+<p>现在有一些主机商开始提供ghost的主机服务了，如果你有这个机会，可以尝尝鲜！</p>
+<p>因为hexo是静态的，放到哪里都行。</p>
+<blockquote>
+<p>问题2，ghost不支持分类，怎么办？</p>
+</blockquote>
+<p>其实很多人直接通过控制tag来为文章分类了……我自己不是很习惯，因为之前还有好多篇文章都没改……</p>
+<p>###markdown<br>最近比较流行用markdown来写作，我用sphinx的时候，觉得rst其实也不错……</p>
+<p>markdown中常用的标题，列表，引用，代码格式，这篇文章里都用到了，我在这写一点不常用的……</p>
+<ol>
+<li>markdown中&lt;\code&gt;&lt;\pre&gt; 都是可以正常用的。此处为了正确显示，加了一个反斜杠。</li>
+<li><p>链接[an example][id](<a href="http://example.com/" target="_blank" rel="external">http://example.com/</a> “Title”)</p>
+<p>[id]: <a href="http://example.com/" target="_blank" rel="external">http://example.com/</a>  “Optional Title Here”，说到这个，我更喜欢rst里的链接格式一些……</p>
+</li>
+<li>图片![Alt text](/path/to/img.jpg “Optional title”)</li>
+</ol>
+</div></article></div></section><footer><div class="paginator"><a href="/blog/2014/05/01/数模的基本思路和写作攻略/" class="prev">上一篇</a><a href="/blog/2014/01/19/投稿的故事/" class="next">下一篇</a></div><div class="copyright"><p>© 2015 - 2016 <a href="http://kokdemo.github.io/blog">kokdemo</a>, unless otherwise noted.</p></div></footer><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script><script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "//hm.baidu.com/hm.js?a36e15d9e2adec9a21fcdd9f686b1ed2";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();</script><script src="https://cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>

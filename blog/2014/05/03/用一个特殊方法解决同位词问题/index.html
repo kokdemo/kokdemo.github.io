@@ -1,0 +1,44 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 用一个特殊方法解决同位词问题 · kok's story box</title><meta name="description" content="用一个特殊方法解决同位词问题 - kokdemo"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/blog/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">博客</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">归档</a></li><li class="nav-list-item"><a href="http://weibo.com/sunchongsheng" target="_blank" class="nav-list-link">微博</a></li><li class="nav-list-item"><a href="https://github.com/pinggod" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">用一个特殊方法解决同位词问题</h1><div class="post-meta"><div class="post-time">May 3, 2014</div></div><div class="post-content"><p>前几天参加某公司的面试，被问了这么一个问题：</p>
+<blockquote>
+<p>有一个字符串组叫a， a = [a, abc, apple, …, zoo]。<br>其中像stop post tops 这样的就叫做同位词。</p>
+</blockquote>
+<p>这么看来同位词也就是组成相同，长短一样的两个字符串。</p>
+<p>我事后查了一下，这个题是编程珠玑上的一道题目，书上给出的方案是这样的。</p>
+<blockquote>
+<p>先将字符串内部按顺序排列，比如bac-&gt;abc，然后字符串间在排序，就可以找到同位词。</p>
+</blockquote>
+<p>我当时给出的答案却是这样的：</p>
+<blockquote>
+<p>对a，b，c～z进行加权，让a=1，b=2，c=4～z=2^25，然后每个字符串就可以算出来唯一的特征值。</p>
+</blockquote>
+<p>后来给面试官解释这个原理的时候说的不是很好，于是自己后来想了一下，觉得这个思路还是可以发展一下的。</p>
+<p>###为什么要这么定权值？</p>
+<p>对于2^n的这个序列，很明显相邻两个数之间的差值为2^x，x为相邻两个数之间的较小值。</p>
+<p>假设存在一个式子：</p>
+<pre><code>2^a+2^b=2^c+2^d      其中a，b，c，d互不相等。
+</code></pre><p>这里让a&gt;d,c&gt;b，对这个式子做一个变化。</p>
+<pre><code>2^a-2^d=2^c-2^b
+</code></pre><p>由刚才的推论我们知道，等号左边或者右边的结果，一定至少是2^x这个格式，或者是2^x1+2^x2……。</p>
+<p>式中x取式中较小值，这里让x分别取d和b。得到</p>
+<pre><code>2^d=2^b
+</code></pre><p>这明显与假设不符（就算让他们展开为x1+x2这种也不符），因此可以得到一个结论。</p>
+<blockquote>
+<p>在2^n的序列中，不存在 2^a+2^b=2^c+2^d。</p>
+</blockquote>
+<p>也就是说，我将a，b，c赋2^n的权值，不会存在a+b=c的情况，也不会存在a+b=c+d的情况，这对于我们标记一个独特的字符串十分有用。</p>
+<p>当然你可能会说a+a=b，但是计算权值是有前提的，就是字符串要等长，这样这个问题就可以规避掉了。</p>
+<p>###当然这个方法也是有问题的！！<br>细心的你估计马上就发现了，英文字母有26个，那么光计算z的权值就要2^25= <strong>33554432</strong> ，略大啊……如果有一个字符串是“zzzzzzz”，那还能不能愉快的计算了……</p>
+<p>为了减少计算压力，我有这么几个方案：</p>
+<ol>
+<li><p>将字母表中的前八位改为2^-8～2^0，计算的时候，先把小数点后提取出来，同时计算小数点后的权值和整数部分权值。</p>
+<p> 至于为啥是前八位，因为2^-8=0.00390625，小数点后已经有八位了……你看之前2的25次方也才八位数而已，当然这个方案也只是一个试想……</p>
+</li>
+<li><p>其实2^n不就是指一个二进制数么！</p>
+<p> 比如abc，按照之前的方案，其实就是111，ac就是101，这个值也是唯一的，那么我们完全可以把所有的字符串改为存储这样的数字啊！</p>
+<p> 比如有abc和bca，他们的权都是111，两者and一下，如果是1，那就是同位词，如果不是那妥妥的就不是了。当然这个法子的前提依旧是等长，不然的话aaac就等于abc了……</p>
+</li>
+</ol>
+<p>仔细的想了一下，编程珠玑上用来给每个字符串求特征序列，在进行排序的思路和我的思路本质上是一样的！</p>
+<p>因为究其根本，还是把一个乱序转化为一个特征，只不过它需要先内部排序，再外部比较，我的方案在内部排序的时候速度更快一些，一轮循环就可以结束。在空间占用上，两个方案差不多。</p>
+<p>今天分享了一个好玩的题目，我感觉是蛮有意思的，也感谢你的阅读。</p>
+</div></article></div></section><footer><div class="paginator"><a href="/blog/2014/05/02/重新学习html-1/" class="next">下一篇</a></div><div class="copyright"><p>© 2015 - 2016 <a href="http://kokdemo.github.io/blog">kokdemo</a>, unless otherwise noted.</p></div></footer><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script><script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "//hm.baidu.com/hm.js?a36e15d9e2adec9a21fcdd9f686b1ed2";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();</script><script src="https://cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>
