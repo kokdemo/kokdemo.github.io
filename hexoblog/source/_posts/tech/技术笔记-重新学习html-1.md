@@ -1,4 +1,4 @@
-title: 重新学习HTML-1
+title: 重新学习HTML
 date: 2014-05-02 22:37:03
 tags:
 - HTML
@@ -11,6 +11,7 @@ categories:
 
 html这种半个小时就可以上手的东西，大部分人可能止步于一些很基本的标签，比如h系列，p，div，a，img这一类，今天来说说一些比较有意思的html内容吧。
 
+<!--more-->
 ###那些很“厉害”的语义化标签
 + article ：就是文章
 + aside：姑且当是边栏吧
