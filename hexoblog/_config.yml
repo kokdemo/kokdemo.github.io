@@ -46,6 +46,12 @@ highlight:
 # Category & Tag
 default_category: uncategorized
 category_map:
+      生活学习: life
+      小说杂文: novel
+      随笔分享: note
+      看互联网: internet
+      技术笔记: tech
+      黑历史: hide
 tag_map:
 
 # Date / Time format

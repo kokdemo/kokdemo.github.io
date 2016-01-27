@@ -4,7 +4,7 @@
   
   <link href="/blog/atom.xml" rel="self"/>
   <link href="http://kokdemo.github.io/blog/"/>
-  <updated>2014-11-01T15:10:51.000Z</updated>
+  <updated>2016-01-27T16:21:35.000Z</updated>
   <id>http://kokdemo.github.io/blog/</id>
   
   <author>
@@ -16,10 +16,10 @@
   
   <entry>
     <title><![CDATA[用一个特殊方法解决同位词问题]]></title>
-    <link href="http://kokdemo.github.io/blog/2014/05/03/%E7%94%A8%E4%B8%80%E4%B8%AA%E7%89%B9%E6%AE%8A%E6%96%B9%E6%B3%95%E8%A7%A3%E5%86%B3%E5%90%8C%E4%BD%8D%E8%AF%8D%E9%97%AE%E9%A2%98/"/>
-    <id>http://kokdemo.github.io/blog/2014/05/03/用一个特殊方法解决同位词问题/</id>
+    <link href="http://kokdemo.github.io/blog/2014/05/03/tech/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0-%E7%94%A8%E4%B8%80%E4%B8%AA%E7%89%B9%E6%AE%8A%E6%96%B9%E6%B3%95%E8%A7%A3%E5%86%B3%E5%90%8C%E4%BD%8D%E8%AF%8D%E9%97%AE%E9%A2%98/"/>
+    <id>http://kokdemo.github.io/blog/2014/05/03/tech/技术笔记-用一个特殊方法解决同位词问题/</id>
     <published>2014-05-03T14:23:50.000Z</published>
-    <updated>2014-11-01T15:10:51.000Z</updated>
+    <updated>2016-01-27T16:21:35.000Z</updated>
     <content type="html"><![CDATA[<p>前几天参加某公司的面试，被问了这么一个问题：</p>
 <blockquote>
 <p>有一个字符串组叫a， a = [a, abc, apple, …, zoo]。<br>其中像stop post tops 这样的就叫做同位词。</p>
@@ -76,16 +76,16 @@
     
       <category term="数学" scheme="http://kokdemo.github.io/blog/tags/%E6%95%B0%E5%AD%A6/"/>
     
-      <category term="技术" scheme="http://kokdemo.github.io/blog/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术笔记" scheme="http://kokdemo.github.io/blog/categories/tech/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[重新学习HTML-1]]></title>
-    <link href="http://kokdemo.github.io/blog/2014/05/02/%E9%87%8D%E6%96%B0%E5%AD%A6%E4%B9%A0html-1/"/>
-    <id>http://kokdemo.github.io/blog/2014/05/02/重新学习html-1/</id>
+    <link href="http://kokdemo.github.io/blog/2014/05/02/tech/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0-%E9%87%8D%E6%96%B0%E5%AD%A6%E4%B9%A0html-1/"/>
+    <id>http://kokdemo.github.io/blog/2014/05/02/tech/技术笔记-重新学习html-1/</id>
     <published>2014-05-02T14:37:03.000Z</published>
-    <updated>2014-11-01T15:10:51.000Z</updated>
+    <updated>2016-01-27T16:21:35.000Z</updated>
     <content type="html"><![CDATA[<p>这一段时间，为了准备面试，好好的重读了一次html，发现了一些以前没有关注过的小细节。</p>
 <p>html这种半个小时就可以上手的东西，大部分人可能止步于一些很基本的标签，比如h系列，p，div，a，img这一类，今天来说说一些比较有意思的html内容吧。</p>
 <p>###那些很“厉害”的语义化标签</p>
@@ -135,16 +135,16 @@
     
       <category term="HTML" scheme="http://kokdemo.github.io/blog/tags/HTML/"/>
     
-      <category term="技术" scheme="http://kokdemo.github.io/blog/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术笔记" scheme="http://kokdemo.github.io/blog/categories/tech/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[数模的基本思路和写作攻略]]></title>
-    <link href="http://kokdemo.github.io/blog/2014/05/01/%E6%95%B0%E6%A8%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF%E5%92%8C%E5%86%99%E4%BD%9C%E6%94%BB%E7%95%A5/"/>
-    <id>http://kokdemo.github.io/blog/2014/05/01/数模的基本思路和写作攻略/</id>
+    <link href="http://kokdemo.github.io/blog/2014/05/01/life/%E7%94%9F%E6%B4%BB%E5%AD%A6%E4%B9%A0-%E6%95%B0%E6%A8%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF%E5%92%8C%E5%86%99%E4%BD%9C%E6%94%BB%E7%95%A5/"/>
+    <id>http://kokdemo.github.io/blog/2014/05/01/life/生活学习-数模的基本思路和写作攻略/</id>
     <published>2014-05-01T11:23:54.000Z</published>
-    <updated>2014-11-01T15:10:51.000Z</updated>
+    <updated>2016-01-27T16:26:52.000Z</updated>
     <content type="html"><![CDATA[<p>这两天是五一佳节了，但肯定还有很多人留在学校做数学建模比赛-号称是大学里参与量最大（shui）的一种竞赛了。</p>
 <p>但是很多同学完全之前没有接触过这种比赛，包括论文写作，找队友也只是随便抓壮丁：</p>
 <pre><code>“哟，听说你编程序很厉害么，跟我来做数模吧！”
@@ -279,16 +279,16 @@ B物的数量=猫的总满足度/X
     
       <category term="论文写作" scheme="http://kokdemo.github.io/blog/tags/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/"/>
     
-      <category term="学习生活" scheme="http://kokdemo.github.io/blog/categories/%E5%AD%A6%E4%B9%A0%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活学习" scheme="http://kokdemo.github.io/blog/categories/life/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[关于hexo静态blog的搭建，美化]]></title>
-    <link href="http://kokdemo.github.io/blog/2014/04/30/%E5%85%B3%E4%BA%8Ehexo%E9%9D%99%E6%80%81blog%E7%9A%84%E4%BA%8B/"/>
-    <id>http://kokdemo.github.io/blog/2014/04/30/关于hexo静态blog的事/</id>
+    <link href="http://kokdemo.github.io/blog/2014/04/30/tech/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0-%E5%85%B3%E4%BA%8Ehexo%E9%9D%99%E6%80%81blog%E7%9A%84%E4%BA%8B/"/>
+    <id>http://kokdemo.github.io/blog/2014/04/30/tech/技术笔记-关于hexo静态blog的事/</id>
     <published>2014-04-30T06:53:18.000Z</published>
-    <updated>2014-11-01T15:10:51.000Z</updated>
+    <updated>2016-01-27T16:21:35.000Z</updated>
     <content type="html"><![CDATA[<p>最近看我的wordpress博客越来越不爽了……</p>
 <p>&lt;–! more –&gt;<br>主要是因为wordpress真的太大，繁琐的厉害，最重要的是，它的反垃圾评论功能似乎没有以前那么好用了。</p>
 <p>因此每次登陆的时候都能看到满坑满谷的垃圾评论……<br>实在是删不过来啊……</p>
@@ -385,14 +385,14 @@ hexo new [post] &lt;title&gt; //一目了然，就是写新文章，post是文�
     
       <category term="nodejs" scheme="http://kokdemo.github.io/blog/tags/nodejs/"/>
     
-      <category term="技术" scheme="http://kokdemo.github.io/blog/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术笔记" scheme="http://kokdemo.github.io/blog/categories/tech/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[投稿的故事]]></title>
-    <link href="http://kokdemo.github.io/blog/2014/01/19/%E6%8A%95%E7%A8%BF%E7%9A%84%E6%95%85%E4%BA%8B/"/>
-    <id>http://kokdemo.github.io/blog/2014/01/19/投稿的故事/</id>
+    <link href="http://kokdemo.github.io/blog/2014/01/19/novel/%E5%B0%8F%E8%AF%B4%E6%9D%82%E6%96%87-%E6%8A%95%E7%A8%BF%E7%9A%84%E6%95%85%E4%BA%8B/"/>
+    <id>http://kokdemo.github.io/blog/2014/01/19/novel/小说杂文-投稿的故事/</id>
     <published>2014-01-18T16:14:05.000Z</published>
     <updated>2014-11-01T15:10:51.000Z</updated>
     <content type="html"><![CDATA[<p>我一向是自诩那种能够写作的人的，尽管我的家长，朋友都质疑我是否还能保持的住高三时期作文的水平。</p>
@@ -453,14 +453,14 @@ hexo new [post] &lt;title&gt; //一目了然，就是写新文章，post是文�
     
       <category term="武侠" scheme="http://kokdemo.github.io/blog/tags/%E6%AD%A6%E4%BE%A0/"/>
     
-      <category term="小说杂文" scheme="http://kokdemo.github.io/blog/categories/%E5%B0%8F%E8%AF%B4%E6%9D%82%E6%96%87/"/>
+      <category term="小说杂文" scheme="http://kokdemo.github.io/blog/categories/novel/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[大雾下的哨兵]]></title>
-    <link href="http://kokdemo.github.io/blog/2013/12/11/%E5%A4%A7%E9%9B%BE%E4%B8%8B%E7%9A%84%E5%93%A8%E5%85%B5/"/>
-    <id>http://kokdemo.github.io/blog/2013/12/11/大雾下的哨兵/</id>
+    <link href="http://kokdemo.github.io/blog/2013/12/11/novel/%E5%B0%8F%E8%AF%B4%E6%9D%82%E6%96%87-%E5%A4%A7%E9%9B%BE%E4%B8%8B%E7%9A%84%E5%93%A8%E5%85%B5/"/>
+    <id>http://kokdemo.github.io/blog/2013/12/11/novel/小说杂文-大雾下的哨兵/</id>
     <published>2013-12-10T16:03:06.000Z</published>
     <updated>2014-11-01T15:10:51.000Z</updated>
     <content type="html"><![CDATA[<p>“司令，看来这次还比较顺利啊”</p>
@@ -538,16 +538,16 @@ hexo new [post] &lt;title&gt; //一目了然，就是写新文章，post是文�
     
       <category term="科幻" scheme="http://kokdemo.github.io/blog/tags/%E7%A7%91%E5%B9%BB/"/>
     
-      <category term="小说杂文" scheme="http://kokdemo.github.io/blog/categories/%E5%B0%8F%E8%AF%B4%E6%9D%82%E6%96%87/"/>
+      <category term="小说杂文" scheme="http://kokdemo.github.io/blog/categories/novel/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[20131118随笔·深夜食堂]]></title>
-    <link href="http://kokdemo.github.io/blog/2013/11/18/20131118%E9%9A%8F%E7%AC%94%C2%B7%E6%B7%B1%E5%A4%9C%E9%A3%9F%E5%A0%82/"/>
-    <id>http://kokdemo.github.io/blog/2013/11/18/20131118随笔·深夜食堂/</id>
+    <link href="http://kokdemo.github.io/blog/2013/11/18/note/%E9%9A%8F%E7%AC%94%E5%88%86%E4%BA%AB-20131118%E9%9A%8F%E7%AC%94%C2%B7%E6%B7%B1%E5%A4%9C%E9%A3%9F%E5%A0%82/"/>
+    <id>http://kokdemo.github.io/blog/2013/11/18/note/随笔分享-20131118随笔·深夜食堂/</id>
     <published>2013-11-18T15:26:33.000Z</published>
-    <updated>2014-11-01T15:10:51.000Z</updated>
+    <updated>2016-01-27T16:21:35.000Z</updated>
     <content type="html"><![CDATA[<p>其实深夜里学校正式的食堂是不会开的。</p>
 <p>毕竟他们拿的是工资，只需要把自己份内的工作做好就行了，没有必要干到这么晚。只有那些为自己生机赚钱的人，才会刻意的延长自己的劳动时间以获取更多的利润，或者说：生计。</p>
 <p>而像我这种吃货，没机会晚上去加餐的话，忍就忍了，一旦遇到有机会加餐，总是要挑一样自己最想吃的东西。毕竟这冬天可是实打实的毫无水分。</p>
@@ -570,16 +570,16 @@ hexo new [post] &lt;title&gt; //一目了然，就是写新文章，post是文�
     
       <category term="随笔" scheme="http://kokdemo.github.io/blog/tags/%E9%9A%8F%E7%AC%94/"/>
     
-      <category term="小说杂文" scheme="http://kokdemo.github.io/blog/categories/%E5%B0%8F%E8%AF%B4%E6%9D%82%E6%96%87/"/>
+      <category term="随笔分享" scheme="http://kokdemo.github.io/blog/categories/note/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[外存的管理策略]]></title>
-    <link href="http://kokdemo.github.io/blog/2013/10/01/%E5%A4%96%E5%AD%98%E7%9A%84%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5/"/>
-    <id>http://kokdemo.github.io/blog/2013/10/01/外存的管理策略/</id>
+    <link href="http://kokdemo.github.io/blog/2013/10/01/tech/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0-%E5%A4%96%E5%AD%98%E7%9A%84%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5/"/>
+    <id>http://kokdemo.github.io/blog/2013/10/01/tech/技术笔记-外存的管理策略/</id>
     <published>2013-10-01T15:20:30.000Z</published>
-    <updated>2014-11-01T15:10:51.000Z</updated>
+    <updated>2016-01-27T16:21:35.000Z</updated>
     <content type="html"><![CDATA[<h2 id="23_23_23_23Abstract"><a href="#23_23_23_23Abstract" class="headerlink" title="####Abstract"></a>####Abstract</h2><p>这个讲座/聚会/别的什么形式当中,我将会与大家分享如题目中所示的内容,主要涉及到了计算机类课程中的<strong>操作系统</strong>与<strong>计算机组成原理</strong>两门课,但是没有学过这两门课的同学也可以来听一听.(由于使用markdown写作,因此统一使用英文字符,见谅.)</p>
 <p>在这个部分当中,将会包括以下的内容：</p>
 <ul>
@@ -602,14 +602,14 @@ hexo new [post] &lt;title&gt; //一目了然，就是写新文章，post是文�
     <![CDATA[<h2 id="23_23_23_23Abstract"><a href="#23_23_23_23Abstract" class="headerlink" title="####Abstract"></a>####Abstract</h2><p>这个讲座/聚会/别的什么形式当中]]>
     </summary>
     
-      <category term="科普" scheme="http://kokdemo.github.io/blog/categories/%E7%A7%91%E6%99%AE/"/>
+      <category term="技术笔记" scheme="http://kokdemo.github.io/blog/categories/tech/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[尽头]]></title>
-    <link href="http://kokdemo.github.io/blog/2013/08/21/%E5%B0%BD%E5%A4%B4/"/>
-    <id>http://kokdemo.github.io/blog/2013/08/21/尽头/</id>
+    <link href="http://kokdemo.github.io/blog/2013/08/21/novel/%E5%B0%8F%E8%AF%B4%E6%9D%82%E6%96%87-%E5%B0%BD%E5%A4%B4/"/>
+    <id>http://kokdemo.github.io/blog/2013/08/21/novel/小说杂文-尽头/</id>
     <published>2013-08-20T16:30:29.000Z</published>
     <updated>2014-11-01T15:10:51.000Z</updated>
     <content type="html"><![CDATA[<p>“师傅，知识会有尽头吗？”</p>
@@ -643,14 +643,14 @@ hexo new [post] &lt;title&gt; //一目了然，就是写新文章，post是文�
     
       <category term="科幻" scheme="http://kokdemo.github.io/blog/tags/%E7%A7%91%E5%B9%BB/"/>
     
-      <category term="小说杂文" scheme="http://kokdemo.github.io/blog/categories/%E5%B0%8F%E8%AF%B4%E6%9D%82%E6%96%87/"/>
+      <category term="小说杂文" scheme="http://kokdemo.github.io/blog/categories/novel/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[二维的曲率飞船]]></title>
-    <link href="http://kokdemo.github.io/blog/2013/08/06/%E4%BA%8C%E7%BB%B4%E7%9A%84%E6%9B%B2%E7%8E%87%E9%A3%9E%E8%88%B9/"/>
-    <id>http://kokdemo.github.io/blog/2013/08/06/二维的曲率飞船/</id>
+    <link href="http://kokdemo.github.io/blog/2013/08/06/novel/%E5%B0%8F%E8%AF%B4%E6%9D%82%E6%96%87-%E4%BA%8C%E7%BB%B4%E7%9A%84%E6%9B%B2%E7%8E%87%E9%A3%9E%E8%88%B9/"/>
+    <id>http://kokdemo.github.io/blog/2013/08/06/novel/小说杂文-二维的曲率飞船/</id>
     <published>2013-08-05T16:41:09.000Z</published>
     <updated>2014-11-01T15:10:51.000Z</updated>
     <content type="html"><![CDATA[<p>“怎么感觉像是三体的同人什么的”主人公x问道。</p>
@@ -706,16 +706,16 @@ hexo new [post] &lt;title&gt; //一目了然，就是写新文章，post是文�
     
       <category term="飞船" scheme="http://kokdemo.github.io/blog/tags/%E9%A3%9E%E8%88%B9/"/>
     
-      <category term="小说杂文" scheme="http://kokdemo.github.io/blog/categories/%E5%B0%8F%E8%AF%B4%E6%9D%82%E6%96%87/"/>
+      <category term="小说杂文" scheme="http://kokdemo.github.io/blog/categories/novel/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[0.1，0.1^0.1，以及0.1^0.1^0.1]]></title>
-    <link href="http://kokdemo.github.io/blog/2013/06/28/0-1%EF%BC%8C0-10-1%EF%BC%8C%E4%BB%A5%E5%8F%8A0-10-10-1/"/>
-    <id>http://kokdemo.github.io/blog/2013/06/28/0-1，0-10-1，以及0-10-10-1/</id>
+    <link href="http://kokdemo.github.io/blog/2013/06/28/tech/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0-0-1%EF%BC%8C0-10-1%EF%BC%8C%E4%BB%A5%E5%8F%8A0-10-10-1/"/>
+    <id>http://kokdemo.github.io/blog/2013/06/28/tech/技术笔记-0-1，0-10-1，以及0-10-10-1/</id>
     <published>2013-06-27T17:43:59.000Z</published>
-    <updated>2014-11-01T15:10:51.000Z</updated>
+    <updated>2016-01-27T16:08:46.000Z</updated>
     <content type="html"><![CDATA[<p>前几天考某门试的时候心中实在是纠结（写不出来），于是就拿出了我心爱的计算器按了起来。</p>
 <p>我先算了(0.1^{0.1})，这个结果等于0.7943。</p>
 <p>于是好奇心又起，算了(0.1^{0.1^{0.1}})，这次算出来的结果却等于0.1606。</p>
@@ -817,16 +817,16 @@ hexo new [post] &lt;title&gt; //一目了然，就是写新文章，post是文�
     
       <category term="蛋疼" scheme="http://kokdemo.github.io/blog/tags/%E8%9B%8B%E7%96%BC/"/>
     
-      <category term="科普" scheme="http://kokdemo.github.io/blog/categories/%E7%A7%91%E6%99%AE/"/>
+      <category term="技术笔记" scheme="http://kokdemo.github.io/blog/categories/tech/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[站在19岁的路口]]></title>
-    <link href="http://kokdemo.github.io/blog/2013/06/03/%E7%AB%99%E5%9C%A819%E5%B2%81%E7%9A%84%E8%B7%AF%E5%8F%A3/"/>
-    <id>http://kokdemo.github.io/blog/2013/06/03/站在19岁的路口/</id>
+    <link href="http://kokdemo.github.io/blog/2013/06/03/note/%E9%9A%8F%E7%AC%94%E5%88%86%E4%BA%AB-%E7%AB%99%E5%9C%A819%E5%B2%81%E7%9A%84%E8%B7%AF%E5%8F%A3/"/>
+    <id>http://kokdemo.github.io/blog/2013/06/03/note/随笔分享-站在19岁的路口/</id>
     <published>2013-06-03T14:36:09.000Z</published>
-    <updated>2014-11-01T15:10:51.000Z</updated>
+    <updated>2016-01-27T16:21:35.000Z</updated>
     <content type="html"><![CDATA[<p>趁着舍友都不在，于是拟下这个文艺范一些的标题。</p>
 <p>这一次我果断的没有躲在家里宅上一天，抑或是和一堆人喝个七荤八素，我干了一件更蠢的事情，我在艳阳天里站了一下午。</p>
 <p>不过是在音乐节的场地里，听着大功率喇叭中传来的艺人们声情并茂歇斯底里的演出。</p>
@@ -864,16 +864,16 @@ hexo new [post] &lt;title&gt; //一目了然，就是写新文章，post是文�
 ]]>
     </summary>
     
-      <category term="学习生活" scheme="http://kokdemo.github.io/blog/categories/%E5%AD%A6%E4%B9%A0%E7%94%9F%E6%B4%BB/"/>
+      <category term="随笔分享" scheme="http://kokdemo.github.io/blog/categories/note/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[也谈一谈西安的风土人情]]></title>
-    <link href="http://kokdemo.github.io/blog/2013/05/28/%E4%B9%9F%E8%B0%88%E4%B8%80%E8%B0%88%E8%A5%BF%E5%AE%89%E7%9A%84%E9%A3%8E%E5%9C%9F%E4%BA%BA%E6%83%85/"/>
-    <id>http://kokdemo.github.io/blog/2013/05/28/也谈一谈西安的风土人情/</id>
+    <link href="http://kokdemo.github.io/blog/2013/05/28/life/%E7%94%9F%E6%B4%BB%E5%AD%A6%E4%B9%A0-%E4%B9%9F%E8%B0%88%E4%B8%80%E8%B0%88%E8%A5%BF%E5%AE%89%E7%9A%84%E9%A3%8E%E5%9C%9F%E4%BA%BA%E6%83%85/"/>
+    <id>http://kokdemo.github.io/blog/2013/05/28/life/生活学习-也谈一谈西安的风土人情/</id>
     <published>2013-05-28T08:36:47.000Z</published>
-    <updated>2014-11-01T15:10:51.000Z</updated>
+    <updated>2016-01-27T16:26:52.000Z</updated>
     <content type="html"><![CDATA[<p>今天看到了这样一篇文章《<strong>顶着炮火黑西安。</strong>》（原文的标题确实是带句号的），作者分了几个篇章来写他眼中的西安，这个作者应该是一个深圳人。读完之后，和之前与别人聊天时获得的一些信息作比较，发现确实有一些值得一谈的地方。</p>
 <p>我自己是土生土长的西安人，从祖辈以上开始都是长安县的农民，看到我曾祖（爷爷的父亲）的照片，或是听爷爷讲太祖（就是爷爷的爷爷）的故事总是十分有趣。在看完文章之后我还是支持其中的一些观点的，比如，人们不是很热心，又比如贼很多，再比如环境不好，那么，这些问题是由何产生的呢？</p>
 <p>在上个世纪40年代以前，中国完成基本城市化的城市屈指可数，比如北京，又比如上海，天津应该也算，内陆里面武汉可能就已经是最好的了，原因在于什么呢？租界。</p>
@@ -907,24 +907,18 @@ hexo new [post] &lt;title&gt; //一目了然，就是写新文章，post是文�
 <p>我自己是土生]]>
     </summary>
     
-      <category term="围城" scheme="http://kokdemo.github.io/blog/tags/%E5%9B%B4%E5%9F%8E/"/>
-    
-      <category term="改革开放" scheme="http://kokdemo.github.io/blog/tags/%E6%94%B9%E9%9D%A9%E5%BC%80%E6%94%BE/"/>
-    
-      <category term="花园口" scheme="http://kokdemo.github.io/blog/tags/%E8%8A%B1%E5%9B%AD%E5%8F%A3/"/>
-    
       <category term="西安" scheme="http://kokdemo.github.io/blog/tags/%E8%A5%BF%E5%AE%89/"/>
     
-      <category term="小说杂文" scheme="http://kokdemo.github.io/blog/categories/%E5%B0%8F%E8%AF%B4%E6%9D%82%E6%96%87/"/>
+      <category term="生活学习" scheme="http://kokdemo.github.io/blog/categories/life/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[为什么学英语？]]></title>
-    <link href="http://kokdemo.github.io/blog/2013/03/24/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%AD%A6%E8%8B%B1%E8%AF%AD%EF%BC%9F/"/>
-    <id>http://kokdemo.github.io/blog/2013/03/24/为什么学英语？/</id>
+    <link href="http://kokdemo.github.io/blog/2013/03/24/life/%E7%94%9F%E6%B4%BB%E5%AD%A6%E4%B9%A0-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%AD%A6%E8%8B%B1%E8%AF%AD%EF%BC%9F/"/>
+    <id>http://kokdemo.github.io/blog/2013/03/24/life/生活学习-为什么学英语？/</id>
     <published>2013-03-24T13:38:17.000Z</published>
-    <updated>2014-11-01T15:10:51.000Z</updated>
+    <updated>2016-01-27T16:21:35.000Z</updated>
     <content type="html"><![CDATA[<p>这个问题确实已经困扰了我很久了。</p>
 <p>幸好我小的时候幼教还不是很注重双语，尽管如此小学开始以后就有了英语课，对于一个刚上了小学的小朋友来说，语言课是无比的无趣的，毕竟语文在学前就有所接触，而英语却可以算是接触的新东西。</p>
 <p>这样的结果就是我对其排斥不已，因为我发现我在生活中根本就找不到用的机会，老爸老妈学历也不低，但是他们上学的时候学的东西又怎么会记住呢？于是我的英语成绩一直很“捉鸡”，为此家里人想了不少办法。比如让我去上剑桥少儿英语，但是我最后的收获仅仅是成功的把我自己以及周围小朋友手中的书后送的贴纸搞到了我自己的罐子里；又比如去找某个英语老师，一次两小时，收费不低，可是每次硬着头皮去都如坐针毡，感觉像是生命中最难熬的两个小时，还经常打瞌睡……；再比如去上某辅导班，也是两个小时，结果去了一段时间依旧没听懂个啥……</p>
@@ -954,14 +948,14 @@ hexo new [post] &lt;title&gt; //一目了然，就是写新文章，post是文�
     
       <category term="英语" scheme="http://kokdemo.github.io/blog/tags/%E8%8B%B1%E8%AF%AD/"/>
     
-      <category term="教育探讨" scheme="http://kokdemo.github.io/blog/categories/%E6%95%99%E8%82%B2%E6%8E%A2%E8%AE%A8/"/>
+      <category term="生活学习" scheme="http://kokdemo.github.io/blog/categories/life/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[无光之日]]></title>
-    <link href="http://kokdemo.github.io/blog/2012/12/22/%E6%97%A0%E5%85%89%E4%B9%8B%E6%97%A5/"/>
-    <id>http://kokdemo.github.io/blog/2012/12/22/无光之日/</id>
+    <link href="http://kokdemo.github.io/blog/2012/12/22/novel/%E5%B0%8F%E8%AF%B4%E6%9D%82%E6%96%87-%E6%97%A0%E5%85%89%E4%B9%8B%E6%97%A5/"/>
+    <id>http://kokdemo.github.io/blog/2012/12/22/novel/小说杂文-无光之日/</id>
     <published>2012-12-22T15:16:17.000Z</published>
     <updated>2014-11-01T15:10:51.000Z</updated>
     <content type="html"><![CDATA[<p>“报告，‘无光计划’全部准备完毕，将在预定时间开始运行，请指示。”</p>
@@ -999,22 +993,14 @@ hexo new [post] &lt;title&gt; //一目了然，就是写新文章，post是文�
 <p>]]>
     </summary>
     
-      <category term="2012" scheme="http://kokdemo.github.io/blog/tags/2012/"/>
-    
-      <category term="戴森球" scheme="http://kokdemo.github.io/blog/tags/%E6%88%B4%E6%A3%AE%E7%90%83/"/>
-    
-      <category term="末日" scheme="http://kokdemo.github.io/blog/tags/%E6%9C%AB%E6%97%A5/"/>
-    
-      <category term="隐士" scheme="http://kokdemo.github.io/blog/tags/%E9%9A%90%E5%A3%AB/"/>
-    
-      <category term="小说杂文" scheme="http://kokdemo.github.io/blog/categories/%E5%B0%8F%E8%AF%B4%E6%9D%82%E6%96%87/"/>
+      <category term="小说杂文" scheme="http://kokdemo.github.io/blog/categories/novel/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[穿越小说两三事]]></title>
-    <link href="http://kokdemo.github.io/blog/2012/12/07/%E7%A9%BF%E8%B6%8A%E5%B0%8F%E8%AF%B4%E4%B8%A4%E4%B8%89%E4%BA%8B/"/>
-    <id>http://kokdemo.github.io/blog/2012/12/07/穿越小说两三事/</id>
+    <link href="http://kokdemo.github.io/blog/2012/12/07/novel/%E5%B0%8F%E8%AF%B4%E6%9D%82%E6%96%87-%E7%A9%BF%E8%B6%8A%E5%B0%8F%E8%AF%B4%E4%B8%A4%E4%B8%89%E4%BA%8B/"/>
+    <id>http://kokdemo.github.io/blog/2012/12/07/novel/小说杂文-穿越小说两三事/</id>
     <published>2012-12-06T16:03:18.000Z</published>
     <updated>2014-11-01T15:10:51.000Z</updated>
     <content type="html"><![CDATA[<p>这一段时间以来一直都在阅读一些穿越类型的历史小说，比如《极品马贼》《商业三国》《恶汉》《逆隋》《江山美色》《北地枪王张绣》《新宋》《回到明朝当王爷》《大明1937》《庆余年》《天行健》（其实最后那本算是架空），再加上很早以前看的《寻秦记》，几乎各个朝代都有。</p>
@@ -1049,7 +1035,7 @@ hexo new [post] &lt;title&gt; //一目了然，就是写新文章，post是文�
     
       <category term="穿越小说" scheme="http://kokdemo.github.io/blog/tags/%E7%A9%BF%E8%B6%8A%E5%B0%8F%E8%AF%B4/"/>
     
-      <category term="小说杂文" scheme="http://kokdemo.github.io/blog/categories/%E5%B0%8F%E8%AF%B4%E6%9D%82%E6%96%87/"/>
+      <category term="小说杂文" scheme="http://kokdemo.github.io/blog/categories/novel/"/>
     
   </entry>
   
@@ -1074,7 +1060,53 @@ hexo new [post] &lt;title&gt; //一目了然，就是写新文章，post是文�
 <p>拗相公是什么人，庆历二年的进士，看着文正公一伙变法的年轻人。那时范仲淹、富弼、韩琦年富力强的新一代官员面对着外族入侵，内部动荡不停，只好上了十言疏以求力挽狂澜，仁宗也期望这些人能够做出些什么好的改变，或者说全天下都在等着什么]]>
     </summary>
     
-      <category term="小说杂文" scheme="http://kokdemo.github.io/blog/categories/%E5%B0%8F%E8%AF%B4%E6%9D%82%E6%96%87/"/>
+  </entry>
+  
+  <entry>
+    <title><![CDATA[东坡先生与拗相公]]></title>
+    <link href="http://kokdemo.github.io/blog/2012/10/19/%E5%B0%8F%E8%AF%B4%E6%9D%82%E6%96%87-%E4%B8%9C%E5%9D%A1%E5%85%88%E7%94%9F%E4%B8%8E%E6%8B%97%E7%9B%B8%E5%85%AC/"/>
+    <id>http://kokdemo.github.io/blog/2012/10/19/小说杂文-东坡先生与拗相公/</id>
+    <published>2012-10-19T13:09:05.000Z</published>
+    <updated>2014-11-01T15:10:51.000Z</updated>
+    <content type="html"><![CDATA[<p>东坡先生向来是不愿与拗相公为伍的。</p>
+<p>拗相公是什么人，庆历二年的进士，看着文正公一伙变法的年轻人。那时范仲淹、富弼、韩琦年富力强的新一代官员面对着外族入侵，内部动荡不停，只好上了十言疏以求力挽狂澜，仁宗也期望这些人能够做出些什么好的改变，或者说全天下都在等着什么好的改变，可惜仅仅过了一年零四个月，就难以为继，仁宗将这一批庆历党人几乎全部打发出了汴京，总也比被车裂的商君，被枪决的戊戌六君子好些。相比拗相公得知此事定是心痛失望之极吧，为何这么些一代名臣却依然无法拯救这个大宋朝，若是他们未完成，我便挑起这担子好了。</p>
+<p>东坡先生却是嘉佑年间的进士，从眉山这个小镇出来，却将汴京的文士们憾了又憾，诗书画三绝不知羡煞了多少人，在汴京的莺莺燕燕中东坡度过了人生中最得志的时光，面对这浩瀚的官场，东坡先生恐怕是并不想踏进去的吧，若是能做个自由的仙人什么的，也是不错的。可是当世风气却是不允这种行为，所谓状元方是好儿郎，饱有学识之士总是要进入这官场里浸一浸的，至少连考不中的老苏这么想的。</p>
+<p>拗相公与年轻的神宗几乎是一拍而合。神宗需要一个人来改变，这个人要足够的刚正不阿，还要有过硬的执政手段，最重要的是要是一颗又臭又硬的烂石头；拗相公需要一个足够坚毅的力量以支持自己的理想。这便是拗相公变法的前提。可惜的是那些聚在他身边的，却没几个有当年庆历党人的神采，章惇、吕惠卿、沈括、李定之流都是能够上奸相传的人物。因此熙宁变法在一开始就埋下了两颗定时炸弹，一是拗相公不识人，导致变法大军中鱼龙混杂，大大削弱了变法的实际效果；二是拗相公实在是太急了。所制均属、青苗、保甲本意都是极好的，可惜拗相公却忽视执行者和新法本身不完整的问题。</p>
+<p>东坡先生却没像拗相公混的那么好，像个小职员一样朝九晚五的上班，下班就去喝喝酒什么的，也有功夫写些你侬我侬的小词，只是王弗这样的女子却早早的离去，让东坡好是伤感。等到熙宁变法正式推行的时候，东坡先生战斗力不足的问题就体现出来了，他不像庆历党人那么善于治政，也不像庆历四谏客那么能说，甚至连仁宗时那个又臭又硬的包龙图都比不过。那么既然打不过，就组团结党吧，那时司马光倒是很希望这位大才子加入反对的阵营，可是东坡先生却选择的自请外任，挑了一个好地方，去了杭州。杭州这地方倒是很合东坡的胃口，依旧过着那种惬意的小生活，偶尔动动脑子为百姓做几件大好事诸如修苏堤什么的。</p>
+<p>拗相公才不管你跑多远呢，只要挡在他变法之路上的障碍物，小到钉子大到山岭全部拔起，丢到一边。三年之后，朝廷将在外任官的东坡迁到密州，又签到徐州，最后到了湖州，尽管在去徐州途中还帮着堵了一次黄河决口，但是朝廷的决定却没法改变。拗相公那些满肚子流黑水的手下，便在御史台里玩命的分析东坡先生写的每首诗词，最后找出移任湖州是上书的谢表中的不当之处，炮制了“乌台诗案”，这对于从不拉帮结派的东坡来说是致命的。东坡先生总归是有些人愿意帮忙的，太皇太后、苏辙还有一大帮喜好东坡文章的墨客都伸出了援助之手，到最后神宗也怜惜东坡才学，将他贬到了黄州做一个小小的团练副使。这职位清苦万分，以至于每月花钱都要一分三十悬于房梁之上，每日取一。过去的日子一去不复返，但也比在御史台中所过的那非人的日子好得多，想到乌台诗案的起源，东坡默默找出自己的诗稿，将其中狂傲张狂之作尽数烧掉，这一烧，便是一大半，东坡从此也将年少时的棱角磨去，过上了与渔樵为伴的生活。</p>
+<p>新党的最大靠山倒了，神宗撒手而去，留下年仅10岁的哲宗，两位早已看不惯新党的太皇太后辅政的第一步便是将旧党领袖司马光任用为首相，几乎将新党人士尽数贬谪。这时拗相公由于独子病逝，早已退出政坛，专心治学。说是专心治学，但是司马光等人将熙宁年间所立新法尽数废去却对拗相公打击极大。或者说自己一生的心血结晶就如此的不被认可，那自己坚持这么多年究竟是为了什么？而东坡却再次被启用，做到了礼部尚书，龙图阁大学士之职。可是东坡此时心情却也与拗相公差不多，那便是再无治政之心，自己早已深深地爱上了与山林一体的生活，于是东坡再一次自请外任，再次的踏上了杭州的土地，故地重游令人唏嘘不已。</p>
+<p>元佑初年，拗相公与世长辞，这位横跨了四位皇帝的一代传奇在自己故乡家中安详离世，朝廷给了谥号“文”，并让时任中书舍人的东坡先生写了《王安石赠太傅》一文追赠，这位一辈子苦行，恪守准则，严格对世的拗相公，再也不能“拗”了。到了绍圣年间，哲宗开始治政，将原来大力启用的旧党再一次踢开，启用了诸如章淳之流的新党，可是没有拗相公的新党却早不是原来的那个新党了。东坡于是再一次被贬谪，这一次，目的地是惠州儋州，年近花甲的东坡一辈子都不安定，怎奈得住这种折腾，在北还至常州的时候撒手人寰，终年六十四岁。</p>
+<p>但愿这两位别到了下面还上演个王安石三难苏东坡的故事就好。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>东坡先生向来是不愿与拗相公为伍的。</p>
+<p>拗相公是什么人，庆历二年的进士，看着文正公一伙变法的年轻人。那时范仲淹、富弼、韩琦年富力强的新一代官员面对着外族入侵，内部动荡不停，只好上了十言疏以求力挽狂澜，仁宗也期望这些人能够做出些什么好的改变，或者说全天下都在等着什么]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[东坡先生与拗相公]]></title>
+    <link href="http://kokdemo.github.io/blog/2012/10/19/novel/%E5%B0%8F%E8%AF%B4%E6%9D%82%E6%96%87-%E4%B8%9C%E5%9D%A1%E5%85%88%E7%94%9F%E4%B8%8E%E6%8B%97%E7%9B%B8%E5%85%AC/"/>
+    <id>http://kokdemo.github.io/blog/2012/10/19/novel/小说杂文-东坡先生与拗相公/</id>
+    <published>2012-10-19T13:09:05.000Z</published>
+    <updated>2014-11-01T15:10:51.000Z</updated>
+    <content type="html"><![CDATA[<p>东坡先生向来是不愿与拗相公为伍的。</p>
+<p>拗相公是什么人，庆历二年的进士，看着文正公一伙变法的年轻人。那时范仲淹、富弼、韩琦年富力强的新一代官员面对着外族入侵，内部动荡不停，只好上了十言疏以求力挽狂澜，仁宗也期望这些人能够做出些什么好的改变，或者说全天下都在等着什么好的改变，可惜仅仅过了一年零四个月，就难以为继，仁宗将这一批庆历党人几乎全部打发出了汴京，总也比被车裂的商君，被枪决的戊戌六君子好些。相比拗相公得知此事定是心痛失望之极吧，为何这么些一代名臣却依然无法拯救这个大宋朝，若是他们未完成，我便挑起这担子好了。</p>
+<p>东坡先生却是嘉佑年间的进士，从眉山这个小镇出来，却将汴京的文士们憾了又憾，诗书画三绝不知羡煞了多少人，在汴京的莺莺燕燕中东坡度过了人生中最得志的时光，面对这浩瀚的官场，东坡先生恐怕是并不想踏进去的吧，若是能做个自由的仙人什么的，也是不错的。可是当世风气却是不允这种行为，所谓状元方是好儿郎，饱有学识之士总是要进入这官场里浸一浸的，至少连考不中的老苏这么想的。</p>
+<p>拗相公与年轻的神宗几乎是一拍而合。神宗需要一个人来改变，这个人要足够的刚正不阿，还要有过硬的执政手段，最重要的是要是一颗又臭又硬的烂石头；拗相公需要一个足够坚毅的力量以支持自己的理想。这便是拗相公变法的前提。可惜的是那些聚在他身边的，却没几个有当年庆历党人的神采，章惇、吕惠卿、沈括、李定之流都是能够上奸相传的人物。因此熙宁变法在一开始就埋下了两颗定时炸弹，一是拗相公不识人，导致变法大军中鱼龙混杂，大大削弱了变法的实际效果；二是拗相公实在是太急了。所制均属、青苗、保甲本意都是极好的，可惜拗相公却忽视执行者和新法本身不完整的问题。</p>
+<p>东坡先生却没像拗相公混的那么好，像个小职员一样朝九晚五的上班，下班就去喝喝酒什么的，也有功夫写些你侬我侬的小词，只是王弗这样的女子却早早的离去，让东坡好是伤感。等到熙宁变法正式推行的时候，东坡先生战斗力不足的问题就体现出来了，他不像庆历党人那么善于治政，也不像庆历四谏客那么能说，甚至连仁宗时那个又臭又硬的包龙图都比不过。那么既然打不过，就组团结党吧，那时司马光倒是很希望这位大才子加入反对的阵营，可是东坡先生却选择的自请外任，挑了一个好地方，去了杭州。杭州这地方倒是很合东坡的胃口，依旧过着那种惬意的小生活，偶尔动动脑子为百姓做几件大好事诸如修苏堤什么的。</p>
+<p>拗相公才不管你跑多远呢，只要挡在他变法之路上的障碍物，小到钉子大到山岭全部拔起，丢到一边。三年之后，朝廷将在外任官的东坡迁到密州，又签到徐州，最后到了湖州，尽管在去徐州途中还帮着堵了一次黄河决口，但是朝廷的决定却没法改变。拗相公那些满肚子流黑水的手下，便在御史台里玩命的分析东坡先生写的每首诗词，最后找出移任湖州是上书的谢表中的不当之处，炮制了“乌台诗案”，这对于从不拉帮结派的东坡来说是致命的。东坡先生总归是有些人愿意帮忙的，太皇太后、苏辙还有一大帮喜好东坡文章的墨客都伸出了援助之手，到最后神宗也怜惜东坡才学，将他贬到了黄州做一个小小的团练副使。这职位清苦万分，以至于每月花钱都要一分三十悬于房梁之上，每日取一。过去的日子一去不复返，但也比在御史台中所过的那非人的日子好得多，想到乌台诗案的起源，东坡默默找出自己的诗稿，将其中狂傲张狂之作尽数烧掉，这一烧，便是一大半，东坡从此也将年少时的棱角磨去，过上了与渔樵为伴的生活。</p>
+<p>新党的最大靠山倒了，神宗撒手而去，留下年仅10岁的哲宗，两位早已看不惯新党的太皇太后辅政的第一步便是将旧党领袖司马光任用为首相，几乎将新党人士尽数贬谪。这时拗相公由于独子病逝，早已退出政坛，专心治学。说是专心治学，但是司马光等人将熙宁年间所立新法尽数废去却对拗相公打击极大。或者说自己一生的心血结晶就如此的不被认可，那自己坚持这么多年究竟是为了什么？而东坡却再次被启用，做到了礼部尚书，龙图阁大学士之职。可是东坡此时心情却也与拗相公差不多，那便是再无治政之心，自己早已深深地爱上了与山林一体的生活，于是东坡再一次自请外任，再次的踏上了杭州的土地，故地重游令人唏嘘不已。</p>
+<p>元佑初年，拗相公与世长辞，这位横跨了四位皇帝的一代传奇在自己故乡家中安详离世，朝廷给了谥号“文”，并让时任中书舍人的东坡先生写了《王安石赠太傅》一文追赠，这位一辈子苦行，恪守准则，严格对世的拗相公，再也不能“拗”了。到了绍圣年间，哲宗开始治政，将原来大力启用的旧党再一次踢开，启用了诸如章淳之流的新党，可是没有拗相公的新党却早不是原来的那个新党了。东坡于是再一次被贬谪，这一次，目的地是惠州儋州，年近花甲的东坡一辈子都不安定，怎奈得住这种折腾，在北还至常州的时候撒手人寰，终年六十四岁。</p>
+<p>但愿这两位别到了下面还上演个王安石三难苏东坡的故事就好。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>东坡先生向来是不愿与拗相公为伍的。</p>
+<p>拗相公是什么人，庆历二年的进士，看着文正公一伙变法的年轻人。那时范仲淹、富弼、韩琦年富力强的新一代官员面对着外族入侵，内部动荡不停，只好上了十言疏以求力挽狂澜，仁宗也期望这些人能够做出些什么好的改变，或者说全天下都在等着什么]]>
+    </summary>
+    
+      <category term="小说杂文" scheme="http://kokdemo.github.io/blog/categories/novel/"/>
     
   </entry>
   
@@ -1110,101 +1142,6 @@ hexo new [post] &lt;title&gt; //一目了然，就是写新文章，post是文�
 <p>这条狗从此就叫护墙狗了，它整天都很忠心的趴在墙边。</p>
 <p>有一天，从前]]>
     </summary>
-    
-      <category term="小说杂文" scheme="http://kokdemo.github.io/blog/categories/%E5%B0%8F%E8%AF%B4%E6%9D%82%E6%96%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[智能手机之旅]]></title>
-    <link href="http://kokdemo.github.io/blog/2012/09/05/%E6%99%BA%E8%83%BD%E6%89%8B%E6%9C%BA%E4%B9%8B%E6%97%85/"/>
-    <id>http://kokdemo.github.io/blog/2012/09/05/智能手机之旅/</id>
-    <published>2012-09-05T13:21:22.000Z</published>
-    <updated>2014-11-01T15:10:51.000Z</updated>
-    <content type="html"><![CDATA[<p>最近由于上一台milestone挂掉，于是入了xt316，这是一台价格为374的便宜手机，但是我好奇的上网查找了一下参数之后……</p>
-<p>我发现它的参数与我两年之前购买的milestone所差无几……然而与当年购买的2600元水货相比，xt316的价格实在是太诱人了。想到这里，我思考了一下我到现在为止一共用过那些手机……</p>
-<p>我的第一款手机是一款非常之牛b的国产神机，牌子是“振华”，至于型号嘛，我至今都找不到……这个神机是一个关系非常好的亲戚送的，因此抱着不得不用的心态用了这款神机两年，在这两年中，饱受各种不爽……最后这款手机电池老化导致充一次电一天都用不到（现在来看，这不算什么问题……），我就整天期待着，快坏吧，快坏吧，坏了就能买新的了……很快，它就真的坏了……</p>
-<p>第二款手机也是我第一次尝试淘宝购物，购买了一个600元的moto e2，当然不必说，它连水货都不是——标准的翻新机。索性这个机子还是带给我很多神奇的概念的，比如说，linux，刷机等等。说道这款手机与linux，不得不感叹一下当年的moto，产品线里囊括了塞班，windowsmobile，非智能机，还包括了他们自己开发的linux手机系统，这个超级神的特性也带给了e2无比的可扩展性，在仅有10m的ram里，各路大神为它编写了说不清的神软件，包括可以完美后台的音乐播放器，包括支持所有格式的超强视频播放器（有多神呢？什么逐帧播放，字幕显示等等），甚至有让我不能直视的三国志系列和doom……从此，我踏上了走向只能手机的不——归——路……</p>
-<p>后来e2（兔子）外壳坏了加之我高考结束，因此我准备换手机（话说后一个理由才是主要理由吧混淡）……最开始的时候喜欢诺记的5800，黑色机身，xm家族的特性令那时的我看得极为眼红……谁知后来android却杀出来，用极为cool的形式颠覆了我对手机看法，当时看上了那个后空翻me600，觉得超酷，还有一个触摸板，直到有一天，母上和我去某手机卖场逛，让我第一次看到了me600的真相……这个分辨率颗粒感也太强了吧……还有屏幕为何那么小……这样等等的诸多原因，让我最后瞄上了另一款，milestone。</p>
-<p>里程碑真的是里程碑一样的存在啊，它是android史上决不可忘记的一款经典机型，硬朗外形，十分高的屏幕分辨率，最重要的是……它还有全键盘。以2600大洋购买了水货milestone之后，我这算是开始了真正意义上的智能手机之旅吧。有一段时间，我迷上了刷机和定制rom，以至于现在那个跪了的milestone里还有5个以上的刷机包，随时想刷随时刷。</p>
-<p>可是android远远比我想象的快，军备竞赛一样的硬件发展，蜂拥而至的开发者，接连不断的优秀应用，让人应接不暇。直到有一天我发现milestone被抛弃了，就像河道中的一块烂木头，没有人知道当年它吃水多么深。于是我开始反思，我所需要的智能手机是什么？一个通讯工具+？+？+？</p>
-<p>不不不，它就应该是一个通讯工具，能让我的朋友家人用各种方式联系到我就行，我不用它来办公，我也不用它来游戏，它只是一个手机，对它强求什么呢？屏幕再大你的世界还是那么小，内存再大你的记忆还是那么差，cpu再强，电池再强，这一切又有什么必要呢？</p>
-<p>因此拿到xt316我的心情还是很不错的，它没什么缺点，价格却给力的惊人，这不就够了么。</p>
-<p>&nbsp;</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>最近由于上一台milestone挂掉，于是入了xt316，这是一台价格为374的便宜手机，但是我好奇的上网查找了一下参数之后……</p>
-<p>我发现它的参数与我两年之前购买的milestone所差无几……然而与当年购买的2600元水货相比，xt316的价格实在是太诱人了。]]>
-    </summary>
-    
-      <category term="android" scheme="http://kokdemo.github.io/blog/tags/android/"/>
-    
-      <category term="手机" scheme="http://kokdemo.github.io/blog/tags/%E6%89%8B%E6%9C%BA/"/>
-    
-      <category term="我看互联网" scheme="http://kokdemo.github.io/blog/categories/%E6%88%91%E7%9C%8B%E4%BA%92%E8%81%94%E7%BD%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[锄头]]></title>
-    <link href="http://kokdemo.github.io/blog/2012/08/07/%E9%94%84%E5%A4%B4/"/>
-    <id>http://kokdemo.github.io/blog/2012/08/07/锄头/</id>
-    <published>2012-08-07T15:30:52.000Z</published>
-    <updated>2014-11-01T15:10:51.000Z</updated>
-    <content type="html"><![CDATA[<p>下雪了，贾和平看着窗外，默念着自己还有几站就到家了，今天在郊区的宣讲还算很成功，虽然这些没有受过高等教育的刁民提出的问题都很奇怪而且很刁钻，但是牢记元首著作的他又怎么可能会被难倒。</p>
-<p>车门吱呀呀的响了起来，贾和平才回过神来发现自己要下车了，于是提起公文包匆匆的下了车。</p>
-<p>在车站垃圾箱旁边有一个一平方米左右的区域，是专门为像他这样抽烟的人准备的，只有在这个小区域内吞吐云雾才不算犯法，但是即便这样，这里仍然没有什么人，因为抽烟的人实在是太少了，或者说是能抽到烟的太少了，几个世纪之前人类一直没有完成的伟业在新时代迎刃而解。</p>
-<p>贾和平从大衣的内兜掏出一根纸烟，慢慢的点上，享受这短暂的轻松时刻。尽管很呛，烟味也不好，但是对于磨了一天的嘴皮子的他来说，真的是宝贵的不能在宝贵了。他还记得在他入职的时候，在真理部宣传署里领导随手递给他的那支烟，简直就是人间极品，不仅做工好看，味道也纯正，一点杂味道都没有，甚至纸边还有金丝做相衬。</p>
-<p>想到这里，贾和平舒服的展了展身体，靠在了身后的站牌上。</p>
-<p>突然，身后的站牌突然有了变化，大元首的电视讲话突然就出现在了上面，贾和平愣了一下，想要躲开，却已经挡在了“大元首”的面前，之后的事情，他却完全不知道了。</p>
-<p>等到他醒来的时候，他被关在一间小小的格子里，面前放着一个面包，几张纸。顾不上吃东西了，他连忙开始读这纸上的内容。</p>
-<p>“贾和平因为违反国家形象法被判处劳改10年”</p>
-<p>看到《国家形象法》这五个字，贾和平心里凉了一下，幸好自己是宣传署的，要是一般人，估计也不会是这种处理。想到自己将来10年会在某个不知名的偏僻地方度过，自己的青春估计也就消耗殆尽了吧。</p>
-<p>果然第二天，就有人押着贾和平和很多人上了一辆大卡车，至于目的地，谁也不知道。</p>
-<p>这个冬天在贾和平的眼里变得更冷了。</p>
-<p>“咱们这是要去哪？”他一边对手呵着气一边对旁边的另一个带着眼镜的犯人说。</p>
-<p>“不知道，有人说是那个西伯利亚，也有人说是格陵兰，反正去年的那一批派去了青藏高原上”眼镜的脸上看不出一点红润，脸颊瘦削，颧骨也高高的凸显了出来，两只手的手指修长而瘦削，只是眼镜不像和平这样耐不住寒冷，和同车其他人一样，只是把衣服领子又捋了捋，让风不要进到脖子里。</p>
-<p>“你是新来的？”那个眼镜这才注意到了身边的这个不同寻常的犯人。</p>
-<p>“是啊，我以前是宣传署的，前几天犯了国家形象法”和平想到才发生的事，心里不由的一阵胆寒。</p>
-<p>眼镜听到之后先是一愣，然后慢慢笑道“那你还真是命大啊，我从没听说犯了这个法的人还能活下来，对了，以后在我们这堆人里，不要说自己以前是国家机关的，不然会被敌视的”说着眼镜的口气慢慢的严肃了下来。</p>
-<p>在接下来的十几天里，贾和平几乎经受了所有可能的交通工具，包括卡车，货运火车等，到了目的地的时候，除了贾和平浑身是病，上吐下泻之外，其余的这些犯人都没有什么事情，看起来和出发的时候一模一样。</p>
-<p>监管他们的有两拨人，一方是和平军的士兵，一方则是一群穿着白大褂的家伙，清点完人数之后，在这片山区中唯一的一片平地上，和平军的长官和白大褂们的首领站上了一处高的石头开始训话。</p>
-<p>“你们这些罪孽深重的犯人，现在是你们赎罪的时候了”长官张口就来了这么一句，贾和平却知道这种话属于官方套话，每次开场白的时候都要说的。</p>
-<p>“这片荒地就是你们赎罪的地方，你们将会开垦它，用来养活你们自己，我们则不会对此干涉，我们将会在以此为中心的100公里外驻扎，任何一个想要逃离这个范围的人都会死，除此之外，没有其他规则，另外，我们只会给你们提供工具和一个月的口粮，其余问题自己解决。”长官的话振聋发聩，在场的所有犯人都睁大了眼睛。</p>
-<p>在士兵的监督下，犯人们将一箱箱的工具搬走，背走属于自己的粮食口袋，在天黑之前，和平军的士兵和白大褂们尽数撤走。</p>
-<p>大兵们才走，贾和平跟着眼镜和他的几个关系较好的犯人就往山里走，让他不解的是眼睛和犯人们搬起了那箱沉沉的锄头，就在走到一个偏僻的山沟的时候，眼镜突然说“今晚我们就不在营地里睡了，我们就在这里驻扎吧。”</p>
-<p>贾和平很理解不了这种决定，营地里有火，有帐篷，睡得也舒服，可是这里搞不好晚上还有野兽呢。</p>
-<p>眼镜似乎看出了和平心里的疑惑，慢慢的叹了一句“营地里好是好，就是土地不够肥沃啊。”</p>
-<p>尽管心里有着一万个不愿意，贾和平晚上还是得睡到那掏出的几个洞里，或者说是一个小坑，仅仅能避避风，晚上时不时还传出几声动物的嚎叫声，弄得贾和平失了眠。</p>
-<p>贾和平突然很想家，很想自己的老婆，自己的孩子，甚至是之前看起来挺繁琐挺讨厌的工作，现在也有些怀念了。</p>
-<p>在朦朦胧胧中，贾和平似乎听到了几声有些尖锐的声音。</p>
-<p>第二天早上，贾和平醒的时候发现山谷中腹地里有烟雾弥散开，高高的飘散在空中，和平第一次觉得一种烟雾也能让他觉得这么恶心。</p>
-<p>眼镜和他的朋友们坐成了一个圈，一动不动，也没有人说话。</p>
-<p>贾和平凑上去，发现大家的中间围着那几个装着锄头的箱子，贾和平左右的看了看，发现大家没人说话，于是伸手去打开那个刚被撬开的箱子。</p>
-<p>他永远都不能忘记这一幕。</p>
-<p>这箱标着锄头的箱子里装着的是旧时代里的热武器，一整箱的半自动步枪。</p>
-<p>这是锄头吗？</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>也许，这就是锄头。</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>ps：这是之前写的一篇文章的一部分，今天准备续写的时候却发现实在是不能写下去了，那么就只能把这篇文章发出来当作坑爹作了。</p>
-<p>ps2：这篇文章写的有一点失望，因为作为背景的一部分，它本身的故事构架被打乱了。</p>
-<p>&nbsp;</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>下雪了，贾和平看着窗外，默念着自己还有几站就到家了，今天在郊区的宣讲还算很成功，虽然这些没有受过高等教育的刁民提出的问题都很奇怪而且很刁钻，但是牢记元首著作的他又怎么可能会被难倒。</p>
-<p>车门吱呀呀的响了起来，贾和平才回过神来发现自己要下车了，于是提起公文包匆匆的下]]>
-    </summary>
-    
-      <category term="小说" scheme="http://kokdemo.github.io/blog/tags/%E5%B0%8F%E8%AF%B4/"/>
-    
-      <category term="科幻" scheme="http://kokdemo.github.io/blog/tags/%E7%A7%91%E5%B9%BB/"/>
-    
-      <category term="小说杂文" scheme="http://kokdemo.github.io/blog/categories/%E5%B0%8F%E8%AF%B4%E6%9D%82%E6%96%87/"/>
     
   </entry>
   

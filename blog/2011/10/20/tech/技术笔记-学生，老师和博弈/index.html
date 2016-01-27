@@ -1,0 +1,87 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 学生，老师和博弈 · kok's story box</title><meta name="description" content="学生，老师和博弈 - kokdemo"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.ico"><link rel="stylesheet" href="/blog/css/apollo.css"><link rel="stylesheet" href="http://fonts.useso.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/" class="logo-link"><img src="/box.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/blog/" target="_self" class="nav-list-link">博客</a></li><li class="nav-list-item"><a href="/blog/archives/" target="_self" class="nav-list-link">归档</a></li><li class="nav-list-item"><a href="http://twitter.com/kokdemo" target="_blank" class="nav-list-link">TWITTER</a></li><li class="nav-list-item"><a href="https://github.com/kokdemo" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/blog/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">学生，老师和博弈</h1><div class="post-meta"><div class="post-time">Oct 20, 2011</div></div><div class="post-content"><p>究竟是上课还是翘课，这是一个问题……<a id="more"></a></p>
+<p>如果去了，上的无聊的内容会让人受不了，如果不去，老师又有可能会点名（尽管有人吐槽拿点名留住学生的老师就像拿身体留住男人的女人一样），被点名不到就会被记住，期末就会扣分。在freetime和分数之间总是会有些人在徘徊，有的人选了前者，成了大牛或者卢瑟；有的人选了后者，成了学霸或者呆子。</p>
+<p>因此如何取舍肯定是每个学生心目中必须要考虑的问题，当然很显然，又有freetime又不被扣分肯定是最好的结果。</p>
+<p>我还清楚地记得老师会把这样的行为定义成【侥幸心理】，就好像做贼一样，但是实际上，又有多少人会老老实实得坐在那里听诸如思修毛概这种课呢。</p>
+<h2 id="part_1"><a href="#part_1" class="headerlink" title="part 1"></a>part 1</h2><p>【正文】 将【上课不点名】和【上课点名】定义成    【收益0】 ；将【不上课点名】定义成   【 收益-1,】；将【不上课不点名】定义成  【收益1 】</p>
+<p>容易得到这个表格</p>
+<p><table width="286"></table></p>
+<p><tbody></tbody></p>
+<p><tr></tr></p>
+<p><td valign="center" width="158"></td></p>
+<p><td valign="center" width="158"><span style="color: #ff0000;">点名（p）</span></td></p>
+<p><td valign="center" width="158"><span style="color: #ff0000;">不点名（q）</span></td><br></p>
+<p><tr></tr></p>
+<p><td valign="center" width="158"><span style="color: #ff0000;">不上课</span></td></p>
+<p><td valign="center" width="158"><span style="color: #ff0000;">-1</span></td></p>
+<p><td valign="center" width="158"><span style="color: #ff0000;">1</span></td><br></p>
+<p><tr></tr></p>
+<p><td valign="center" width="158"><span style="color: #ff0000;">上课</span></td></p>
+<p><td valign="center" width="158"><span style="color: #ff0000;">0</span></td></p>
+<p><td valign="center" width="158"><span style="color: #ff0000;">0</span></td><br><br><br><br>这是一个学生平时在做抉择的时候的一个收益表，其中q，p代表两个事件发生的概率。（p=1-q  为了好理解，不换算）</p>
+<p>E（期望|上课）= 0     E（期望|不上课）=q-p</p>
+<p>那么很容易的能够看出来，上不上课取决于点不点名的概率，如果你碰见的是一个和蔼可亲的老爷爷什么的，从不点名，那么从纯收益的角度讲，还是翘吧（这是良心问题，要是讲的还不错还是去一下吧）；如果你碰见了一个苛刻无比的死八婆之类的老师，就需要你认真地评估一下了。</p>
+<p>以上内容为高中概率论水平，要继续挖掘这个问题，就需要考虑另外一个问题。</p>
+<p>老师是不是sb？这个答案显然是“不是”，因为能混到老师这个地步的人，至少都是有高学历的人，这类人一般智商都没什么问题。</p>
+<p>于是问题出现了，要是q，p不固定怎么办？</p>
+<p>老师应该也是这个故事的另一方，作为地球上的一种智能生物，老师也会趋向于选择自己收益最大化的一项。</p>
+<h2 id="part2"><a href="#part2" class="headerlink" title="part2"></a>part2</h2><p>【假设】（有一些学校貌似不怎么管的，不考虑）老师点名学生未到，收益为1；老师不点名学生到了，老师点名学生到了，收益为0；老师不点名，学生未到，收益为-1。</p>
+<p>那么那个表格就会变化了</p>
+<p><table width="322"></table></p>
+<p><tbody></tbody></p>
+<p><tr></tr></p>
+<p><td rowspan="2" colspan="2" valign="center" width="153"></td></p>
+<p><td colspan="2" valign="center" width="341">                <span style="color: #ff0000;">     老师</span></td><br></p>
+<p><tr></tr></p>
+<p><td valign="center" width="171"><span style="color: #ff0000;">点名</span></td></p>
+<p><td valign="center" width="170"><span style="color: #ff0000;">不点名</span></td><br></p>
+<p><tr></tr></p>
+<p><td rowspan="2" valign="center" width="78"><span style="color: #ff0000;">学生</span></td></p>
+<p><td valign="center" width="75"><span style="color: #ff0000;">不上课</span></td></p>
+<p><td valign="center" width="171"><span style="color: #ff0000;">（-1，1）</span></td></p>
+<p><td valign="center" width="170"><span style="color: #ff0000;">（1，-1）</span></td><br></p>
+<p><tr></tr></p>
+<p><td valign="center" width="75"><span style="color: #ff0000;">上课</span></td></p>
+<p><td valign="center" width="171"><span style="color: #ff0000;">（0，0）</span></td></p>
+<p><td valign="center" width="170"><span style="color: #ff0000;">（0，0）</span></td><br><br><br><br>括号里第一项代表学生收益，第二项代表老师收益</p>
+<p>从学生的角度来讲，老师采用了某一行为，相对的学生是能够采取对应的措施的。</p>
+<p><table width="288"></table></p>
+<p><tbody></tbody></p>
+<p><tr></tr></p>
+<p><td valign="center" width="238"><span style="color: #ff0000;">老师采取的行为</span></td></p>
+<p><td valign="center" width="238"><span style="color: #ff0000;">学生相对采取的行为</span></td><br></p>
+<p><tr></tr></p>
+<p><td valign="center" width="238"><span style="color: #ff0000;">点名</span></td></p>
+<p><td valign="center" width="238"><span style="color: #ff0000;">上课</span></td><br></p>
+<p><tr></tr></p>
+<p><td valign="center" width="238"><span style="color: #ff0000;">不点名</span></td></p>
+<p><td valign="center" width="238"><span style="color: #ff0000;">不上课</span></td><br><br><br><br>这个看起来是会有一些废话，因为这东西只要有脑子的学生都知道。</p>
+<p>好吧，问题又来了，在这方面学生是不公平的，因为【点名】和【上课】这两个行为并不是同时发生的，上不上课的决定其实要比点不点名要早————即就是说，这个博弈并不是公平的。</p>
+<p>你要是以为我要说明的是“<span style="color: #3366ff;">畜生你还是去上课吧</span>”，你就弱爆了……</p>
+<h2 id="part3"><a href="#part3" class="headerlink" title="part3"></a>part3</h2><p>老师究竟会以什么为标准来决定点不点名呢？</p>
+<p>当然就是到课率了，如果去的人多，就不必麻烦了，当然如果老师看到教室里空空如也，哪点不点你也清楚。</p>
+<p>这个需要一个开头，【假设】老师在上节课点过名了。</p>
+<p>那么大多数人这一次就会去，那么你不去就没有什么关系了；根据这个假设，就有这样的选择链</p>
+<p><table width="264"></table></p>
+<p><tbody></tbody></p>
+<p><tr></tr></p>
+<p><td valign="top" width="254"><span style="color: #ff0000;">大多数人的选择</span></td></p>
+<p><td valign="top" width="254"><span style="color: #ff0000;">我的选择</span></td><br></p>
+<p><tr></tr></p>
+<p><td valign="top" width="254"><span style="color: #ff0000;">去</span></td></p>
+<p><td valign="top" width="254"><span style="color: #ff0000;">不去</span></td><br></p>
+<p><tr></tr></p>
+<p><td valign="top" width="254"><span style="color: #ff0000;">……</span></td></p>
+<p><td valign="top" width="254"><span style="color: #ff0000;">……</span></td><br></p>
+<p><tr></tr></p>
+<p><td valign="top" width="254"><span style="color: #ff0000;">不去</span></td></p>
+<p><td valign="top" width="254"><span style="color: #ff0000;">去</span></td><br></p>
+<p><tr></tr></p>
+<p><td colspan="2" valign="top" width="508">                      <span style="color: #ff0000;">点名</span></td><br></p>
+<p><tr></tr></p>
+<p><td valign="top" width="254"><span style="color: #ff0000;">去</span></td></p>
+<p><td valign="top" width="254"><span style="color: #ff0000;">不去</span></td><br></p>
+<p><tr></tr></p>
+<p><td colspan="2" valign="top" width="508">                     <span style="color: #ff0000;"> 循环……</span></td><br><br><br><br>这样是不是很爽，以最小的代价换来更多的freetime。</p>
+<h1 id="u4F46_u662F_u95EE_u9898_u4F9D_u7136_u5B58_u5728_uFF0C_u5C31_u662F_u5982_u679C_u4F60_u7684_u540C_u5B66_u4E5F_u770B_u4E86_u8FD9_u7BC7_u6587_u7AE0_u600E_u4E48_u529E_uFF1F"><a href="#u4F46_u662F_u95EE_u9898_u4F9D_u7136_u5B58_u5728_uFF0C_u5C31_u662F_u5982_u679C_u4F60_u7684_u540C_u5B66_u4E5F_u770B_u4E86_u8FD9_u7BC7_u6587_u7AE0_u600E_u4E48_u529E_uFF1F" class="headerlink" title="但是问题依然存在，就是如果你的同学也看了这篇文章怎么办？"></a><span style="color: #000000;"> 但是问题依然存在，就是如果你的同学也看了这篇文章怎么办？</span></h1><p>&nbsp;</p>
+<p>&nbsp;</p>
+</div></article></div></section><footer><div class="paginator"><a href="/blog/2011/10/20/学生，老师和博弈/" class="prev">PRVE</a><a href="/blog/2011/10/12/life/生活学习-为何西电不再辉煌？——写在西电八十周年校庆之/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2016 <a href="http://kokdemo.github.io/blog">kokdemo</a>, unless otherwise noted.</p></div></footer><script src="https://cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>

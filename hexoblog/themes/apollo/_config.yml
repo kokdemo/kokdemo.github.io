@@ -1,7 +1,7 @@
 menu:
     博客: /blog/
     归档: /blog/archives/
-    微博: http://twitter.com/kokdemo
+    twitter: http://twitter.com/kokdemo
     github: https://github.com/kokdemo
     rss: /blog/atom.xml
 
