@@ -5,6 +5,16 @@
     <title>kok 的收纳箱</title>
     <link href="//cdn.bootcss.com/material-design-lite/1.0.6/material.min.css" rel="stylesheet">
     <link rel="stylesheet" href="http://fonts.useso.com/icon?family=Material+Icons">
+    <style>
+        .card-square.mdl-card {
+            height: 300px;
+        }
+
+        .card-square > .mdl-card__title {
+            color: #fff;
+            background: bottom right 15% no-repeat #46B6AC;
+        }
+    </style>
 </head>
 <body>
 
@@ -35,38 +45,66 @@
         </nav>
     </div>
     <main class="mdl-layout__content">
-        <div class="page-content"><!-- Your content goes here --></div>
+        <div class="page-content">
+            <div class="mdl-grid">
+                <div class="card-square mdl-cell mdl-card mdl-cell--3-col mdl-shadow--2dp" v-for="card in cards" v-href="card.href">
+                    <div class="mdl-card__title mdl-card--expand" v-bind:style="{ background-image: card.pic }">
+                        <h2 class="mdl-card__title-text">{{card.name}}</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        {{card.describe}}
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">View Page
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 </div>
 
-<!-- Square card -->
-<style>
-    .demo-card-square.mdl-card {
-        width: 320px;
-        height: 320px;
-    }
-    .demo-card-square > .mdl-card__title {
-        color: #fff;
-        background: bottom right 15% no-repeat #46B6AC;
-    }
-</style>
-
-<div class="demo-card-square mdl-card mdl-shadow--2dp">
-    <div class="mdl-card__title mdl-card--expand">
-        <h2 class="mdl-card__title-text">Update</h2>
-    </div>
-    <div class="mdl-card__supporting-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Aenan convallis.
-    </div>
-    <div class="mdl-card__actions mdl-card--border">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-            View Updates
-        </a>
-    </div>
-</div>
-
-    <script src="//cdn.bootcss.com/vue/1.0.15/vue.min.js"></script>
-    <script src="//cdn.bootcss.com/material-design-lite/1.0.6/material.min.js"></script>
+<script src="//cdn.bootcss.com/vue/1.0.15/vue.min.js"></script>
+<script src="//cdn.bootcss.com/material-design-lite/1.0.6/material.min.js"></script>
+<script src="static/vue-href.js"></script>
+<script>
+    var board = new Vue({
+        el:'body',
+        data:{
+            cards:[
+                {
+                    name :'blog',
+                    describe:'一个记录文字的地方。',
+                    pic:'',
+                    href:'http://kokdemo.github.io/blog/'
+                },
+                {
+                    name :'Why learn this?',
+                    describe:'一个收集学习经验的收藏夹。',
+                    pic:'',
+                    href:'http://why-should-i-learn-this-course.readthedocs.org/zh_CN/latest/'
+                },
+                {
+                    name :'Impress.js 中文教程',
+                    describe:'就仅仅是中文教程。',
+                    pic:'',
+                    href:'https://github.com/kokdemo/impress.js-tutorial-in-Chinese'
+                },
+                {
+                    name :'前端问答',
+                    describe:'原来答案不是我写的，我做了一些增补。',
+                    pic:'',
+                    href:'https://github.com/kokdemo/Front-end-Developer-QandA'
+                },
+                {
+                    name :'前端问答',
+                    describe:'原来答案不是我写的，我做了一些增补。',
+                    pic:'',
+                    href:'https://github.com/kokdemo/Front-end-Developer-QandA'
+                }
+            ]
+        }
+    });
+</script>
 </body>
 </html>
