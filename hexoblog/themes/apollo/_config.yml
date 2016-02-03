@@ -1,6 +1,7 @@
 menu:
     博客: /blog/
     归档: /blog/archives/
+    收纳箱: http://kokdemo.github.io
     twitter: http://twitter.com/kokdemo
     github: https://github.com/kokdemo
     rss: /blog/atom.xml
@@ -10,12 +11,12 @@ logo: /box.png
 
 # Comment
 # e.g disqus: seansun
-disqus:
+disqus: kokdemo
 duoshuo: 
 
 # Analytics
 # google-analytics:
-#ga: UA-65933410-1
+ga: UA-73260488-1
 # baidu-analytics:
 #ba: //hm.baidu.com/hm.js?a36e15d9e2adec9a21fcdd9f686b1ed2
 

@@ -1,7 +1,9 @@
 extends partial/layout
 
 block container
-    h1= page.year
+    h2 archives
+    != list_archives({show_count: false,class: 'nav-list',style: 'text',type: 'yearly',separator: '&nbsp; &nbsp; &nbsp; &nbsp;'})
+    h2= page.year
     include mixins/post
     +postList()
 

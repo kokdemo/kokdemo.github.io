@@ -1,7 +1,23 @@
 mixin postInfo(item)
     .post-meta
-        .post-time
+        span.post-time
             != full_date(item.date, 'll')
+
+
+
+mixin postTag(item)
+    .post-tag-cat
+        span.post-tags
+            - for(var i=0;i<item.tags.data.length;i++){
+                a(href= url_for(item.tags.data[i].path))
+                    != item.tags.data[i].name
+            - }
+        span.post-category
+            - item.categories.forEach(function(cat,index) {
+                a(href= url_for(cat.path))
+                    != cat.name
+            -})
+        .clearfix
 
 mixin postList()
     ul.archive.post-list
@@ -12,6 +28,7 @@ mixin postList()
                         a.post-title-link(href= url_for(item.path))
                             != item.title
                     +postInfo(item)
+
         - })
 
 mixin posts()
@@ -26,6 +43,7 @@ mixin posts()
                     .post-content
                         != item.excerpt
                     a.read-more(href=item.path)!= __('more')
+                    +postTag(item)
         - })
 
 mixin post(item)
