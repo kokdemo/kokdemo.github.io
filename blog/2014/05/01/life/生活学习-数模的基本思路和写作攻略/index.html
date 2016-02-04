@@ -1,0 +1,134 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 数模的基本思路和写作攻略 · kok's story box</title><meta name="description" content="数模的基本思路和写作攻略 - kokdemo"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.ico"><link rel="stylesheet" href="/blog/css/apollo.css"><link rel="stylesheet" href="http://fonts.useso.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/" class="logo-link"><img src="/box.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/blog/" target="_self" class="nav-list-link">博客</a></li><li class="nav-list-item"><a href="/blog/archives/" target="_self" class="nav-list-link">归档</a></li><li class="nav-list-item"><a href="/blog/tags" target="_self" class="nav-list-link">标签</a></li><li class="nav-list-item"><a href="http://kokdemo.github.io" target="_blank" class="nav-list-link">收纳箱</a></li><li class="nav-list-item"><a href="https://github.com/kokdemo" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/blog/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">数模的基本思路和写作攻略</h1><div class="post-meta"><span class="post-time">2014年5月1日</span></div><div class="post-content"><p>这两天是五一佳节了，但肯定还有很多人留在学校做数学建模比赛-号称是大学里参与量最大（shui）的一种竞赛了。</p>
+<p>但是很多同学完全之前没有接触过这种比赛，包括论文写作，找队友也只是随便抓壮丁：</p>
+<pre><code>“哟，听说你编程序很厉害么，跟我来做数模吧！”
+“呵呵”
+</code></pre><p>这种思路注定是要配人读书的……</p>
+<p>&lt;–! more –&gt;</p>
+<p>下面来讲讲如何临时抱佛脚吧……仔细准备注定与你们无缘了……</p>
+<p>###怎么读题？<br>读题是一件很重要的事情，某猫号称自己在acm专注读题100年，可见把题读好十分重要。</p>
+<p>如果你没读好？有可能发现以下的尴尬情况：</p>
+<ol>
+<li>做到第三问突然发现问的变量之前根本没考虑到……</li>
+<li>把部分当成了全部，把可能当成了肯定……</li>
+<li>找不到足够的信息，连定性分析都做不到……</li>
+</ol>
+<p>要是第三天才发现这个问题，你和你的队友就可以洗洗睡了……</p>
+<p>如果你今天就发现你自己的读题能力就是个渣渣，请重新读一遍，保证每次都有新发现！</p>
+<p>以2014年的某高校A题为例吧，就是那个换刀片的问题。看起来好多字，该怎么读呢？</p>
+<p>重新举一个吕大举过的例子吧！</p>
+<blockquote>
+<p>你买苹果，一个2块钱，你买了2个，来给抽象一个模型出来！</p>
+</blockquote>
+<p>对此你应该有点无措，诶，不就是买了苹果么，咋就能变成数学模型呢？</p>
+<p>我们来分析一下这个个例，首先，这个例子中有一个对象叫苹果，苹果有两个参数【单价】【数量】，我们由这两个参数得到了一个值【总价】。</p>
+<p>ok，模型来了……</p>
+<pre><code>苹果总价=苹果单价 × 苹果数量          （式1）
+</code></pre><p>我没在开玩笑……这个简单的模型就这么出来了，那么接下来进阶一下。</p>
+<blockquote>
+<p>如果现在有A苹果和B苹果，单价为A和B，抽象一个模型出来！</p>
+</blockquote>
+<p>考虑到现在的对象不止一个了，那么有了以下三个式子：</p>
+<pre><code>A苹果总价= A苹果单价 × A苹果数量         （式2）
+B苹果总价= B苹果单价 × B苹果数量         （式3）
+苹果总价=A苹果总价 × B苹果总价           （式4）
+</code></pre><p>急于抱佛脚的你可能会发现，诶，前两个式子不就是式1吗？</p>
+<p>你说对了，既然有了两个对象，但每个对象都是之前的基础对象，那么公式也就是通用的了。</p>
+<p>ok，我们再进一步，现在有了新的要求：</p>
+<blockquote>
+<p>现在我们有个动物园，比如就叫osc动物园吧，里面的动物大概只有【熊】和【猫】，他们的食物就是【咖啡】和【双马尾照片】，每次投食都能让他们获得x点满足度，熊和猫的满足度都是100，现在需要设计一个购买食物的方案：</p>
+</blockquote>
+<p>恩，其实这种题目就挺符合现在数模题的出法了，给一个简单的食物套一个情景。</p>
+<p>让我们来分析一下：</p>
+<p>对象是【熊】-吃【咖啡】，【猫】-吃【双马尾照片】，简称这两种食物为A物，B物好了，他们也有对应的单价和数量，熊和猫也有数量。那么好了，可以发展出这样的式子：</p>
+<pre><code>熊的总满足度=熊的数量×100
+猫的总满足度=猫的数量×100
+A物的数量=熊的总满足度/X
+B物的数量=猫的总满足度/X
+购物总价=A物的数量×A物的价格+B物的数量×B物的价格
+</code></pre><p>看，其实也就是这几个式子，最后一个式子其实就是我们讨论的模型2中的那个式子。</p>
+<p>在黑了这么多好朋友之后，我只是想要说明一个事情。</p>
+<blockquote>
+<p>所有的可求问题下都隐藏的是数学，所以在做数学模型前，请先将你的题目提炼出一个模型来。</p>
+</blockquote>
+<p>以上是第一步。（话说这么黑人不会被反黑么……）</p>
+<p>###怎么解题？<br>如果你没有做上一步，你就不要先看这一节了，因为你看了也没有用。</p>
+<p>因为无论是姜启源老师的《数学建模》抑或是你桌子上的其他书都不会直接写出来，那个问题应该用那个方法来解。</p>
+<p>这一切都取决于你提炼出的模型。</p>
+<p>比如刚才的模型3中，猫和熊自身也会随着时间繁衍，随着时间归于尘土，那么这时候对应的位置就应该有一些变化了，在我举的例子中，应该是【动物的数量】此时是时间的函数，应该在这里修正。</p>
+<p>又比如说，你购买的【咖啡】和【双马尾】照片在市场上购买数量很多，会引起市场价格的波动，那么你这时候【物品的价格】就应该是时间或者是供求关系的函数，应该在这里修正。</p>
+<p>因此案头的书中，那些什么图论，人口模型，排队论等等都只是对应情况下所抽象出的最简单的【模型】，切莫直接去套。</p>
+<p>你应该怎么做呢？从你概括出的模型出发，来寻找对应的解法。</p>
+<blockquote>
+<p>有一些猫和熊在长期被投食之后，产生了变异，变成了大绅士，竟然开始对对方的食物感兴趣了，变异的概率为p1和p2，求一段时间之后的食物配给方案。</p>
+</blockquote>
+<p>这时候很显然可以抽象出一个【概率转换】的点，好，那么就去看对应的模型，这时候一翻书—好，找到了【马尔可夫链】。</p>
+<p>一样的情况下，你应该用同样的思路来寻找解法，然后去做题。</p>
+<p>###怎么算题？<br>其实这里就不算是我所擅长的了，这里大致的说一说。</p>
+<p>无论你是不是抓的壮丁来做数模，请确保你的壮丁至少应该会用MATLAB（用盗版之前请记得忏悔一次……），因为这个掌握起来比较快，而且画图什么的比较方便。算是我大xdu必备的一项技能吧！</p>
+<p>当然如果你有特殊的抓壮丁/抱大腿技巧，程序员确实很厉害，那么画图什么的不在话下，只要你有了解题思路，把题算出来又有什么问题呢？</p>
+<p>接下来，在校赛中，你是可以打听一下大家的结果的，如果你和大部分人都不一样，那么你有98%的可能性是算错了，这时候请赶快检查一下……能纠正起来最好，要是纠正不了……</p>
+<p>你需要一项新技能！</p>
+<pre><code>数据造假
+</code></pre><p>对的，造假也是要有技巧性的，比如你真的很水，全文都是定性分析，结果在最后来了一个正确答案，脑残都知道你在造假了嘛……</p>
+<p>所以你应该从你们那糟糕的文章的最后一步逆推起，向上逆推五六步，把这里的数据进行修改，让最后一步的结果===正确答案。（请记住这里的三个等号是有意义的，就是数值相等，意义相等，情景相等）</p>
+<p>好了，我似乎毒害青少年朋友们了……</p>
+<p>###怎么写论文？<br>这一章我们只讨论论文的写作，摘要拿出来单独的来写。</p>
+<p>数模论文是一种很正式的科技论文，因此很多同学一开始有点接受不了这种写法。</p>
+<p>比如<em>“我经过计算，认为答案可能是a”</em>。</p>
+<p>这句子绝对有问题……比较正确的写法是：</p>
+<pre><code>通过式X，导入式y的结果，计算出变量a有b%的可能性是a，有d%的可能性是b……
+</code></pre><p>这是个示例句子，不要乱抄！</p>
+<p>写它的意义在于告知别人结果是什么，数据是什么，错误句子中的“我”，“可能”，最好不要出现。</p>
+<p>在结构上，大部分的优秀论文都会告诉你论文的结构是什么样的，不再赘述。</p>
+<p>关于是把模型建立和计算放到一起还是分开，在于你的模型的耦合度，如果模型2极其需要模型1的联系，那么还是放到一起比较好。</p>
+<p>在版式上，请保证你的表格，图不要过宽，那样非常难看。</p>
+<p>在目录的编辑上，latex/ctex什么的没有这个困扰，word的用户应该使用它带的目录生成功能，非常的方便好用，比你自己控制强得多。</p>
+<p>论文的版本应该是有一个控制的，我自己之前做过一个草案，供大家借鉴一下。</p>
+<pre><code>0.x 表示内容只是片段，尚未成文。
+1.x 表示内容已经连接，大部分数据还没有填进去。
+2.x 表示数据已经完全填入。
+3.x 表示文章还没有检查，没有润色。
+4.x 表示摘要还没有写好，文章仍然存在小问题。
+5.x 表示论文已经可以提交，也许还有一点问题。
+</code></pre><p>每个版本结束时，就将你的队友的文章更新一遍，保证大家都在最新的论文下工作。论文的把关一定要握在论文同学手里，不要被“你这个词用的不好”，“你这里有点废话”这类的内容影响，该删减还是该增添内容要有自己的主意，不然你就真的写不出来了。</p>
+<p>###摘要的写作<br>这里继续感谢吕大以前的指导和帮助。</p>
+<p>所谓摘要，就应该是你文章最重要的部分，就像预告片与电影，ps照与女生。</p>
+<p>总之一句话。</p>
+<blockquote>
+<p>把最精彩和最重要的写出来。</p>
+</blockquote>
+<p>最精彩是什么？</p>
+<p>是指你们用的独特/有想法的方案，或者是不一样的切入角度。</p>
+<p>举个例子，还是那个osc动物园的例子，大部分人都开始分析咖啡和双马尾对于动物们的关系的时候，你可以开始分析动物为什么会对这些食物有满足感？满足感增加对于动物有什么变化？他们的体重会不会因为投食产生变化？</p>
+<p>你一旦找到了足够支持你新观点的证据：比如</p>
+<pre><code>猫是因为常年视野比较高所以才对娇小的双马尾感兴趣的。
+</code></pre><p>那么你的论文看起来会很有亮点。当然你也得把该算的算出来，不能像我这样，为了黑别人而丧心病狂……</p>
+<p>最重要的是什么？</p>
+<p>是指你们算出来的“干货”，一般就是问题中你们的结果，请务必给一个精准的数值结果出来。所以不要遮遮掩掩，算出来什么就些什么。</p>
+<p>我这里贴一个以前我们用的摘要，我会删减一些……</p>
+<blockquote>
+<p>　　人类酿造葡萄酒的历史悠久，但是目前葡萄酒的评价一般是通过聘请一批有资质的评酒员进行品评，结果具有很大的主观性。本文研究通过葡萄酒理化指标评价葡萄酒品质，具有重大现实意义。</p>
+<p>   问题一，为了判定两组评酒员的评价结果有无显著差异，本文建立基于逐对比较法的t检验模型。将两组评酒员对同一样品的评价分为一组，组内的差异是由各种因素引起，而不同组之间的差异仅是由于两组不同的评酒师的差异引起。而只考虑单独由评酒师所产生的影响。由于各对数据的差异为服从正态分布，进行单一正态总体的t检验，判定两组评酒员的评价结果有无显著差异。在95%的置信区间内，两组评价结果无显著性差异。为确定哪一组评价结果更可信，对两组评价数据进行正态分布检验，在此基础上比较两组评价数据和拟合成正态分布曲线上的对应点的方差大小，第一组的拟合方差分别为a,b。第二组的拟合方差为c,d。从而判定第二组评价结果更可信。</p>
+</blockquote>
+<p>这是2012年国赛的题目了，我们当时最后做的结果是有问题的，所以结果不是很好……但是摘要还是不错的，可以供你们借鉴一下。问题一中写的有点稍微啰嗦，但是我们使用的方法和得到的结果都写上去了。</p>
+<p>最后感叹一下我居然写了这么多东西，感谢包括指导我的老师和学长，与我一起合作过的队友，谢谢你们，数模确实是一个很有意思的事情。（当然你一心要拿奖可能就会觉得比较累了。）</p>
+<p>希望读完文章的你可以有所收获，希望你能在比赛中收获愉快的心情和有趣的经历。</p>
+<p>kok敬上！</p>
+<p>最后打两个广告：</p>
+<ol>
+<li><p><a href="http://why-should-i-learn-this-course.readthedocs.org/" target="_blank" rel="external">http://why-should-i-learn-this-course.readthedocs.org/</a> “为啥我要学这个？” 这是我搞的一个文档项目，旨在收集一些学习方法和学习意义的文章，以扫除你在学习上的疑问，坑有点大，我慢慢填。</p>
+</li>
+<li><p>XDOSC 西电开源社区 欢迎搜索相关网站，人人号和邮件列表以及微信公众号。如果你不知道应该怎么参与进来，每周四，只要不下刀子或者要考试，都会有 Hacking Thursday在某个有饮料和网的地方举行。kok作为当年的发起者之一一直很喜欢这个活动……</p>
+</li>
+</ol>
+</div></article></div></section><footer><div class="paginator"><a href="/blog/2014/05/02/tech/技术笔记-重新学习html-1/" class="prev">上一篇</a><a href="/blog/2014/04/30/tech/技术笔记-关于hexo静态blog的事/" class="next">下一篇</a></div><div data-thread-key="2014/05/01/life/生活学习-数模的基本思路和写作攻略/" data-title="数模的基本思路和写作攻略" data-url="http://kokdemo.github.io/blog/2014/05/01/life/生活学习-数模的基本思路和写作攻略/" data-author-key="1" class="ds-thread"></div><script>var duoshuoQuery = {short_name:"kokdemo"};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+
+</script><div class="copyright"><p>© 2010 - 2016 <a href="http://kokdemo.github.io/blog">kokdemo</a>, unless otherwise noted.</p></div></footer><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-73260488-1",'auto');ga('send','pageview');</script><script src="https://cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>

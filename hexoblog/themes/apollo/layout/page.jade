@@ -1,0 +1,13 @@
+//
+   Created by kokdemo on 16/2/4.
+
+extends partial/layout
+block container
+   if page.type === 'tags'
+       h1= 'tags'
+       != tagcloud({min_font: 12, max_font: 30, amount: 200, color: true, start_color: '#ccc', end_color: '#111'})
+block pagination
+   include mixins/paginator
+   +home()
+block copyright
+   include partial/copyright

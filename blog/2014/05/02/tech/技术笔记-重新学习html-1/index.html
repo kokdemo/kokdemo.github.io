@@ -1,0 +1,52 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 重新学习HTML · kok's story box</title><meta name="description" content="重新学习HTML - kokdemo"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.ico"><link rel="stylesheet" href="/blog/css/apollo.css"><link rel="stylesheet" href="http://fonts.useso.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/" class="logo-link"><img src="/box.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/blog/" target="_self" class="nav-list-link">博客</a></li><li class="nav-list-item"><a href="/blog/archives/" target="_self" class="nav-list-link">归档</a></li><li class="nav-list-item"><a href="/blog/tags" target="_self" class="nav-list-link">标签</a></li><li class="nav-list-item"><a href="http://kokdemo.github.io" target="_blank" class="nav-list-link">收纳箱</a></li><li class="nav-list-item"><a href="https://github.com/kokdemo" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/blog/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">重新学习HTML</h1><div class="post-meta"><span class="post-time">2014年5月2日</span></div><div class="post-content"><p>这一段时间，为了准备面试，好好的重读了一次html，发现了一些以前没有关注过的小细节。</p>
+<p>html这种半个小时就可以上手的东西，大部分人可能止步于一些很基本的标签，比如h系列，p，div，a，img这一类，今天来说说一些比较有意思的html内容吧。</p>
+<a id="more"></a>
+<p>###那些很“厉害”的语义化标签</p>
+<ul>
+<li>article ：就是文章</li>
+<li>aside：姑且当是边栏吧</li>
+<li>header：头部</li>
+<li>footer：脚部……</li>
+<li>nav：导航条</li>
+</ul>
+<p>以上的这些标签都是页面布局中常用的标签，但是实际上你还是需要给他们放到合适的位置，并加上合理的css以保证他们出现在正确的位置。</p>
+<ul>
+<li>ul：无序列表</li>
+<li>ol：有序列表</li>
+<li>li：列表项</li>
+</ul>
+<p>其实现在ul的用途更广一些……比如nav中的链接就应该写在ul中，这样比较美观易读一些。</p>
+<ul>
+<li>dl：定义列表</li>
+<li>dt：定义列表中的项目</li>
+<li>dd：定义列表中的内容</li>
+</ul>
+<p>我感觉这个用的也不太多，因为比如一个dl中有几个dt，其实也可写成几个ul，但是出于语义化的思路，把有关系的列表就可以这么写。</p>
+<ul>
+<li>pre：将源内容展示出来，但中间不能包括块级元素。</li>
+<li>code：专门处理源代码，可以被浏览器特殊处理。</li>
+<li>var：指pre，code中的变量，表示效果就是斜体啦。</li>
+<li>dfn：定义的文字用这个标签，表示效果依旧是斜体。</li>
+<li>samp：用来做样本的文本，无特殊效果。</li>
+<li>kdb：键盘文字，比如可以写 kbd esc /kbd 就表示esc这个键的意思。</li>
+</ul>
+<p>这里列了一些用来语义化处理文字的标签，常见的还有del之类的就不提了。</p>
+<p>###一些实用好标签！</p>
+<ul>
+<li>wbr：被这个标签影响的内容在页面宽度不足是会折行，类似overflow，很神奇的，类似的标签&#8203;或&shy; 他们之间仅仅有一些兼容性差异。</li>
+<li>rel：这个html属性可以放一些没有指定的参数，而且所有的标签都有。</li>
+<li>acronym：这个标签可以用来给文字加一个解释。</li>
+<li>base：给每个页面加一个基本url。这个模板处理估计比较好用。</li>
+<li>sub sup：下标和上标，公式输入就靠他们了！</li>
+</ul>
+</div></article></div></section><footer><div class="paginator"><a href="/blog/2014/05/03/tech/技术笔记-用一个特殊方法解决同位词问题/" class="prev">上一篇</a><a href="/blog/2014/05/01/life/生活学习-数模的基本思路和写作攻略/" class="next">下一篇</a></div><div data-thread-key="2014/05/02/tech/技术笔记-重新学习html-1/" data-title="重新学习HTML" data-url="http://kokdemo.github.io/blog/2014/05/02/tech/技术笔记-重新学习html-1/" data-author-key="1" class="ds-thread"></div><script>var duoshuoQuery = {short_name:"kokdemo"};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+
+</script><div class="copyright"><p>© 2010 - 2016 <a href="http://kokdemo.github.io/blog">kokdemo</a>, unless otherwise noted.</p></div></footer><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-73260488-1",'auto');ga('send','pageview');</script><script src="https://cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>
