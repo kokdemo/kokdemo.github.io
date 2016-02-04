@@ -1,8 +1,8 @@
 menu:
     博客: /blog/
     归档: /blog/archives/
+    标签: /blog/tags
     收纳箱: http://kokdemo.github.io
-    twitter: http://twitter.com/kokdemo
     github: https://github.com/kokdemo
     rss: /blog/atom.xml
 
@@ -11,7 +11,7 @@ logo: /box.png
 
 # Comment
 # e.g disqus: seansun
-disqus:
+#disqus:
 duoshuo: kokdemo
 
 # Analytics
@@ -21,7 +21,7 @@ ga: UA-73260488-1
 #ba: //hm.baidu.com/hm.js?a36e15d9e2adec9a21fcdd9f686b1ed2
 
 # Copyright Infomation
-startyear: 2015
+startyear: 2010
 
 # Font CDN
 #true : use google fonts api, not stable for chinese visitor sometimes, caused by force majeure factor

@@ -1,8 +1,7 @@
-title: "Hello 【new】 world！"
+title: "Hello new world！"
 id: 1
 date: 2011-07-12 14:01:01
 tags: 
-- 
 categories: 
 - 随笔分享
 ---

@@ -1,5 +1,5 @@
-prev: PRVE
-next: NEXT
-prev_post: PRVE
-next_post: NEXT
-more: ...more
+prev: "PRVE"
+next: "NEXT"
+prev_post: "PRVE"
+next_post: "NEXT"
+more: "...more"
