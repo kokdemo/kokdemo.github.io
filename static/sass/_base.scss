@@ -1,0 +1,13 @@
+$font-size : 14px;
+$font-color-1: rgba(104, 95, 100,0.8);
+$font-color-2: rgba(104, 95, 100,0.6);
+a{
+    text-decoration: none;
+}
+
+@font-face{
+    font-family: Josefin Sans;
+    src:URL('JosefinSans-Regular.ttf');
+}
+
+@import "compass/reset"

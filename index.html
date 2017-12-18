@@ -7,10 +7,14 @@
         <link
             href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"
             rel="stylesheet">
+        
     </head>
     <body>
         <div id="profile">
-            <header class="header">占位</header>
+            <header class="header">
+                <img src="static/img/logo.png" class="header-logo">
+                <span class="header-text">Say hello to curiosity</span>
+            </header>
             <main class="main">
                 <sidebar class="sidebar">
                     <div class="sidebar-block" v-for="(sideItem,index) in sidebar">
@@ -27,6 +31,10 @@
                     </div>
                 </sidebar>
                 <content class="content">
+                    <gallery
+                        :images="gallery.photos"
+                        :index="gallery.photoindex"
+                        @close="gallery.photoindex = null"></gallery>
                     <div
                         class="content-block"
                         v-for="(sideBarClassify,sideBarClassifyindex) in sidebar">
@@ -38,14 +46,14 @@
                                 v-if="contentItem.name==sideBarItem">
                                 <div
                                     class="content-block-photo"
-                                    v-for="(photo,photoIndex) in contentItem.photos">
+                                    v-for="(photo,photoIndex) in contentItem.photos"
+                                    @click="gallery.photos=contentItem.photos,gallery.photoindex=photoIndex">
                                     <img :src="photo">
                                 </div>
-                                <!-- <gallery :images="contentItem.photos" :index="index" @close="index =
-                                null"></gallery> -->
+
                                 <div class="content-block-item" v-for="(item,itemIndex) in contentItem.items">
-                                    <a>
-                                        <img :src="item.photo">
+                                    <a :href="item.href">
+                                        <img :src="item.src">
                                         <span>{{item.title}}</span>
                                     </a>
                                 </div>
@@ -58,11 +66,18 @@
         </div>
 
         <script src="https://cdn.bootcss.com/vue/2.5.9/vue.min.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/blueimp-gallery@2.27.0/js/blueimp-helper.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/blueimp-gallery@2.27.0/js/blueimp-gallery.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/blueimp-gallery@2.27.0/js/blueimp-gallery-fullscreen.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://unpkg.com/blueimp-gallery@2.27.0/css/blueimp-gallery.min.css">
         <script src="https://unpkg.com/vue-gallery@1.2.4/dist/js/vue-gallery.min.js"></script>
         <script src="static/vue-href.js"></script>
         <script>
             var board = new Vue({
                 el: '#profile',
+                components: {
+                    'gallery': VueGallery
+                },
                 data: {
                     gallery: {
                         photos: [],
@@ -71,19 +86,19 @@
                     sidebar: [
                         {
                             name: 'Photography',
-                            classify: ['a', 'b', 'c']
+                            classify: ['2017', '2016', '2015']
                         }, {
                             name: 'Cooking',
-                            classify: ['a', 'b', 'c']
+                            classify: ['bake', 'b', 'c']
                         }, {
                             name: 'Handwork',
                             classify: ['a', 'b', 'c']
                         }, {
                             name: 'Writing',
-                            classify: ['a', 'b', 'c']
+                            classify: ['blog', 'jianshu', 'wechat offical account']
                         }, {
                             name: 'Project',
-                            classify: ['a', 'b', 'c']
+                            classify: ['web project', 'chrome extension','web game', 'translation','other project']
                         }, {
                             name: 'Design',
                             classify: ['a', 'b', 'c']
@@ -93,7 +108,7 @@
                         {
                             name: 'a',
                             photos: [
-                                'static/img/background.jpg', 'static/img/background.jpg'
+                                'static/img/background.jpg', 'static/img/background.jpg', 'static/img/background.jpg'
                             ],
                             items: [
                                 {
