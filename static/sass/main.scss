@@ -58,13 +58,17 @@ html,body{
             display: block;
             font-size: 1.2rem;
             padding: 0 0 0.8rem 0;
+            color: $font-color-2;
             &:hover{
                 color: $font-color-1;
             }
         }
         li{
             padding: 0.6rem 0;
-            &:hover{
+            a{
+                color: $font-color-2;
+            }
+            &:hover a{
                 color: $font-color-1;
             }
         }
@@ -81,7 +85,7 @@ html,body{
     }
     i{
         font-size: 2rem;
-        color: #888;
+        color: $font-color-1;
     }
 }
 
@@ -117,14 +121,25 @@ html,body{
 .content-block-item{
 	display: inline-block;
     width: 30%;
+    height: 18rem;
     margin-right: 1rem;
     margin-bottom: 2rem;
-    box-shadow: 0 0.3rem 1rem 0 rgba(0, 0, 0, 0.3);
-    img{
-        width: 100%;
+    box-shadow: 0 0.3rem 1rem 0 rgba(0, 0, 0, 0.3);  
+    a{
+        display: flex;
+        flex-direction: column;
+        color: $font-color-1;
+        height: 100%;
+        .content-block-item-img{
+            background-size:contain;
+            background-repeat: no-repeat;
+            width: 100%;
+            flex: 1;
+        }
+        span{
+            line-height: 3.5rem;
+            padding-left: 1rem;
+        }
     }
-    span{
-        line-height: 3.5rem;
-        padding-left: 1rem;
-    }
+    
 }

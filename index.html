@@ -6,8 +6,7 @@
         <link rel="stylesheet" href="static/main.css">
         <link
             href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"
-            rel="stylesheet">
-        
+            rel="stylesheet">    
     </head>
     <body>
         <div id="profile">
@@ -18,9 +17,9 @@
             <main class="main">
                 <sidebar class="sidebar">
                     <div class="sidebar-block" v-for="(sideItem,index) in sidebar">
-                        <span class="sidebar-block-title">{{sideItem.name}}</span>
+                        <a :href="'#'+sideItem.name"><span class="sidebar-block-title">{{sideItem.name}}</span></a>
                         <ul>
-                            <li v-for="(item,index) in sideItem.classify">{{item}}</li>
+                            <li v-for="(item,index) in sideItem.classify"><a :href="'#'+item">{{item}}</a></li>
                         </ul>
                     </div>
                     <div class="sidebar-footer">
@@ -38,22 +37,25 @@
                     <div
                         class="content-block"
                         v-for="(sideBarClassify,sideBarClassifyindex) in sidebar">
-                        <h3>{{sideBarClassify.name}}</h3>
+                        <h3 :id="sideBarClassify.name">{{sideBarClassify.name}}</h3>
+                        
                         <template v-for="(sideBarItem,itemIndex) in sideBarClassify.classify">
-                            <h4>{{sideBarItem}}</h4>
+                            <h4 :id="sideBarItem">{{sideBarItem}}</h4>
                             <template
                                 v-for="(contentItem,contentItemIndex) in content"
                                 v-if="contentItem.name==sideBarItem">
                                 <div
                                     class="content-block-photo"
                                     v-for="(photo,photoIndex) in contentItem.photos"
-                                    @click="gallery.photos=contentItem.photos,gallery.photoindex=photoIndex">
-                                    <img :src="photo">
+                                    @click="gallery.photos=contentItem.photos,gallery.photoindex=photoIndex"
+                                    >
+                                    <img :src="photo" data-width>
                                 </div>
 
                                 <div class="content-block-item" v-for="(item,itemIndex) in contentItem.items">
                                     <a :href="item.href">
-                                        <img :src="item.src">
+                                        <div class="content-block-item-img" style="background-image:url('static/img/placeholder.png')" 
+                                        :style="'background-image:url('+item.src+')'"></div>
                                         <span>{{item.title}}</span>
                                     </a>
                                 </div>
@@ -72,6 +74,7 @@
         <link rel="stylesheet" type="text/css" href="https://unpkg.com/blueimp-gallery@2.27.0/css/blueimp-gallery.min.css">
         <script src="https://unpkg.com/vue-gallery@1.2.4/dist/js/vue-gallery.min.js"></script>
         <script src="static/vue-href.js"></script>
+        <script type='text/javascript' src='https://500px.com/embed.js'></script>
         <script>
             var board = new Vue({
                 el: '#profile',
@@ -85,128 +88,147 @@
                     },
                     sidebar: [
                         {
+                            name: 'Life',
+                            classify: ['writing','cooking']
+                        },
+                        {
                             name: 'Photography',
                             classify: ['2017', '2016', '2015']
-                        }, {
-                            name: 'Cooking',
-                            classify: ['bake', 'b', 'c']
-                        }, {
-                            name: 'Handwork',
-                            classify: ['a', 'b', 'c']
-                        }, {
-                            name: 'Writing',
-                            classify: ['blog', 'jianshu', 'wechat offical account']
-                        }, {
+                        },  {
                             name: 'Project',
-                            classify: ['web project', 'chrome extension','web game', 'translation','other project']
-                        }, {
-                            name: 'Design',
-                            classify: ['a', 'b', 'c']
+                            classify: ['web project', 'chrome extension','web game']
                         }
                     ],
                     content: [
                         {
-                            name: 'a',
+                            name:'2017',
+                            photos:[
+                                'https://drscdn.500px.org/photo/243136823/m%3D900/v2?user_id=12068053&webp=true&sig=341be535db3b589058bbf744d60fbb632ac29ad27208c8ffe03f1f8ccecf26c9',
+                                'https://drscdn.500px.org/photo/233472673/m%3D900/v2?user_id=12068053&webp=true&sig=62f75ec56bfd39f4ce26c09b4728c648b58995976dea2e68ba547c366de58f08',
+                            ]
+                        },
+                        {
+                            name:'2016',
+                            photos:[
+                                'https://drscdn.500px.org/photo/243136731/m%3D900/v2?user_id=12068053&webp=true&sig=ad21c1a7d104337b66e65a12907f30e0514d188dc778ecfc174d87c1d2e0f4ff',
+                                'https://drscdn.500px.org/photo/155393021/m%3D900/v2?user_id=12068053&webp=true&sig=06f40269cca8e6f598a792da0df67062d24ed0c42ef931207c165f37b3778e04',
+                                'https://drscdn.500px.org/photo/155392985/m%3D900/v2?user_id=12068053&webp=true&sig=3a23d49caaa6c982adca060d261d28bd76b196b9a74b3cc749edced7b31a6cba',
+                                'https://drscdn.500px.org/photo/155392979/m%3D900/v2?user_id=12068053&webp=true&sig=ad9820407ff987280ded7cbd1e1b36c56acd7e06faa1896511f23cc7b2ee8c56',
+                                'https://drscdn.500px.org/photo/155392977/m%3D900/v2?user_id=12068053&webp=true&sig=f2ad7b5d9797418a8d86c9100c40bd55af3e18492a587ad5dd660d69777a0f62',
+                                'https://drscdn.500px.org/photo/155392975/m%3D900/v2?user_id=12068053&webp=true&sig=5b4348ccc46fe014f42fdf19d5a9b0e71b54b62d73c5f9f9968477dad092b20b',
+                                'https://drscdn.500px.org/photo/155392973/m%3D900/v2?user_id=12068053&webp=true&sig=3ddfa9946eeb054be98281314d678758ceb4b042831b8749123cef004b3ccb94'
+                            ]
+                        },
+                        {
+                            name:'2015',
+                            photos:[
+                                'https://drscdn.500px.org/photo/243133779/m%3D900/v2?user_id=12068053&webp=true&sig=a386b630f3a99843a10c70acfd2b2d22d435b15dbfffca8878adc1b90d6a9468',
+                                'https://drscdn.500px.org/photo/243134191/m%3D900/v2?user_id=12068053&webp=true&sig=7135893faae64b099d7ab696235e8069b33bb25489707130f5333f6175201aef',
+                                'https://drscdn.500px.org/photo/243134349/m%3D900/v2?user_id=12068053&webp=true&sig=4064ab4b3f4eba7c24bda3887fa67b7611752edbe8dbc4636ea4ed4e2edbb53b'
+                            ]
+                        },
+                        {
+                            name: 'cooking',
                             photos: [
-                                'static/img/background.jpg', 'static/img/background.jpg', 'static/img/background.jpg'
-                            ],
+                                'https://drscdn.500px.org/photo/233370221/m%3D900/v2?user_id=12068053&webp=true&sig=ec322ad55139aca89a296696777a63be051fdcaa875e87eb9d0d4eabe8dee7e5',
+                                'https://drscdn.500px.org/photo/233369881/m%3D900/v2?user_id=12068053&webp=true&sig=4409b3c5d475b03a3e39fd24e24db0873fa681a06013b10742af3b0d035f2f8f',
+                            ]
+                        },
+                        {
+                            name: 'writing',
                             items: [
                                 {
-                                    src: 'static/img/background.jpg',
-                                    title: 'abc',
-                                    href: 'http://google.com'
+                                    src: 'static/img/box.png',
+                                    title: 'Blog',
+                                    href: 'http://wocai.de/blog'
+                                },
+                                {
+                                    src: 'static/img/placeholder.png',
+                                    title: '简书',
+                                    href: 'https://www.jianshu.com/u/Avnyjg'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'web project',
+                            items: [
+                                {
+                                    src: 'static/img/placeholder.png',
+                                    title: 'Web-tools 一些小工具',
+                                    href: 'http://wocai.de/k-web-tools/'
+                                },
+                                {
+                                    src: 'static/img/placeholder.png',
+                                    title: 'FlowNote 像做笔记一样画流程图',
+                                    href: 'http://wocai.de/flowNote/'
+                                },
+                                {
+                                    src: 'static/img/placeholder.png',
+                                    title: 'ColorBox 解决配色之苦',
+                                    href: 'http://wocai.de/ColorBox/'
+                                },
+                                {
+                                    src: 'static/img/placeholder.png',
+                                    title: '你所在的创业公司能打几分？',
+                                    href: 'http://wocai.de/companyReview/'
+                                },
+                                {
+                                    src: 'static/img/placeholder.png',
+                                    title: 'Deadline 一切任务皆有死线',
+                                    href: 'http://wocai.de/deadline/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'chrome extension',
+                            items: [
+                                {
+                                    src: 'static/img/placeholder.png',
+                                    title: 'v2ex.k: Get a better UI of V2EX',
+                                    href: 'https://github.com/kokdemo/v2ex.k'
+                                },
+                                {
+                                    src: 'static/img/placeholder.png',
+                                    title: 'SteamRateHelper: 看评分！',
+                                    href: 'https://github.com/kokdemo/SteamRateHelper'
+                                },
+                                {
+                                    src: 'static/img/placeholder.png',
+                                    title: 'Qianci: 遣词，让markdown输入更流畅',
+                                    href: 'https://github.com/kokdemo/QianCi'
+                                },
+                                {
+                                    src: 'static/img/placeholder.png',
+                                    title: 'K-Launcher: 尽可能提高浏览效率',
+                                    href: 'https://github.com/kokdemo/K-Launcher'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'web game',
+                            items: [
+                                {
+                                    src: 'static/img/placeholder.png',
+                                    title: '定个小目标，赚到10000块',
+                                    href: 'http://wocai.de/ClickGold/'
+                                },
+                                {
+                                    src: 'static/img/placeholder.png',
+                                    title: '来一盘24点吧',
+                                    href: 'http://wocai.de/Cool24/'
+                                },
+                                {
+                                    src: 'static/img/placeholder.png',
+                                    title: '江湖中从不平凡',
+                                    href: 'http://wocai.de/jianghu/'
+                                },
+                                {
+                                    src: 'static/img/placeholder.png',
+                                    title: '2048，支持重力感应哦',
+                                    href: 'http://wocai.de/2048Mobile/'
                                 }
                             ]
                         }
-                    ],
-                    cards: [
-                        {
-                            name: 'blog',
-                            describe: '一个记录文字的地方。',
-                            pic: 'static/img/box.png',
-                            href: 'http://kokdemo.github.io/blog/'
-                        }, {
-                            name: 'Why learn this?',
-                            describe: '一个收集学习经验的收藏夹。',
-                            pic: 'http://www.66tools.com/WebTools/rImage?p=220-200',
-                            href: 'http://why-should-i-learn-this-course.readthedocs.org/zh_CN/latest/'
-                        }, {
-                            name: 'Impress.js教程',
-                            describe: '就仅仅是中文教程。',
-                            pic: 'http://www.66tools.com/WebTools/rImage?p=220-201',
-                            href: 'https://github.com/kokdemo/impress.js-tutorial-in-Chinese'
-                        }, {
-                            name: '前端问答',
-                            describe: '做了一些答案的增补。',
-                            pic: 'http://www.66tools.com/WebTools/rImage?p=220-202',
-                            href: 'https://github.com/kokdemo/Front-end-Developer-QandA'
-                        }, {
-                            name: 'K-Launcher',
-                            describe: '一个提高浏览效率的扩展',
-                            pic: 'http://www.66tools.com/WebTools/rImage?p=220-203',
-                            href: 'https://github.com/kokdemo/K-Launcher'
-                        }, {
-                            name: 'QianCi-遣词',
-                            describe: '提高中文输入MarkDown效率',
-                            pic: 'http://www.66tools.com/WebTools/rImage?p=220-204',
-                            href: 'https://github.com/kokdemo/QianCi'
-                        }, {
-                            name: 'v2ex.k',
-                            describe: '颠覆的v2ex界面扩展',
-                            pic: 'http://www.66tools.com/WebTools/rImage?p=220-205',
-                            href: 'https://github.com/kokdemo/v2ex.k'
-                        }, {
-                            name: 'vue-href',
-                            describe: '减少一层一层a标签的嵌套',
-                            pic: 'http://www.66tools.com/WebTools/rImage?p=220-206',
-                            href: 'https://github.com/kokdemo/vue-href'
-                        }, {
-                            name: '2048Mobile',
-                            describe: '用重力感应玩的2048',
-                            pic: 'http://www.66tools.com/WebTools/rImage?p=220-207',
-                            href: 'https://github.com/kokdemo/2048Mobile'
-                        }, {
-                            name: 'jianghu',
-                            describe: '有如这波澜的江湖',
-                            pic: 'http://www.66tools.com/WebTools/rImage?p=220-208',
-                            href: 'https://github.com/kokdemo/jianghu'
-                        }, {
-                            name: 'Cool24',
-                            describe: '精巧的24点游戏',
-                            pic: 'http://www.66tools.com/WebTools/rImage?p=220-209',
-                            href: 'https://github.com/kokdemo/Cool24'
-                        }, {
-                            name: 'ClickGold',
-                            describe: '简单的放置类小游戏',
-                            pic: 'http://www.66tools.com/WebTools/rImage?p=220-210',
-                            href: 'https://github.com/kokdemo/ClickGold'
-                        }, {
-                            name: 'xdeat',
-                            describe: '我最早认真对待的项目',
-                            pic: 'http://www.66tools.com/WebTools/rImage?p=220-211',
-                            href: 'https://github.com/kokdemo/xdeat'
-                        }, {
-                            name: 'deadline',
-                            describe: 'deadline是第一生产力',
-                            pic: 'http://www.66tools.com/WebTools/rImage?p=220-212',
-                            href: 'https://github.com/kokdemo/deadline'
-                        }, {
-                            name: 'companyReview',
-                            describe: '你的公司到底有多好？',
-                            pic: 'http://www.66tools.com/WebTools/rImage?p=220-213',
-                            href: 'https://github.com/kokdemo/companyReview'
-                        }, {
-                            name: 'ColorBox',
-                            describe: '解决配色之苦',
-                            pic: 'http://www.66tools.com/WebTools/rImage?p=220-214',
-                            href: 'https://github.com/kokdemo/ColorBox'
-                        }, {
-                            name: 'KMockup',
-                            describe: '简单的mockup图片生成器',
-                            pic: 'http://www.66tools.com/WebTools/rImage?p=220-215',
-                            href: 'https://github.com/kokdemo/KMockup'
-                        }
-
                     ]
                 }
             });
